@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul{
+	width: 90%;
+	height: auto;
+}
+ul li{
+	width: 100%;
+	list-style: none;	
+}
+
+ul li a{
+	text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+	font-weight: bold;
+	text-align: left;
+	color: #fff;
+	display: block;
+	line-height: 3.3;
+}
+
+ul li a:hover, ul li a:focus {
+    background-size: 100% 2px;
+	
+}
+ul li a span{
+	float: right;
+	font-size: 1.5rem;
+	margin-top: 10px;
+}
+

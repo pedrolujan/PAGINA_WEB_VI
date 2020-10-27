@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenG{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.contenEjem{
+    width: 25%;
+    justify-content: center;
+    background-color: lightblue;
+}
+ h3{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+.contenCajas{
+    display: block;
+    padding: 10px;
+}
+.contenCajas input{
+    text-align: center;
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.contenCajas button{
+    margin: auto;
+    background: none;
+    background-color: limegreen;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.mensaje{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 25px;
+    padding: 20px;
+    background-color: #0e8644;
+}

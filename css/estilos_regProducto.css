@@ -1,0 +1,220 @@
+
+.modal,.modalActualizaPro{
+    position: fixed;
+    background:rgb(0, 0, 0,0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+    left: 0;
+    z-index: 100;
+}
+.conten_regProG,.conten_ActualizaProG{
+    display: none;
+    
+}
+.conten_regPro,.conten_ActualizaPro{
+    width: 80%;
+    height: 400px;
+    position: fixed;  
+    display: flex;
+    left: calc(100% - 90%);
+    justify-content: center;
+    top: 100px;
+    padding: 5% 10px 10px 10px;
+    border: solid 2px #ccc;
+    background-color: #ffffff;
+    border-radius: 1em;
+    z-index: 202;
+}
+.conten_regPro h3,.conten_ActualizaPro h3{
+    position: absolute;
+    margin: auto;
+    color: #000000;
+    font-size: 30px;
+    top: 4%;
+}
+.conten_regPro .btnCerrar,.conten_ActualizaPro .btnCerrar{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #CF514F;
+    color: #fff;
+    font-weight: bold;
+}
+.contenFoto_prod,.contenFotoAct_prod{
+    width: 40%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 40px 20px;
+}
+.contenFoto_prod img,.contenFotoAct_prod img{
+    width: 350px;
+    border-radius: 5px;
+    height: 350px;
+}
+.contenFoto_prod .btnSubeImgPro,.contenFotoAct_prod .btnSubeImgActPro{
+    width: 350px;
+    position: relative;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    bottom: 24.3%;
+    border-radius: 0px 0px 5px 5px;
+    padding: 20px;
+    color: #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: rgb(0,0, 0,.5);
+}
+.contenFoto_prod .btnSubeImgPro:hover,.contenFotoAct_prod .btnSubeImgActPro:hover{
+    background-color: rgb(0,0, 0,.7);
+    color: rgb(233, 220, 220);
+}
+.contenFoto_prod .btnSubeImgPro:hover span, .contenFotoAct_prod .btnSubeImgActPro:hover span{
+    transform: scale(1.2);
+}
+.contenFoto_prod .btnSubeImgPro:active span,.contenFotoAct_prod .btnSubeImgActPro:active span{
+    transform: scale(0.8);
+}
+/* actualizar producto */
+
+.contenFoto_prod .btnSubeImgActPro{
+    width: 350px;
+    position: relative;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    bottom: 21.3%;
+    border-radius: 0px 0px 5px 5px;
+    padding: 20px;
+    color: #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: rgb(0,0, 0,.5);
+}
+.contenFoto_prod .btnSubeImgActPro:hover{
+    background-color: rgb(0,0, 0,.7);
+    color: rgb(233, 220, 220);
+}
+.contenFoto_prod .btnSubeImgActPro:hover span{
+    transform: scale(1.2);
+}
+.contenFoto_prod .btnSubeImgActPro:active span{
+    transform: scale(0.8);
+}
+.contenCajas{
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+.contenInputs{
+    width: 60%;
+}
+.contenCajas input{
+width: 100%;
+height: 30px;
+border-style: none;
+border-bottom:solid 1px #000;
+outline: 0px;
+background: none;
+margin: 10px 0px;
+font-size: 16px;
+font-weight: bold;
+padding: 5px 10px;
+}
+.contenCajas textarea{
+    width: 100%;
+    resize: none;
+    height: 120px;    
+    margin: 10px 0px;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: solid 1px #000;
+}
+.precio-cat{
+    display: flex;
+}
+.precio-cat select, .precio-cat input{
+    width: 50%;
+    height: 30px;
+    outline: 0px;
+    background: none;
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.precio-cat select{
+    margin-left: 20px;
+}
+.btnRegistrarPro{
+    width: 150px;
+    background: #59BA5B;
+    color: #ffffff;
+    border: none;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    padding: 10px;
+    outline: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.icon-checkmark{
+    margin-right: 10px;
+    color: #ccc;
+}
+
+.btnRegistrarPro:hover{
+    background: #2b812c;
+}
+.btnRegistrarPro:active{
+    transform: scale(0.9);
+}
+.btnAbreActualizaPro,.btnAbreEliminarPro{
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: #079243;
+    cursor: pointer;
+    outline: none;
+}
+.btnAbreActualizaPro{
+    padding: 10px 30px;
+}
+.btnAbreEliminarPro{     
+    background-color: rgb(223, 9, 9);
+    margin-left: 10%;
+}
+.btnAbreActualizaPro:hover,.btnAbreEliminarPro:hover{
+    transform: scale(1.05);
+}
+.btnAbreActualizaPro span,.btnAbreEliminarPro span{
+    width: 20px;
+    margin-right: 10px;
+    color: rgb(228, 226, 226);
+}
