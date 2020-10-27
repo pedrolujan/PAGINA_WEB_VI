@@ -7,7 +7,6 @@ include("../model/conexion.php");
 	$user=new ApptivaDB();
 $html="";
 if(isset($_POST['search']) && ($_POST['search']!="")){
-
 	$u=$user->buscar("productos"," productos.nombre_pro like '%".$_POST['search']."%'");
 	if(!$u){
 		$html.="<p style='background: #D9534F; color: #fff; padding: 5px;'> No se encontraron datos </p>";
