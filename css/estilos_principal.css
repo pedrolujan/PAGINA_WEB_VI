@@ -9,7 +9,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   padding: 0;
-  background: #F0F2F5;
+  background: #ffffff;
   margin: 0;
   margin-left: var(--width-collapsed);
 }
@@ -39,7 +39,7 @@ body {
 }
 .header-main {
   height: 60px;
-  background: #fff;
+  background: #f6f7f8;
   top: 0;
   width: calc(100% - calc(var(--width-collapsed)) - 10px);
   box-sizing: border-box;
@@ -66,7 +66,7 @@ body {
 .header-main .contenHMain .busqueda input {
   outline: none;
   border: none;
-  background-color: #F0F2F5;
+  background-color: #d9dfe6;
   color: #1c1c1d;
   border: solid 1px #ccc;
 }
@@ -87,7 +87,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #D8DADF;
+  background-color: #d9dfe6;
   border-radius: 50%;  
   padding:5px;
 }
@@ -131,7 +131,7 @@ body {
   border-radius: 50px;
 }
 .header-main .contenHMain .datos_usuario .datos_usuarioEsp:hover{
-  background-color: #D8DADF;
+  background-color: #d9dfe6;
 
 }
 .img_usuario {
@@ -352,25 +352,29 @@ body {
 /* estilos submuenu imagen uusuario*/
 
 .celusubmenu {
-  background: #D8DADF;
+  background: #F6F7F8;
   position: fixed;
   list-style: none;
   width: 15%;
   color: #000;
+  overflow: hidden;
+  text-align: center;
   top: 6.4%;
-  border-radius: 0px 0px 5px 0px;
+  padding: 0px;
+  border-radius: 0px 0px 5px 10px;
   border:  solid #ccc 1px;
+  box-shadow: 2px 2px 12px -2px #000;
   clip-path: circle(0px at top right);
   transition: clip-path ease-in-out 700ms;
 }
 .celusubmenu li {
-  transform: scale(1);
-  border-bottom: solid 1px rgba(27, 27, 27, 0.6);
-  padding: 0px 0px;
+  border-bottom: solid 1px #011309;
+  padding: 0px 10px;
   transition: transform 0.4s;
 }
 .celusubmenu li:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
+  background-color: #D9DFE6;
 }
 .celusubmenu li a {
   width: 100%;
@@ -380,7 +384,6 @@ body {
   color: #000;
   text-align: center;
   text-decoration: none;
-  transform: scale(1.05);
 }
 
 .celmenuchico {

@@ -1,0 +1,70 @@
+.modal_confirmar{
+    background-color: rgb(0, 0, 0,0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    left: 0;
+}
+.contenMConfirmar{
+    background-color: #fff;
+    width: 40%;
+    height: 30%;
+    margin: auto;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+}
+.contenMConfirmar .btnCerrar{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #CF514F;
+    color: #fff;
+    font-weight: bold;
+}
+.contenMConfirmar .atenecion{
+    text-align: left;
+    padding: 5px 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.contenMConfirmar h3{
+    font-weight: normal;
+}
+.contenMConfirmar button{
+    height: 30px;
+    width: 30%;
+    background: #59BA5B;
+    color: #ffffff;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2%;
+}
+@media screen and (max-width: 700px){
+    .contenMConfirmar button{
+    font-size:12px;
+    }
+}
+.contenMConfirmar .btn_eliminar{
+    background: #D9534F;
+}
