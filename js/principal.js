@@ -264,7 +264,7 @@ $(document).on("change", "#imagenProducto", function () {
         reader.readAsDataURL(this.files[0]);
     }
 });
-
+/* codigo para registrar productos */
 $(document).ready(function () {
     $('#formularioRegPro').submit(insertardatos);
     function insertardatos(e) {

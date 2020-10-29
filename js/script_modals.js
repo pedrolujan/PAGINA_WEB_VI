@@ -19,6 +19,8 @@ $(document).on('click', '.modal_confirmar', cerrarConfirElimina)
 $(document).on('click', '.btnCerrar', cerrarConfirElimina);
 $(document).on('click', '.btn_cancelar', cerrarConfirElimina);
 
+/* codigo para elimminar producto */
+
 $(document).on('click', '.btn_eliminar', function(){
     var id=$("#txtObtId").val();
     $.ajax({
@@ -39,7 +41,7 @@ $(document).on('click', '.btn_eliminar', function(){
         }         
     })
     .fail(function error(e){
-        $(".respuestas").html("No se pudo elimino el producto").fadeIn();
+        $(".respuestas").html("No se pudo eliminar el producto").fadeIn();
         cerrarConfirElimina();
     })
     .always( function final(){			 
@@ -49,4 +51,7 @@ $(document).on('click', '.btn_eliminar', function(){
     }, 3000);
 });
 
-
+$(document).on("click",".btnActualizarPro",function(e){
+    e.preventDefault();
+    alert("actualizare");
+})

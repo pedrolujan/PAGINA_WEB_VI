@@ -207,7 +207,7 @@ padding: 5px 10px;
     padding: 10px 30px;
 }
 .btnAbreEliminarPro{     
-    background-color: rgb(223, 9, 9);
+    background-color: #D9534F;
     margin-left: 10%;
 }
 .btnAbreActualizaPro:hover,.btnAbreEliminarPro:hover{

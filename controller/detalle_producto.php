@@ -14,7 +14,7 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 			<div class='contenDatosDetPro'><div class='DetProNombre_pro'><label class='nombre_pro'>".$v["nombre_pro"]."</label></br></div>
 								<div class='DetProMarca_pro'><label class='marca_pro'>".$v["marca_pro"]."</label></br></div>
 								<div class='DetProDescrip_pro'><label class='descripcion_pro'>".$v["descripcion_pro"]."</label></br></div>
-								<div class='DetProPrecio_pro'><label class='precio_pro'>".$v["precio_pro"]."</label></div>
+								<div class='DetProPrecio_pro'>S/ <label class='precio_pro'>".$v["precio_pro"]."</label></div>
 								<button class='btnAbreActualizaPro'><span class='icon-pencil'></span>Editar</button>
 								<button class='btnAbreEliminarPro'><span class='icon-bin'></span>Eliminar</button></div></div></div>"; 
 								

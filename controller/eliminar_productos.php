@@ -3,7 +3,7 @@ include("../model/conexion.php");
 $id=$_POST['id'];
 if(!empty($id)){
 	$activ=new ApptivaDB();
-	$tabla=  "productods";
+	$tabla=  "productos";
 		$condicion="productos.id_pro='$id'";		
 		$sql=$activ->borrar($tabla,$condicion,);
 		if($sql){

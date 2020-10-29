@@ -25,10 +25,10 @@
                             <option value="<?php echo $cat['id_cat'] ?>">
                                 <?php  echo $cat['nombre_cat'] ?>
                             </option>
-                            <?php   endforeach;   ?>
+                            <?php endforeach;?>
                         </select>
                     </div>
-                    <button class="btnRegistrarPro"><span class="icon-checkmark"></span>Actualizar</button>
+                    <button class="btnRegistrarPro btnActualizarPro"><span class="icon-checkmark"></span>Actualizar</button>
                 </div>
 
             </div>
@@ -48,4 +48,4 @@
  </div>
 
  <script src="js/jquery-3.5.1.min.js"></script>
- <script src="js/script_modasl.js"></script>
+ <script src="js/script_modals.js"></script>
