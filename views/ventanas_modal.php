@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="css/estilos_modals.css">
 <div class="modalActualizaPro" id="modalActualizaPro"> </div>
-<form action="#" method="post" enctype="multipart/form-dat" id="formularioRegPro">
+<form action="#" method="post" enctype="multipart/form-dat" id="formularioActPro">
     <div class="conten_ActualizaProG" id="conten_ActualizaProG">
         <div class="conten_ActualizaPro">
             <div class="btnCerrar">X</div>
             <h3 id="msg">Actualiza producto</h3>
             <div class="contenFotoAct_prod">
+                <input type="hidden" name="txtimagen" id="txtimagen" value="<?php echo $imagen ?>" >
                 <input type="file" name="imagenActProducto" id="imagenActProducto" style="display: none;">
                 <img src="" alt="" srcset="" id="acaFotoActProducto">
                 <div class="btnSubeImgActPro" id="btnSubeImgActPro"><span class="icon-camera"></span></div>

@@ -50,8 +50,26 @@ $(document).on('click', '.btn_eliminar', function(){
         $(".respuestas").fadeOut(1500);
     }, 3000);
 });
-
+/* codigo para actualizar producto */
 $(document).on("click",".btnActualizarPro",function(e){
     e.preventDefault();
-    alert("actualizare");
+    var datos = new FormData($("#formularioActPro")[0]);
+        $.ajax({
+            url: "controller/actualizar_productos.php",
+            data: datos,
+            type: "POST",
+            dataType: "json",
+            contentType: false,
+            processData: false
+        }).done(function correcto(resp) {
+            console.log(resp);
+            if (resp.error !== undefined) {
+                $(".respuestas").html(resp.error).fadeIn();
+                return false;
+            }
+            if (resp.exito !== undefined) {
+                $(".respuestas").html(resp.exito).fadeIn();
+            }
+        })
 })
+

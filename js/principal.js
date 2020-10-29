@@ -205,6 +205,7 @@ $(document).on('click', '.btnAbreActualizaPro', function () {
     $('#txtdescripcion').val( $('.descripcion_pro').html());
     $('#txtmarca').val( $('.marca_pro').html());
     $('#txtprecio').val( $('.precio_pro').html());
+    $('#txtimagen').val( $('#imagenDetPro').attr("src"));
 
 
    
