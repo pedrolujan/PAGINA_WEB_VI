@@ -33,7 +33,7 @@ if(isset($_POST["capIdPro"])){
 		$tabla="productos";
 		if(empty($name) || !in_array($imagenActPro["type"],$tipoImagen)){
 			$datos="nombre_pro='".$nombre."',descripcion_pro='".$descripcion."',
-			marca_pro='".$marca."', precio_pro='".$precio."', ID_CATEGORIA='".$categoria."', imagen_admin='".$imagenProActual."'";
+			marca_pro='".$marca."', precio_pro='".$precio."', ID_CATEGORIA='".$categoria."', imagen_pro='".$imagenProActual."'";
 			$aux.="pero no la imagen";
 			
 			$sql=$user->actualizar($tabla,$datos,"productos.id_pro=".$_POST["capIdPro"]);
@@ -45,7 +45,7 @@ if(isset($_POST["capIdPro"])){
 
 		}else{
 			$datos="nombre_pro='".$nombre."',descripcion_pro='".$descripcion."',
-			marca_pro='".$marca."', precio_pro='".$precio."', ID_CATEGORIA='".$categoria."', imagen_admin='".$rutabd."'";
+			marca_pro='".$marca."', precio_pro='".$precio."', ID_CATEGORIA='".$categoria."', imagen_pro='".$rutabd."'";
 			$aux.="";
 			
 			$sql=$user->actualizar($tabla,$datos,"productos.id_pro=".$_POST["capIdPro"]);

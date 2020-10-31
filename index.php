@@ -3,18 +3,18 @@ error_reporting(0);
 session_start();
 
 ?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PeJaTec Servis</title>
     <link rel="stylesheet" href="css/estilos_principal.css">
     <link rel="stylesheet" href="fonts/style.css">
     <link rel="stylesheet" href="fonts/fonts/style.css">
     <link rel="icon" href="imagenes/monitor.png" type="image/png">
-    <link rel="stylesheet" href="css/estilos_ajax.css">
     <script src="https://kit.fontawesome.com/0c226161df.js" crossorigin="anonymous"></script>
 </head>
 
@@ -99,8 +99,8 @@ session_start();
     </script>
    
     <?php include("views/ventanas_modal.php"); ?>
-    <script src="js/principal.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/principal.js"></script>
 </body>
 
 </html>

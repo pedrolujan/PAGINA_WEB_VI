@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Documento sin título</title>
     <link rel="stylesheet" href="css/estilos_regProducto.css" type="text/css">
-    <link rel="stylesheet" href="css/estilos.css" type="text/css">
 </head>
 
 <body>
@@ -76,7 +75,6 @@
             </div>
         </div>
     </form>
-
     <script src="js/principal.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
 

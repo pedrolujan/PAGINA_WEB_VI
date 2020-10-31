@@ -1,3 +1,10 @@
+<?php
+session_start();
+ if(isset($_SESSION["usuarioLogeado"]) || isset($_SESSION["adminLogeado"])){
+    header("location: ../index.php");
+ }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

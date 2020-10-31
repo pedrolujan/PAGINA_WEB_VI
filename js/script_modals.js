@@ -68,8 +68,35 @@ $(document).on("click",".btnActualizarPro",function(e){
                 return false;
             }
             if (resp.exito !== undefined) {
+                cerrarRegistroA();
                 $(".respuestas").html(resp.exito).fadeIn();
+                
+                    let id = $("#capIdPro").val(); 
+                    $.ajax({
+                        data: {id},
+                        url: 'controller/detalle_producto.php',
+                        type: 'post',
+                        beforeSend: function () {},
+                        success: function (response) {
+                            $(".cargarDatos").html(response);
+                        },
+                        error: function () {
+                            alert("error")
+                        }
+                    });                
             }
         })
+        setTimeout(function () {
+            $(".respuestas").fadeOut(1500);
+        }, 3000);
 })
 
+
+
+/* codigo para adicionar a carrito */
+
+
+
+ $(document).on("click","#btnAdLogeate",function(){
+   alert("myvar");
+})

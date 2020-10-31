@@ -93,14 +93,14 @@ session_start();
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"> <span class="icon-keyboard"></span></div>
-                <div class="title"><span>Teclados</span></div>
+                <div class="icon"> <img src="imagenes/fuentes/ventas.png" alt="" srcset=""></div>
+                <div class="title"><span>TOTAL VENTAS</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
-                <div class="title"><span>CONFIG. / ACCIONES</span></div>
+                <div class="icon"><img src="imagenes/fuentes/dinero.png" alt="" srcset=""></div>
+                <div class="title"><span>GANANCIAS</span></div>
             </a>
         </div>
         <div class="item">

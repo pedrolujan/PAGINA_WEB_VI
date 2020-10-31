@@ -29,7 +29,7 @@
                             <?php endforeach;?>
                         </select>
                     </div>
-                    <button class="btnRegistrarPro btnActualizarPro"><span class="icon-checkmark"></span>Actualizar</button>
+                    <button class="btnRegistrarPro btnActualizarPro" id="btnActualizarPro"><span class="icon-checkmark"></span>Actualizar</button>
                 </div>
 
             </div>

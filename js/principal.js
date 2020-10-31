@@ -11,12 +11,13 @@ $(document).on("click", "#messagechat", function () {
     menuchico.classList.toggle('chat-espanded');
 })
 
-
+/* codigo para submenu usuario */
 function desplemenulogin() {
     console.log("aca toy");
     let menuchico = document.getElementById('celusubmenu');
     menuchico.classList.toggle('celmenuchico');
 }
+/* cargar datos del usuario */
 function cargar_datosUsuLogeado() {
     $.ajax({
         url: 'controller/funciones.php',
@@ -53,7 +54,7 @@ $(document).ready(function () {
 $(document).on('click', '.btnatualizar', function () {
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr('capturaId');
-
+    alert(id);
     $.post('controller/actualizar_datos.php', {
         id
     }, function (resp) {
@@ -81,15 +82,13 @@ $(document).on('click', '.btnatualizar', function () {
     })
 });
 
+/* codigo para el detalle del producto */
 $(document).on('click', '.contenProductos', function (e) {
     e.preventDefault();
     let element = $(this)[0];
     let id = $(element).attr('capturoid');
-    window.history.forward(12);
     $.ajax({
-        data: {
-            id
-        },
+        data: {id},
         url: 'controller/detalle_producto.php',
         type: 'post',
         beforeSend: function () {},
@@ -102,49 +101,13 @@ $(document).on('click', '.contenProductos', function (e) {
     });
 
 });
+
 /* codigo boton atras */
 $(document).on("click","#icon-undo2",function(){
-    window.history.back();
+    mostrarProductos();
 })
-/* function mostrar_alumnos(){
-$.ajax({
-		url:'controller/mostrar_usuarios.php',
-		type:'GET',
-		success: function(resp2){
-			let datosResp2 = JSON.parse(resp2);
-			let tempo2 = '';							  
-			datosResp2.forEach(recor2 => {				
-				tempo2 += `
-					<tr>						
-						<td>${recor2.nombre}</td>
-						<td>${recor2.apellido}</td>
-						<td>${recor2.correo}</td>
-						<td><img src="imagenes/ok.PNG" width="20"></td>						
-					</tr>
-					`
-			});
-			$('.cargar_datos').html(tempo2);
-			
-		}
-	});
-} */
-$(document).ready(function () {
-    /* 	$('.btnlogin').click(function(){
-		$('.cargarDatos').load('views/login.php');
-	});
-	 */
 
-
-    /*	$('#btnregGrado').click(function(){
-		$('.contnRAat').load('php/registro_grado.php');
-	});
-	$('#btnregSeccion').click(function(){
-		$('.contnRAat').load('php/registro_seccion.php');
-	});
-	$('#btnregCurso').click(function(){
-		$('.contnRAat').load('php/registro_curso.php');
-	});*/
-});
+/* codigo para mostrar todo los productos */
 function mostrarProductos() {
     $.ajax({
         url: 'controller/todosProductos.php',
@@ -152,12 +115,11 @@ function mostrarProductos() {
         beforeSend: function () {},
         success: function (res) {
             $(".cargarDatos").html(res);
-            $(".loading").hide();
         },
         error: function () {
             alert("error")
         }
-    });
+    })
 }
 
 
@@ -172,7 +134,7 @@ function abrirRegistro() {
 function cerrarRegistro() {
     $('.conten_regPro').fadeOut(300, function () {
         $('.conten_regProG').fadeOut(0, function () {
-            $('.modal').fadeOut();
+            $('.modal---').fadeOut();
         });
     });
 }
@@ -287,6 +249,7 @@ $(document).ready(function () {
             if (resp.exito !== undefined) {
                 $("#msg").html(resp.exito);
                 mostrarProductos();
+                cerrarRegistro();
                 /* setTimeout("location.href='login.php'", 1000); */
             }
         })
