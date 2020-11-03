@@ -125,7 +125,7 @@ function mostrarProductos() {
 
 /* abrir y cerrar formulario de registro de producto */
 function abrirRegistro() {
-    $('.modal').fadeIn(300, function () {
+    $('.modalRegpro').fadeIn(300, function () {
         $('.conten_regProG').fadeIn(0, function () {
             $('.conten_regPro').fadeIn();
         });
@@ -134,7 +134,7 @@ function abrirRegistro() {
 function cerrarRegistro() {
     $('.conten_regPro').fadeOut(300, function () {
         $('.conten_regProG').fadeOut(0, function () {
-            $('.modal---').fadeOut();
+            $('.modalRegpro').fadeOut();
         });
     });
 }

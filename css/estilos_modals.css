@@ -1,3 +1,4 @@
+
 .modal_confirmar{
     background-color: rgb(0, 0, 0,0.5);
     width: 100%;
@@ -60,11 +61,57 @@
     cursor: pointer;
     margin-top: 2%;
 }
+
+.contenMConfirmar .btn_eliminar{
+    background: #D9534F;
+}
+/* //codigo para el logeo si desea comprar */
+#login-form{
+    width: 30%;
+}
+#login-form h1{
+    font-family: 'roboto';
+    color: #166FE5;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 40px;
+}
+#login-form input{
+   width: 90%;
+   outline:none;
+   border: solid #ccc 1px;
+   font-size: 17px;
+    padding: 14px 16px;
+    margin-bottom: 40px;
+    border-radius: 6px;
+}
+#login-form input:focus{
+    border: solid 1.5px #166FE5;
+}
+#login-form .btnaccederM{
+ width: 100%;
+ background-color: #166FE5;
+ color: #fff;
+ cursor: pointer;
+ font-weight: bold;
+}
+#login-form .btnaccederM:hover{
+    transform: scale(1.05);
+}
+#login-form .btnaccederM:active{
+    transform: scale(1);
+}
+#login-form a{
+    text-decoration: none;
+}
+.respLogin2{
+    margin-top: -30px;
+}
 @media screen and (max-width: 700px){
     .contenMConfirmar button{
     font-size:12px;
     }
-}
-.contenMConfirmar .btn_eliminar{
-    background: #D9534F;
+    #login-form{
+        width: 90%;
+    }
 }

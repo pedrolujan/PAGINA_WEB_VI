@@ -57,14 +57,15 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 								<div class='DetProMarca_pro'><label>".$v["marca_pro"]."</label></br></div>
 								<div class='DetProDescrip_pro'><label>".$v["descripcion_pro"]."</label></br></div>
 								<div class='DetProPrecio_pro precio_pro'><label>S/ ".$v["precio_pro"]."</label></div>
-								<button class='btnAdicionarCar' id='btnAdLogeate'>Añadir a carrito</button></div></div>"; 
+								<a class='btnAdicionarCar' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a></div></div>"; 
 		}else{
 			$html.="<div class='contenProductos'><div class='imgPro_buscados'><img src=imagenes/usuarioblanco.jpg class='imagenMosProductos' ></div>
 			<div class='contenDatos'>
 							<div class='contenDatosProducto'><label class='nombre_pro'>".$v["nombre_pro"]."</label></br></div>
 							<div class='DetProMarca_pro'><label class='marca_pro'>".$v["marca_pro"]."</label></br></div>
 							<div class='DetProPrecio_pro'><label>".$v["precio_pro"]."</label></div>
-							<button class='btnAdicionarCar' id='btnAdLogeate'>Añadir a carrito</button></div></div>"; 
+							<a class='btnAdicionarCar' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a></div></div>"; 
+							
 
 		}	
 	}
@@ -73,11 +74,4 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 }
 echo $html;
 ?>
-<a href="#login-form" rel="modal:open"> abrirrrrr</a>
-<form action="#" method="post" id="login-form" class="modal">
-<h1>Inicia session</h1>
-<input type="text" name="" id=""><br>
-<input type="password" name="" id=""><br>
-<input type="submit" value="ACCEDER">
-</form>
-  
+

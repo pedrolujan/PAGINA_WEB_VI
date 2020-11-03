@@ -218,3 +218,25 @@ padding: 5px 10px;
     margin-right: 10px;
     color: rgb(228, 226, 226);
 }
+@media screen and (max-width: 700px){
+    .btnAbreActualizaPro,.btnAbreEliminarPro{
+        border: none;
+        background: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 20px;
+        color: #fff;
+        font-weight: bold;
+        box-sizing: border-box;
+        background-color: #079243;
+        cursor: pointer;
+        outline: none;
+    }
+    .btnAbreActualizaPro{
+        padding: 10px 30px;
+    }
+    .btnAbreEliminarPro{     
+        background-color: #D9534F;
+        
+    }
+}

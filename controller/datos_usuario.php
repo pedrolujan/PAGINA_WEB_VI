@@ -36,7 +36,7 @@
         </div>-->
 
     <!-- aca creo una vetana modal -->
-    <div class="modal" id="modal"> </div>
+    <div class="modal modalRegpro" id="modal"> </div>
     <form action="#" method="post" enctype="multipart/form-dat" id="formularioRegPro">
         <div class="conten_regProG">
             <div class="conten_regPro">
@@ -44,7 +44,7 @@
                 <h3 id="msg">Registra producto</h3>
                 <div class="contenFoto_prod">
                     <input type="file" name="imagenProducto" id="imagenProducto" style="display: none;">
-                    <img src="" alt="" srcset="" id="acaFotoProducto">
+                    <img src="imagenes/fuentes/subir_imagen.gif" alt="" srcset="" id="acaFotoProducto">
                     <div class="btnSubeImgPro" id="btnSubeImgPro"><span class="icon-camera"></span></div>
                 </div>
                 <div class="contenCajas">

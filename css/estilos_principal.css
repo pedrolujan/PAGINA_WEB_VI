@@ -75,10 +75,15 @@ body {
   width: 25%;
   height: inherit;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   color: #000;
   cursor: pointer;
+}
+@media screen and (max-width: 700px){
+  .header-main .contenHMain .divCarrito{
+    justify-content: flex-start;
+  }
 }
 .header-main .contenHMain .divCarrito span {
   font-size: 1.4rem;
@@ -97,8 +102,8 @@ body {
   font-size: 11px;
   border-radius: 50px;
   color: #ffffff;
-  margin-top: -1.5%;
-  margin-left: 2.6%;
+  margin-bottom: 40px;
+  margin-left: 30px;
   font-weight: bold;
   background: #E42645;
   border: solid 1px rgb(235, 220, 11);
@@ -476,10 +481,10 @@ buscar producto*/
 }
 .contenDetPro .imgDet_Pro .icon-undo2{
   font-size: 30px;
-  position: relative;
-  top: -45%;
+  position: fixed;
+ top: 10%;
   background-color: #000;
-  left: -10%;
+  margin-left: -30%;
   color: #fff;
   padding: 5px 10px;
   border-radius: 10px;
@@ -542,6 +547,7 @@ buscar producto*/
   background: #59ba5b;
   color: #ffffff;
   border: none;
+  text-decoration: none;
   float: right;
   padding: 10px;
   outline: none;
@@ -555,6 +561,111 @@ buscar producto*/
 }
 .btnAdicionarCar:active {
   transform: scale(0.95);
+}
+
+@media screen and (max-width: 700px){
+  .contenDetPro {
+    display: block;
+    width: 100%;
+    border:none;
+    height: auto;
+    border: solid 1px #ccc;
+    justify-content: space-around;
+  }
+  .contenDetPro .imgDet_Pro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border:none;
+    padding: 20px;
+  }
+  .contenDetPro .imgDet_Pro .icon-undo2{
+    font-size: 30px;
+    top: 10%;
+    background-color: #000;
+    left: 10%;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor:pointer;
+  }
+  .contenDetPro .imgDet_Pro .icon-undo2:hover{
+    transform: scale(1.09);
+  }
+  .contenDetPro .imgDet_Pro .icon-undo2:active{
+    transform: scale(1);
+  }
+  .contenDetPro .imgDet_Pro img {
+    width: 70%;
+    height: 80%;
+  }
+  .contenDetPro .contenDatosDetProMain {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenDetPro .contenDatosDetPro {
+    display: inline-block;
+    width: 80%;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: inherit;
+  }
+  .DetProNombre_pro {
+    padding: 1px;
+    font-size: 19px;
+    width: 100%;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-bottom: solid 1px #ccc;
+  }
+  .DetProMarca_pro {
+    padding: 5px 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .DetProDescrip_pro {
+    width: 250px;
+    text-align: left;
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: solid 1px #ccc;
+  }
+  .DetProPrecio_pro {
+    padding: 5px 20px;
+    text-align: left;
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .btnAdicionarCar {
+    background: #59ba5b;
+    display: block;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    outline: none;
+    margin: 5% 10% 5% 0%;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btnAdicionarCar:hover {
+    transform: scale(1.05);
+  }
+  .btnAdicionarCar:active {
+    transform: scale(0.95);
+  }
 }
 
 /* estilos para el chat */
