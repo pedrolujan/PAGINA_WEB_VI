@@ -87,7 +87,7 @@ $(document).on("click", ".btnActualizarPro", function (e) {
 })
 
 
-/* codigo para adicionar a carrito */
+/* codigo para logearse si desea comprar a carrito */
 $(document).on("click", ".btnaccederM", function (e) {
     e.preventDefault();
         var usuario = $("#txtusuario").val();
@@ -116,7 +116,19 @@ $(document).on("click", ".btnaccederM", function (e) {
                 setTimeout("location.href='index.php'", 1000);
                 $(".respuestas").fadeIn(100).text(resp.exito).show();
             }
-        })
-       
+        })      
+    
+})
+var cont=0;
+$(document).on("click",".btnAdicionarCar",function(){
+    $(".sumarCarrito").text(cont);
+    cont+=1;
+})
+$(document).on("click",".btnCargaDescrip",function(){
+    $(".ftbody").load("views/descripcion_producto.php");
+   
+})
+$(document).on("click",".btnCargaFichaT",function(){
+    $(".ftbody").load("views/ficha_tecnicaProducto.php");
     
 })

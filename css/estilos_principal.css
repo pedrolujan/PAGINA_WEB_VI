@@ -410,31 +410,44 @@ buscar producto*/
 }
 .contenProductos{
   width: 200px;
-  padding: 5px;
+  padding: 10px 5px;
   display: inline-block;
   margin-top: 25px;
   margin-bottom: 10px;
   margin-left: 4px;
+  text-align: center;
   margin-right: 0px;
   z-index: 10;
   border-radius: 5px;
   box-sizing: border-box;
 }
-
-.contenProductos:hover {
-  cursor: pointer;
-  transform: scale(1.02);
-  box-shadow: 1px 1px 19px 1px #ccc;
-  border: solid 1px #ccc;
+.contenProductos:hover{
+  box-shadow: 1px 1px 10px 1px #ccc;
 }
-
-.imagenMosProductos {
+.contenProductos .contenImgProBusq{
   width: 100%;
   height: 230px;
+  display: inline-block;
+}
+.imgPro_buscados{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   border-radius: 3px;
 }
-.imagenMosProductos:hover {
-  cursor: cell;
+.imgPro_buscados .imagenMosProductos {
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.contenProductos:hover .imgPro_buscados .imagenMosProductos {
+  cursor: pointer;
+  width: 97%;
+  height: 96%;
+  
 }
 .contenDatos {
   width: 100%;
@@ -447,7 +460,8 @@ buscar producto*/
   height: 70px;
 }
 .contenDatosProducto .nombre_pro {
-  font-size: 16px;
+  font-family: "OpenSans-Regular",sans-serif;
+  font-size: 14px;
 }
 .contenDatos .marca_pro {
   font-size: 16px;
@@ -463,210 +477,6 @@ buscar producto*/
   font-weight: bold;
 }
 
-/* detalles del producto */
-.contenDetPro {
-  display: flex;
-  width: 100%;
-  border: solid 1px #ccc;
-  height: 450px;
-  justify-content: space-around;
-}
-.contenDetPro .imgDet_Pro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  border-right: solid 1px #ccc;
-  padding: 20px;
-}
-.contenDetPro .imgDet_Pro .icon-undo2{
-  font-size: 30px;
-  position: fixed;
- top: 10%;
-  background-color: #000;
-  margin-left: -30%;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 10px;
-  cursor:pointer;
-}
-.contenDetPro .imgDet_Pro .icon-undo2:hover{
-  transform: scale(1.09);
-}
-.contenDetPro .imgDet_Pro .icon-undo2:active{
-  transform: scale(1);
-}
-.contenDetPro .imgDet_Pro img {
-  width: 70%;
-  height: 80%;
-}
-.contenDetPro .contenDatosDetProMain {
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.contenDetPro .contenDatosDetPro {
-  display: inline-block;
-  width: 80%;
-  height: inherit;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  height: inherit;
-}
-.DetProNombre_pro {
-  padding: 10px;
-  font-size: 23px;
-  font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  border-bottom: solid 1px #ccc;
-}
-.DetProMarca_pro {
-  padding: 5px 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 10px 0;
-  font-size: 18px;
-}
-.DetProDescrip_pro {
-  width: 250px;
-  text-align: left;
-  font-size: 18px;
-  padding: 10px 0;
-  border-bottom: solid 1px #ccc;
-}
-.DetProPrecio_pro {
-  padding: 5px 20px;
-  text-align: left;
-  margin: 10px 0;
-}
-.btnAdicionarCar {
-  width: 180px;
-  background: #59ba5b;
-  color: #ffffff;
-  border: none;
-  text-decoration: none;
-  float: right;
-  padding: 10px;
-  outline: none;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btnAdicionarCar:hover {
-  transform: scale(1.05);
-}
-.btnAdicionarCar:active {
-  transform: scale(0.95);
-}
-
-@media screen and (max-width: 700px){
-  .contenDetPro {
-    display: block;
-    width: 100%;
-    border:none;
-    height: auto;
-    border: solid 1px #ccc;
-    justify-content: space-around;
-  }
-  .contenDetPro .imgDet_Pro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    border:none;
-    padding: 20px;
-  }
-  .contenDetPro .imgDet_Pro .icon-undo2{
-    font-size: 30px;
-    top: 10%;
-    background-color: #000;
-    left: 10%;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor:pointer;
-  }
-  .contenDetPro .imgDet_Pro .icon-undo2:hover{
-    transform: scale(1.09);
-  }
-  .contenDetPro .imgDet_Pro .icon-undo2:active{
-    transform: scale(1);
-  }
-  .contenDetPro .imgDet_Pro img {
-    width: 70%;
-    height: 80%;
-  }
-  .contenDetPro .contenDatosDetProMain {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .contenDetPro .contenDatosDetPro {
-    display: inline-block;
-    width: 80%;
-    height: inherit;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    height: inherit;
-  }
-  .DetProNombre_pro {
-    padding: 1px;
-    font-size: 19px;
-    width: 100%;
-    font-weight: bold;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    margin-bottom: 20px;
-    padding: 5px 0;
-    box-sizing: border-box;
-    border-bottom: solid 1px #ccc;
-  }
-  .DetProMarca_pro {
-    padding: 5px 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  .DetProDescrip_pro {
-    width: 250px;
-    text-align: left;
-    font-size: 16px;
-    padding: 10px 0;
-    border-bottom: solid 1px #ccc;
-  }
-  .DetProPrecio_pro {
-    padding: 5px 20px;
-    text-align: left;
-    color: red;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  .btnAdicionarCar {
-    background: #59ba5b;
-    display: block;
-    color: #ffffff;
-    border: none;
-    text-decoration: none;
-    padding: 10px;
-    outline: none;
-    margin: 5% 10% 5% 0%;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .btnAdicionarCar:hover {
-    transform: scale(1.05);
-  }
-  .btnAdicionarCar:active {
-    transform: scale(0.95);
-  }
-}
 
 /* estilos para el chat */
 .messagechat {

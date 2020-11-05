@@ -32,13 +32,62 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 	}elseif(isset($_SESSION['usuarioLogeado'])){
 		if(file_exists("../".$v['imagen_pro'] ) ){
 			
-			$html.="<div class='contenDetPro' capturoid=".$v['id_pro']."><div class='imgDet_Pro'><img src=".$v['imagen_pro']." class='imagenDetPro'></div>
-			<div class='contenDatosDetProMain'>
-			<div class='contenDatosDetPro'><div class='DetProNombre_pro'><label>".$v["nombre_pro"]."</label></br></div>
-								<div class='DetProMarca_pro'><label>".$v["marca_pro"]."</label></br></div>
-								<div class='DetProDescrip_pro'><label>".$v["descripcion_pro"]."</label></br></div>
-								<div class='DetProPrecio_pro precio_pro'><label>S/ ".$v["precio_pro"]."</label></div>
-								<button class='btnAdicionarCar'>Añadir a carrito</button></div></div>"; 
+			$html.="<div class='contenDetPro' capturoid=".$v['id_pro'].">
+						<div class='imgDet_Pro'>
+							<img src=".$v['imagen_pro']." class='imagenDetPro'>
+						</div>
+						<div class='contenDatosDetProMain'>
+							<div class='contenDatosDetPro'>
+								<div class='DetProNombre_pro'>
+									<label>".$v["nombre_pro"]."</label></br>
+								</div>
+								<div class='DetProMarca_pro'>
+									<label>".$v["marca_pro"]."</label></br>
+								</div>
+								<div class='DetProDescrip_pro'>
+									<label>".$v["descripcion_pro"]."</label></br>
+								</div>
+								<div class='DetProPrecio_pro precio_pro'>
+									<label>S/ ".$v["precio_pro"]."</label>
+								</div>
+								<div class='contenDetAddCar'>
+									<div class='contenAddDesp'>
+										<label for='#cantidadPro'>Cantidad
+											<input type='number' id='cantidadPro' value='1'>
+										</label></br>
+										<div class='truck-title'>
+											<img src='imagenes/fuentes/delivery.png' alt='' class='imgDelivery'>
+											<div>
+												<label>Despacho a Domicilio</label>
+												<label class='estadoStok'>Stok disponible</label>												
+											</div>
+											<button class='bntConsulCostoPro'>Consultar costo</button>
+										</div>
+										<div class='truck-title'>
+											<img src='imagenes/fuentes/tienda.png' alt='' class='imgDelivery'>
+											<div>
+												<label>Despacho en tienda</label>
+												<label class='estadoStok'>Stok disponible</label>												
+											</div>
+											<button class='bntConsulCostoPro'>Consultar costo</button>
+										</div>
+									</div>
+									<div class='contenBtnAdd'>
+										<button class='btnAdicionarCar'>Añadir a carrito</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='conten_fTecnicaPro'>
+						<div class='ftcaberera'>
+						<button class='btnCargaDescrip'>Descripcion</button>
+						<button class='btnCargaFichaT'>Ficha Tecnica</button>
+						</div>
+						<div class='ftbody'>
+						</div>
+					
+					</div>"; 
 		}else{
 			$html.="<div class='contenProductos'><div class='imgPro_buscados'><img src=imagenes/usuarioblanco.jpg class='imagenMosProductos' ></div>
 			<div class='contenDatos'>
