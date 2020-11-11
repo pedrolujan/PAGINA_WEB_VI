@@ -280,7 +280,10 @@ a {
   width: 60%;
 }
 .datos-actualizar {
-  display: flex;
+  display: flex; 
+}
+.line-input .lnr{
+  z-index: -10;
 }
 .imagen_usuario {
   padding: 15px 0px;
@@ -309,7 +312,7 @@ a {
   cursor: pointer;
   box-sizing: border-box;
   transition: opacity, background-color 0.8s;
-  z-index: 1;
+  z-index: 2;
 }
 .btnSubeImgUsu span {
   display: block;

@@ -62,7 +62,7 @@ session_start();
         <?php }elseif($_SESSION['adminLogeado']){?>
         <div class="item">
             <a href="#" class="btnregistraProducto">
-                <div class="icon"><img src="imagenes/fuentes/addd.png" alt="" srcset=""></div>
+                <div class="icon"><img src="imagenes/fuentes/addProductos.png" alt="" srcset=""></div>
                 <div class="title"><span>REGISTRAR PRODUCTOS</span></div>
             </a>
         </div>

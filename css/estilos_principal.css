@@ -446,7 +446,7 @@ buscar producto*/
 .contenProductos:hover .imgPro_buscados .imagenMosProductos {
   cursor: pointer;
   width: 97%;
-  height: 96%;
+  height: 95%;
   
 }
 .contenDatos {

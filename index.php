@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="css/estilos_principal.css">
     <link rel="stylesheet" href="fonts/style.css">
     <link rel="stylesheet" href="fonts/fonts/style.css">
+    <link rel="stylesheet" href="js/jquery.modal.min.css">
     <link rel="icon" href="imagenes/monitor.png" type="image/png">
     <script src="https://kit.fontawesome.com/0c226161df.js" crossorigin="anonymous"></script>
 </head>

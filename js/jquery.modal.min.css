@@ -31,10 +31,10 @@
   z-index: 2;
   max-width: 500px;
   box-sizing: border-box;
-  width: 90%;
+  width: 100%;
   height: auto;
-  background: #fff;
-  padding: 15px 30px;
+  background: rgb(255, 255, 255);
+  padding: 15px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;

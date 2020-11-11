@@ -94,6 +94,7 @@ $(document).on('click', '.contenProductos', function (e) {
         beforeSend: function () {},
         success: function (response) {
             $(".cargarDatos").html(response);
+            $(".ftbody").load("views/descripcion_producto.php");
         },
         error: function () {
             alert("error")
@@ -125,9 +126,12 @@ function mostrarProductos() {
 
 /* abrir y cerrar formulario de registro de producto */
 function abrirRegistro() {
-    $('.modalRegpro').fadeIn(300, function () {
+    $('.modalRegpro').fadeIn(100, function () {
         $('.conten_regProG').fadeIn(0, function () {
-            $('.conten_regPro').fadeIn();
+            $('.conten_regPro').fadeIn(0,function(){
+                $('.btnSubeImgUsu').fadeOut();
+                
+            });
         });
     });
 }
@@ -135,11 +139,12 @@ function cerrarRegistro() {
     $('.conten_regPro').fadeOut(300, function () {
         $('.conten_regProG').fadeOut(0, function () {
             $('.modalRegpro').fadeOut();
+            $('.btnSubeImgUsu').fadeIn();
         });
     });
 }
 $(document).on('click', '.btnregistraProducto', abrirRegistro);
-$(document).on('click', '.modal', cerrarRegistro)
+$(document).on('click', '.modalRegpro', cerrarRegistro)
 $(document).on('click', '.btnCerrar', cerrarRegistro);
 
 /* abrir y cerrar formulario de Actualiza de producto */

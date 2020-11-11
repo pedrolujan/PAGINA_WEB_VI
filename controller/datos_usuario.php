@@ -36,7 +36,7 @@
         </div>-->
 
     <!-- aca creo una vetana modal -->
-    <div class="modal modalRegpro" id="modal"> </div>
+    <div class="modalRegpro" id="modal"> </div>
     <form action="#" method="post" enctype="multipart/form-dat" id="formularioRegPro">
         <div class="conten_regProG">
             <div class="conten_regPro">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="contenCajas">
                     <div class="contenInputs" id="">
-                        <input type="text" name="txtnombre" placeholder="Nombre del Producto">
+                        <input type="text" name="txtnombre" placeholder="Nombre del Producto" readonly>
                         <textarea name="txtdescripcion" id="" placeholder="Escribe aca la descripcion"></textarea>
                         <input type="text" name="txtmarca" id="" placeholder="Marca del Producto">
                         <div class="precio-cat"> <input type="number" name="txtprecio" id=""

@@ -1,5 +1,5 @@
 
-.modal,.modalActualizaPro{
+.modalRegpro,.modalActualizaPro{
     position: fixed;
     background:rgb(0, 0, 0,0.6);
     width: 100%;
@@ -11,6 +11,7 @@
 }
 .conten_regProG,.conten_ActualizaProG{
     display: none;
+    
     
 }
 .conten_regPro,.conten_ActualizaPro{
@@ -274,12 +275,13 @@ padding: 5px 10px;
   }
   .DetProNombre_pro {
     padding: 10px;
-    font-size: 23px;
-    font-weight: bold;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    font-family: "OpenSans-SemiBold",sans-serif!important;
     margin-bottom: 20px;
     box-sizing: border-box;
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px rgb(236, 233, 233);
   }
   .DetProMarca_pro {
     padding: 5px 20px;
@@ -290,9 +292,12 @@ padding: 5px 10px;
   .DetProDescrip_pro {
     width: 250px;
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px 0;
     border-bottom: solid 1px #ccc;
+    color: #000;
+    line-height: inherit;
+    font-family: "OpenSans-Regular",sans-serif;
   }
   .DetProPrecio_pro {
     padding: 5px 20px;
@@ -300,7 +305,6 @@ padding: 5px 10px;
     color: red;
     font-weight: bold;
     margin: 10px 0;
-    border-bottom: solid 1px #ccc;
   }
   .btnAdicionarCar {
     width: 180px;
@@ -355,7 +359,6 @@ padding: 5px 10px;
 .contenDetAddCar .contenAddDesp .truck-title .imgDelivery{
     width: 60px;
     height: 60px;
-    transform: rotateY(180deg)
 }
 .contenDetAddCar .contenBtnAdd{
     width: 40%;
@@ -375,9 +378,11 @@ padding: 5px 10px;
     color: #fff;
     outline: none;
     height: 70%;
+    text-decoration: none;
     padding: 5px 15px;
     border-radius: 20px;
 }
+
 
 /*codigo para la ficha tecnica*/
 
@@ -393,18 +398,65 @@ padding: 5px 10px;
     align-items: center;    
 }
 .conten_fTecnicaPro .ftcaberera button{
-    border: none;
-    background: none;
-    font-size: 22px;
-    margin-left: 20px;
-    outline: none;
-    border-left: solid 1px #ccc;
-    border-right: solid 1px #ccc;
-    border-top: solid 1px #ccc;
-    border-radius: 10px 10px 0px 0px;
-    cursor: pointer;
-    padding: 10px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  margin-left: 20px;
+  outline: none;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  border-top: solid 1px #ccc;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+  padding: 10px;
 }
+
+.conten_fTecnicaPro .contenFTPAcciones{
+ padding: 5px;
+ box-sizing: border-box;
+ display: flex;
+ justify-content: flex-end;
+ overflow: auto;
+}
+.conten_fTecnicaPro .contenFTPAcciones a{
+  background-color:#D9DFE6;
+  padding: 5px;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+.conten_fTecnicaPro .contenFTPAcciones a:hover{
+  background-color: #F6F7F8;
+}
+.conten_fTecnicaPro .contenFTPAcciones a img{
+  width: 45px;
+  height: 40px;
+  
+}
+.conten-ficha-tecnica{
+clear: both;
+font-size: 12px;
+padding: 5px 0px;
+color: #000;
+line-height: 22px;
+}
+.conten-ficha-tecnica ul{
+text-align: left;
+padding: 0px;
+}
+.conten-ficha-tecnica ul li{
+  margin-top: 10px;
+  font-style: none;
+  display: flex;
+  }
+.conten-ficha-tecnica ul li:nth-child(2n){
+   background: rgba(0,0,0,.05);;
+}
+.conten-ficha-tecnica ul li span{
+  width: 35%;
+  display: block;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  }
 @media screen and (max-width: 700px){
     .btnAbreActualizaPro,.btnAbreEliminarPro{
         border: none;

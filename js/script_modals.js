@@ -1,3 +1,4 @@
+
 function abrirConfirElimina() {
     $('.modal_confirmar').fadeIn(100, function () {
         $('.contenMConfirmar').fadeIn(0);
@@ -23,9 +24,13 @@ $(document).on('click', '.btn_cancelar', cerrarConfirElimina);
 
 $(document).on('click', '.btn_eliminar', function () {
     var id = $("#txtObtId").val();
-    $.ajax({url: 'controller/eliminar_productos.php', data: {
-            id
-        }, type: 'post', dataType: 'json'}).done(function correcto(resp) {
+    $.ajax({
+        url: 'controller/eliminar_productos.php',
+        data: {id},
+         type: 'post',
+         dataType: 'json'
+        })
+         .done(function correcto(resp) {
         if (resp.exito != undefined) {
             $(".respuestas").html(resp.exito).fadeIn();
             cerrarConfirElimina();
@@ -63,12 +68,9 @@ $(document).on("click", ".btnActualizarPro", function (e) {
         if (resp.exito !== undefined) {
             cerrarRegistroA();
             $(".respuestas").html(resp.exito).fadeIn();
-
             let id = $("#capIdPro").val();
             $.ajax({
-                data: {
-                    id
-                },
+                data: {id},
                 url: 'controller/detalle_producto.php',
                 type: 'post',
                 beforeSend: function () {},
@@ -108,8 +110,6 @@ $(document).on("click", ".btnaccederM", function (e) {
                 $("#msgexito").text(resp.exito).hide();
                 return false;
             }
-
-           
             if(resp.exito !== undefined) {
                 $("#container").hide();
                 $("#msgerror").fadeIn(100).text(resp.error).hide();
@@ -119,16 +119,90 @@ $(document).on("click", ".btnaccederM", function (e) {
         })      
     
 })
+/*codigo para adicionar a carrito*/
 var cont=0;
 $(document).on("click",".btnAdicionarCar",function(){
     $(".sumarCarrito").text(cont);
     cont+=1;
 })
+/*codigo para despachos */
+$(document).on("click",".bntConsulCostoPro",function(){
+    $(".ftbody").load("views/descripcion_producto.php");
+   
+})
+
+ /*codigo para cargar la descripcion y ficha tecnica de los productos*/
 $(document).on("click",".btnCargaDescrip",function(){
     $(".ftbody").load("views/descripcion_producto.php");
    
 })
 $(document).on("click",".btnCargaFichaT",function(){
-    $(".ftbody").load("views/ficha_tecnicaProducto.php");
-    
+    /* capturo el id del producto luego cago la ficha tecnica y le envio el id */
+    let element = $(this)[0].parentElement.parentElement;
+    var id = $(element).attr('capturoid'); 
+   
+    $(".ftbody").load("views/ficha_tecnicaProducto.php",function(){
+        mostrarFichaT(id);
+        $("#txtidFT").val(id);
+        
+    });
+   
+   
 })
+
+/* CODIGO PARA MANDAR EL ID DE PRODUCTO A LA VENTANA MODAL */
+$(document).on("click",".btnEditFT",function(){
+   let id= $("#txtidFT").val();
+    $("#txtidFtModal").val(id);  
+   
+})
+/* codigo para insertar datos de la ficha tecnica de cada producto */
+$(document).on("click",".btnGuardarFTP",function(e){
+  e.preventDefault();
+  let id=$("#txtidFtModal").val();
+ 
+  let datos=$("#form-fichaTecnica").serialize();
+  $.ajax({
+    data: datos,
+    url: "controller/Registrar_fichaTecnica.php",
+    type: "post",
+    dataType: "json",
+    async: true
+}).done(function correcto(resp) {
+    if (resp.error !== undefined) {
+        alert(resp.error);       
+        return false;
+    }
+    if(resp.exito !== undefined) {
+        alert(resp.exito);
+        mostrarFichaT(id);
+    }
+})      
+})
+
+function mostrarFichaT(id){
+    $.ajax({
+        data:{id},
+        url: "controller/mostrar_fichaTecnica.php",
+        type: "post",
+        datatype: "json",
+        beforeSend: function () {},
+        success: function (response) {    
+            let datosRes = JSON.parse(response);
+            datosRes.exito.forEach(recor => {				
+                $("#ftec-tipoP").html(`${recor.tipo_fht}`);
+                $(".ftec-modelP").html(`${recor.modelo_fht}`);
+                $(".ftec-tamPantP").html(`${recor.tamPantalla_fht}`);
+                $(".ftec-DefinicionP").html(`${recor.definiPantalla_fht}`);
+                $(".ftec-resolPP").html(`${recor.resolPantalla_fht}`);
+                $(".ftec-pantTactilP").html(`${recor.pantTactil_fht}`);
+                $(".ftec-anchoP").html(`${recor.ancho_fht}`);
+                $(".ftec-altoP").html(`${recor.alto_fht}`);
+        });
+       
+        },
+        error: function () {
+            alert("error");
+        },
+        });
+}
