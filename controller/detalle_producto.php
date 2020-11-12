@@ -31,6 +31,26 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 								<div class='DetProPrecio_pro'>
 									S/ <label class='precio_pro'>".$v["precio_pro"]."</label>
 								</div>
+								<div class='contenDetAddCar'>
+									<div class='contenAddDesp'>
+										<div class='truck-title'>
+											<img src='imagenes/fuentes/delivery.png' alt='' class='imgDelivery'>
+											<div>
+												<label>Despacho a Domicilio</label>
+												<label class='estadoStok'>Stok disponible</label>												
+											</div>
+											<a href='#localizar-form' rel='modal:open' class='bntConsulCostoPro'>Editar</a>
+										</div>
+										<div class='truck-title'>
+											<img src='imagenes/fuentes/tienda.png' alt='' class='imgDelivery'>
+											<div>
+												<label>Despacho en tienda</label>
+												<label class='estadoStok'>Stok disponible</label>												
+											</div>
+											<button class='bntConsulCostoPro'>Editar</button>
+										</div>
+									</div>
+								</div>
 								<button class='btnAbreActualizaPro'><span class='icon-pencil'></span>Editar</button>
 								<button class='btnAbreEliminarPro'><span class='icon-bin'></span>Eliminar</button>
 							</div>
@@ -106,14 +126,13 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 							</div>
 						</div>
 					</div>
-					<div class='conten_fTecnicaPro'>
+					<div class='conten_fTecnicaPro' capturoid=".$v['id_pro'].">
 						<div class='ftcaberera'>
 							<button class='btnCargaDescrip'> Descripcion</button>
 							<button class='btnCargaFichaT'>Ficha Tecnica</button>
 						</div>
 						<div class='ftbody'>
-						</div>
-					
+						</div>					
 					</div>"; 
 		}else{
 			$html.="<div class='contenProductos'><div class='imgPro_buscados'><img src=imagenes/usuarioblanco.jpg class='imagenMosProductos' ></div>
@@ -127,13 +146,59 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 	}else{
 		if(file_exists("../".$v['imagen_pro'] ) ){
 			
-			$html.="<div class='contenDetPro' capturoid=".$v['id_pro']."><div class='imgDet_Pro'><img src=".$v['imagen_pro']." class='imagenDetPro'></div>
+			$html.="<div class='contenDetPro' capturoid=".$v['id_pro'].">
+			<div class='imgDet_Pro'>
+				<span class='icon-undo2' id='icon-undo2'></span>
+				<img src=".$v['imagen_pro']." class='imagenDetPro'>
+			</div>
 			<div class='contenDatosDetProMain'>
-			<div class='contenDatosDetPro'><div class='DetProNombre_pro'><label>".$v["nombre_pro"]."</label></br></div>
-								<div class='DetProMarca_pro'><label>".$v["marca_pro"]."</label></br></div>
-								<div class='DetProDescrip_pro'><label>".$v["descripcion_pro"]."</label></br></div>
-								<div class='DetProPrecio_pro precio_pro'><label>S/ ".$v["precio_pro"]."</label></div>
-								<a class='btnAdicionarCar' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a></div></div>"; 
+				<div class='contenDatosDetPro'>
+					<div class='DetProNombre_pro'>
+						<label>".$v["nombre_pro"]."</label></br>
+					</div>
+					<div class='DetProMarca_pro'>
+						<label>".$v["marca_pro"]."</label></br>
+					</div>
+					<div class='DetProDescrip_pro'>
+						<label>".$v["descripcion_pro"]."</label></br>
+					</div>
+					<div class='DetProPrecio_pro precio_pro'>
+						<label>S/ ".$v["precio_pro"]."</label>
+					</div>
+					<div class='contenDetAddCar'>
+						<div class='contenAddDesp'>
+							<div class='truck-title'>
+								<img src='imagenes/fuentes/delivery.png' alt='' class='imgDelivery'>
+								<div>
+									<label>Despacho a Domicilio</label>
+									<label class='estadoStok'>Stok disponible</label>												
+								</div>
+								<a href='#localizar-form' rel='modal:open' class='bntConsulCostoPro'>Consultar costo</a>
+							</div>
+							<div class='truck-title'>
+								<img src='imagenes/fuentes/tienda.png' alt='' class='imgDelivery'>
+								<div>
+									<label>Despacho en tienda</label>
+									<label class='estadoStok'>Stok disponible</label>												
+								</div>
+								<button class='bntConsulCostoPro'>Consultar costo</button>
+							</div>
+						</div>
+						<div class='contenBtnAdd'>
+						<a class='btnAdicionarCar' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='conten_fTecnicaPro' capturoid=".$v['id_pro'].">
+			<div class='ftcaberera'>
+				<button class='btnCargaDescrip'> Descripcion</button>
+				<button class='btnCargaFichaT'>Ficha Tecnica</button>
+			</div>
+			<div class='ftbody'>
+			</div>					
+		</div>"; 
 		}else{
 			$html.="<div class='contenProductos'><div class='imgPro_buscados'><img src=imagenes/usuarioblanco.jpg class='imagenMosProductos' ></div>
 			<div class='contenDatos'>

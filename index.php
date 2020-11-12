@@ -56,7 +56,7 @@ session_start();
                     <div class="contengif"></div>
                 </div>
                 <div class="divCarrito">
-                    <span class="lnr lnr-cart">
+                    <span class="lnr lnr-cart carritoDeCompras">
                         <p class="sumarCarrito">32</p>
                     </span>
                 </div>

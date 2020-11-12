@@ -12,14 +12,12 @@ session_start();
 <body>
 <input type="hidden" name="txtidFT" id="txtidFT">
 <div class="contenFTPAcciones">
-<?php  if(isset($_SESSION["adminLogeado"])){?>
-    <a href="#form-fichaTecnica" rel="modal:open">
-        <img src="imagenes/fuentes/icon_editar.png" alt="" srcset="" class="btnEditFT">
-    </a>
-  <!--   <img src="imagenes/fuentes/icon_editar.png" alt="" srcset="" class="probando">
-     -->
-    <?php } ?>
-    </div>
+    <?php  if(isset($_SESSION["adminLogeado"])){?>
+        <a href="#form-fichaTecnica" rel="modal:open">
+            <img src="imagenes/fuentes/icon_editar.png" alt="" srcset="" class="btnEditFT">
+        </a>
+    <?php }?>
+</div>
     <div class="conten-ficha-tecnica">
      
         <ul>

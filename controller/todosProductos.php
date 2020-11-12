@@ -1,6 +1,4 @@
 <?php
-
-sleep(1);
 session_start();
 $html="";
 	include("../model/conexion.php");

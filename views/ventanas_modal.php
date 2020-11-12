@@ -66,6 +66,28 @@
     </fieldset>
     <input type="submit" value="Guardar" class="btnGuardarFTP">
 </form>
+<!-- codigo para descripcion del producto -->
+<form action="#" method="post" id="form-DescripcionProducto" class="modal" enctype="multipart/form-dat">
+    <div class="conten-descripProducto"> 
+        <div class="contenImgDescripProducto">
+            <div class="imgDescripPro contenFoto1Descrip_prod">
+                <input type="hidden" name="txtimg1DescripProducto" id="txtimg1DescripProducto" value="<?php echo $imagen ?>">
+                <input type="file" name="imagen1DescripProducto" id="imagen1DescripProducto" style="display: none;">
+                <img src="" alt="" srcset="" id="acaFoto1DescripProducto">
+                <div class="btnSubeImgDescrip PbtnSubeImg1descripPro" id="btnSubeImg1descripPro"><span class="icon-camera"></span></div>
+            </div>
+            <div class="imgDescripPro contenFoto2Descrip_prod">
+                <input type="hidden" name="txtimg2DescripProducto" id="txtimg2DescripProducto" value="<?php echo $imagen ?>">
+                <input type="file" name="imagen2DescripProducto" id="imagen2DescripProducto" style="display: none;">
+                <img src="" alt="" srcset="" id="acaFoto2DescripProducto">
+                <div class="btnSubeImgDescrip btnSubeImg2descripPro" id="btnSubeImg2descripPro"><span class="icon-camera"></span></div>
+            </div>
+        </div>  
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+       
+        <input type="submit" value="Guardar" class="btnGuardarDescripP">
+    </div>
+</form>
 
 <!-- codigo modal para el logeo del usuario -->
 <form action="#" method="post" id="login-form" class="modal">

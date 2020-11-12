@@ -49,6 +49,9 @@ $(document).ready(function () {
         });
     })
 })
+$(document).on("click",".carritoDeCompras",function(){
+    alert("esta opcion No esta disponible");
+})
 
 
 $(document).on('click', '.btnatualizar', function () {

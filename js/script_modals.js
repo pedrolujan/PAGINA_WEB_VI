@@ -139,8 +139,7 @@ $(document).on("click",".btnCargaDescrip",function(){
 $(document).on("click",".btnCargaFichaT",function(){
     /* capturo el id del producto luego cago la ficha tecnica y le envio el id */
     let element = $(this)[0].parentElement.parentElement;
-    var id = $(element).attr('capturoid'); 
-   
+    var id = $(element).attr('capturoid');    
     $(".ftbody").load("views/ficha_tecnicaProducto.php",function(){
         mostrarFichaT(id);
         $("#txtidFT").val(id);
