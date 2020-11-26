@@ -144,16 +144,20 @@ $(document).on("click",".btnCargaFichaT",function(){
         mostrarFichaT(id);
         $("#txtidFT").val(id);
         
-    });
-   
-   
+    });   
 })
 
 /* CODIGO PARA MANDAR EL ID DE PRODUCTO A LA VENTANA MODAL */
 $(document).on("click",".btnEditFT",function(){
    let id= $("#txtidFT").val();
-    $("#txtidFtModal").val(id);  
-   
+    $("#txtidFtModal").val(id);     
+  
+})
+/* cargo los datos de la descripcion de producto a la ventana modal */
+$(document).on("click","#btnEditDetalle",function(){
+    $('#acaFoto1DescripProducto').attr("src",$('.imagen1DescripPro').attr("src"));
+    $('#acaFoto2DescripProducto').attr("src",$('.imagen2DescripPro').attr("src"));
+    $('#TAdescripcionnn').html($('.textoDescripcion').html());
 })
 /* codigo para insertar datos de la ficha tecnica de cada producto */
 $(document).on("click",".btnGuardarFTP",function(e){
@@ -161,24 +165,28 @@ $(document).on("click",".btnGuardarFTP",function(e){
   let id=$("#txtidFtModal").val();
  
   let datos=$("#form-fichaTecnica").serialize();
-  $.ajax({
-    data: datos,
-    url: "controller/Registrar_fichaTecnica.php",
-    type: "post",
-    dataType: "json",
-    async: true
-}).done(function correcto(resp) {
-    if (resp.error !== undefined) {
-        alert(resp.error);       
-        return false;
-    }
-    if(resp.exito !== undefined) {
-        alert(resp.exito);
-        mostrarFichaT(id);
-    }
-})      
+    $.ajax({
+        data: datos,
+        url: "controller/Registrar_fichaTecnica.php",
+        type: "post",
+        dataType: "json",
+        async: true
+    }).done(function correcto(resp) {
+        if (resp.error !== undefined) {
+            /* alert(resp.error); */       
+            return false;
+        }
+        if(resp.exito !== undefined) {
+            $(".respuestas").fadeIn(100).text(resp.exito).show();
+            mostrarFichaT(id);
+        }
+    
+    })   
+setTimeout(function () {
+    $(".respuestas").fadeOut(1500);
+}, 3000);   
 })
-
+ /* codigo para mostrar ficha tecnica de producto */
 function mostrarFichaT(id){
     $.ajax({
         data:{id},
@@ -202,6 +210,111 @@ function mostrarFichaT(id){
         },
         error: function () {
             alert("error");
+        },
+        });
+}
+/* enlazo el icono de la imagen descripcion de productos con el input filr */
+$(document).on('click', '.btnSubeImg1descripPro', function () {
+    $('#imagen1DescripProducto').click();
+})
+/* previsualizar imagenes de la descripcion del producto antes de subirla */
+$(document).on("change", "#imagen1DescripProducto", function () {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#form-DescripcionProducto + img').remove();
+            $('#acaFoto1DescripProducto').attr("src", e.target.result);
+        };
+
+        reader.readAsDataURL(this.files[0]);
+    }
+});
+/* enlazo el icono de la imagen descripcion de productos con el input filr */
+$(document).on('click', '.btnSubeImg2descripPro', function () {
+    $('#imagen2DescripProducto').click();
+})
+/* previsualizar imagenes de la descripcion del producto antes de subirla */
+$(document).on("change", "#imagen2DescripProducto", function () {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#form-DescripcionProducto + img').remove();
+            $('#acaFoto2DescripProducto').attr("src", e.target.result);
+        };
+
+        reader.readAsDataURL(this.files[0]);
+    }
+});
+/* capturar id de producto */
+$(document).on("click",".btnCargaDescrip",function(){
+    /* capturo el id del producto luego cago la ficha tecnica y le envio el id */
+    let element = $(this)[0].parentElement.parentElement;
+    var id = $(element).attr('capturoid');    
+    $(".ftbody").load("views/descripcion_producto.php",function(){
+        mostrarDEscripcionPro(id);
+        $("#txtidDescripPro").val(id);
+        
+    });   
+})
+
+/* CODIGO PARA MANDAR EL ID DE PRODUCTO A LA VENTANA MODAL de descripcion */
+$(document).on("click",".btnEditFT",function(){
+    let id= $("#txtidDescripPro").val();
+     $("#txtidDescripProModal").val(id);  
+    
+ })
+
+/* codigo para registrar descripcion de productos */
+$(document).ready(function () {
+    $(document).on("click",".btnGuardarDescripP",insertardescripcion);
+    function insertardescripcion(e) {
+        e.preventDefault();
+        var datos = new FormData($("#form-DescripcionProducto")[0]);
+       let id= $("#txtidDescripProModal").val();
+        $.ajax({
+            url: "controller/registroDescripcion_productos.php",
+            data: datos,
+            type: "POST",
+            dataType: "json",
+            contentType: false,
+            processData: false
+        }).done(function correcto(resp) {
+            if (resp.error !== undefined) {
+                return false;
+            }
+            if (resp.exito !== undefined) {
+                $(".respuestas").html(resp.exito).show();
+                mostrarDEscripcionPro(id);
+                /* setTimeout("location.href='login.php'", 1000); */
+            }
+            
+        })
+    }
+    setTimeout(function () {
+        $(".respuestas").fadeOut(1500);
+    }, 3000);
+})
+/* codigo para mostrar descripcion  de producto */
+function mostrarDEscripcionPro(id){
+    
+    $.ajax({
+        data:{id},
+        url: "controller/mostrarDescripcion_producto.php",
+        type: "post",
+        datatype: "json",
+        beforeSend: function () {},
+        success: function (response) {    
+            let datosRes = JSON.parse(response);
+            datosRes.exito.forEach(recor => {				
+                $(".imagen1DescripPro").attr("src",`${recor.fotoUno_descripPro}`);
+                $(".textoDescripcion").html(`${recor.descripcion_pro}`);
+                $(".imagen2DescripPro").attr("src",`${recor.fotoDos_descripPro}`);
+                
+        });
+       
+        },
+        error: function () {/* 
+            alert("error"); */
         },
         });
 }

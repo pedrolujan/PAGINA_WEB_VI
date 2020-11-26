@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="js/jquery.modal.min.css">
-<script src="js/jquery.modal.min.js"></script>
+<!-- <link rel="stylesheet" href="js/jquery.modal.min.css">
+<script src="js/jquery.modal.min.js"></script> -->
 <?php
 session_start();
 $html="";
@@ -14,7 +14,6 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 						
 			$html.="<div class='contenDetPro' capturoid=".$v['id_pro'].">
 						<div class='imgDet_Pro'>
-							<span class='icon-undo2' id='icon-undo2'></span>
 							<img src=".$v['imagen_pro']." class='imagenDetPro' id='imagenDetPro'>
 						</div>
 						<div class='contenDatosDetProMain'>
@@ -80,7 +79,6 @@ if(isset($_POST['id']) && ($_POST['id']!="")){
 			
 			$html.="<div class='contenDetPro' capturoid=".$v['id_pro'].">
 						<div class='imgDet_Pro'>
-							<span class='icon-undo2' id='icon-undo2'></span>
 							<img src=".$v['imagen_pro']." class='imagenDetPro'>
 						</div>
 						<div class='contenDatosDetProMain'>

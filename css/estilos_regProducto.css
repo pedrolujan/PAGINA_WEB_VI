@@ -435,8 +435,9 @@ padding: 5px 10px;
   height: 40px;
   padding: 2px;
   box-sizing: border-box;
-  
-  
+}
+.imagen1DescripPro, .imagen2DescripPro{
+  width: 30%;
 }
 .conten-ficha-tecnica{
 clear: both;
@@ -500,16 +501,7 @@ padding: 0px;
         border:none;
         padding: 20px;
       }
-      .contenDetPro .imgDet_Pro .icon-undo2{
-        font-size: 20px;
-        top: 10%;
-        background-color: #000;
-        left: 10%;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 10px;
-        cursor:pointer;
-      }
+     
       .contenDetPro .imgDet_Pro .icon-undo2:hover{
         transform: scale(1.09);
       }

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/estilos_modals.css">
+
 <div class="modalActualizaPro" id="modalActualizaPro"> </div>
 <form action="#" method="post" enctype="multipart/form-dat" id="formularioActPro">
     <div class="conten_ActualizaProG" id="conten_ActualizaProG">
@@ -14,7 +15,7 @@
             <div class="contenCajas">
                 <div class="contenInputs" id="">
                     <input type="hidden" name="capIdPro" id="capIdPro">
-                    <input type="text" name="txtnombre" id="txtnombre" placeholder="Nombre del Producto" value="">
+                    <input type="text" name="txtnombre" id="txtnobre" placeholder="Nombre del Producto" value="">
                     <textarea name="txtdescripcion" id="txtdescripcion"></textarea>
                     <input type="text" name="txtmarca" id="txtmarca" placeholder="Marca del Producto"
                         value="<?php echo $recor['marca_pro']; ?>">
@@ -64,7 +65,9 @@
        <input type="text" name="txtaltoFTM" id="txtaltoFTM" placeholder="Alto"></br>
        <input type="text" name="txtanchoFTM" id="txtanchoFTM" placeholder="Ancho">
     </fieldset>
-    <input type="submit" value="Guardar" class="btnGuardarFTP">
+    <a href="#close-modal" rel="modal:close" class="btnGuardarDescripP">
+          <input type="submit" value="Guardar" class="btnGuardarFTP">
+    </a>
 </form>
 <!-- codigo para descripcion del producto -->
 <form action="#" method="post" id="form-DescripcionProducto" class="modal" enctype="multipart/form-dat">
@@ -73,19 +76,22 @@
             <div class="imgDescripPro contenFoto1Descrip_prod">
                 <input type="hidden" name="txtimg1DescripProducto" id="txtimg1DescripProducto" value="<?php echo $imagen ?>">
                 <input type="file" name="imagen1DescripProducto" id="imagen1DescripProducto" style="display: none;">
-                <img src="" alt="" srcset="" id="acaFoto1DescripProducto">
-                <div class="btnSubeImgDescrip PbtnSubeImg1descripPro" id="btnSubeImg1descripPro"><span class="icon-camera"></span></div>
+                <img src="" alt="" srcset=""  class="imgDesPro" id="acaFoto1DescripProducto">
+                <div class="btnSubeImgDescrip btnSubeImg1descripPro" id="btnSubeImg1descripPro"><span class="icon-camera"></span></div>
             </div>
             <div class="imgDescripPro contenFoto2Descrip_prod">
                 <input type="hidden" name="txtimg2DescripProducto" id="txtimg2DescripProducto" value="<?php echo $imagen ?>">
                 <input type="file" name="imagen2DescripProducto" id="imagen2DescripProducto" style="display: none;">
-                <img src="" alt="" srcset="" id="acaFoto2DescripProducto">
+                <img src="" alt="" srcset="" class="imgDesPro"  id="acaFoto2DescripProducto">
                 <div class="btnSubeImgDescrip btnSubeImg2descripPro" id="btnSubeImg2descripPro"><span class="icon-camera"></span></div>
             </div>
-        </div>  
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-       
-        <input type="submit" value="Guardar" class="btnGuardarDescripP">
+        </div> 
+        <label for="">Descripcion</label><br>
+        <input type="text" name="txtidDescripProModal" id="txtidDescripProModal">
+        <textarea name="txtdescripcion" id="TAdescripcionnn" cols="30" rows="10"></textarea><br>
+        <a href="#close-modal" rel="modal:close" class="btnGuardarDescripP">
+            <input type="submit" id="averr" value="Guardar" >
+        </a> 
     </div>
 </form>
 
@@ -131,5 +137,6 @@
 
 
 
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/script_modals.js"></script>
+<script src="js/script_modals.js"></script><!-- 
+<script src="js/jquery-3.5.1.min.js"></script> -->
+<script src="js/jquery.modal.min.js"></script>

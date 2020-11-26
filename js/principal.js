@@ -6,7 +6,7 @@ cargar_datosUsuLogeado();
 
 function desplemenulogin() {}
 $(document).on("click", "#messagechat", function () {
-
+   
     let menuchico = document.getElementById('conten_chat');
     menuchico.classList.toggle('chat-espanded');
 })
@@ -97,7 +97,11 @@ $(document).on('click', '.contenProductos', function (e) {
         beforeSend: function () {},
         success: function (response) {
             $(".cargarDatos").html(response);
-            $(".ftbody").load("views/descripcion_producto.php");
+            $(".ftbody").load("views/descripcion_producto.php",function(){
+                $("#txtidDescripPro").val(id);
+                mostrarDEscripcionPro(id);
+            });
+            
         },
         error: function () {
             alert("error")
@@ -107,7 +111,7 @@ $(document).on('click', '.contenProductos', function (e) {
 });
 
 /* codigo boton atras */
-$(document).on("click","#icon-undo2",function(){
+$(document).on("click",".icon-arrow-left2",function(){
     mostrarProductos();
 })
 

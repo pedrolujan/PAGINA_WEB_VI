@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="css/estilos_principal.css">
 <?php
 sleep(1);
 session_start();

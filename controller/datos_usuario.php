@@ -49,7 +49,7 @@
                 </div>
                 <div class="contenCajas">
                     <div class="contenInputs" id="">
-                        <input type="text" name="txtnombre" placeholder="Nombre del Producto" readonly>
+                        <input type="text" name="txtnombre" placeholder="Nombre del Producto">
                         <textarea name="txtdescripcion" id="" placeholder="Escribe aca la descripcion"></textarea>
                         <input type="text" name="txtmarca" id="" placeholder="Marca del Producto">
                         <div class="precio-cat"> <input type="number" name="txtprecio" id=""
