@@ -18,7 +18,7 @@ session_start();
 
         <div class="item">
             <a href="#" class="">
-                <div class="icon"><span class="icon-bin2"></span></div>
+                <div class="icon"><span class="icon-laptop"></span></div>
                 <div class="title"><span>Laptos</span></div>
             </a>
         </div>

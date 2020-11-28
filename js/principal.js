@@ -90,6 +90,7 @@ $(document).on('click', '.contenProductos', function (e) {
     e.preventDefault();
     let element = $(this)[0];
     let id = $(element).attr('capturoid');
+    /* document.location.href = "views/detalleProducto.php?id=" +id ; */
     $.ajax({
         data: {id},
         url: 'controller/detalle_producto.php',
@@ -175,14 +176,11 @@ $(document).on('click', '.btnAbreActualizaPro', function () {
     let id = $(element).attr('capturoid');    
     $('#acaFotoActProducto').attr("src",$('#imagenDetPro').attr("src"));
     $('#capIdPro').val(id);
-    $('#txtnombre').val( $('.nombre_pro').html());
+    $('#txtnobre').val( $('.nombre_pro').html());
     $('#txtdescripcion').val( $('.descripcion_pro').html());
     $('#txtmarca').val( $('.marca_pro').html());
     $('#txtprecio').val( $('.precio_pro').html());
-    $('#txtimagen').val( $('#imagenDetPro').attr("src"));
-
-
-   
+    $('#txtimagen').val( $('#imagenDetPro').attr("src"));  
 })
 $(document).on('click', '.modalActualizaPro', cerrarRegistroA)
 $(document).on('click', '.btnCerrar', cerrarRegistroA);

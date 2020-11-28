@@ -46,7 +46,25 @@
             return $resultado->fetch_all(MYSQLI_ASSOC);
         return false;
     } 
-
+      //BUSCAR carrito
+      public function buscarCar($datos,$tabla, $condicion){
+		
+        $resultado = $this->conexion->query("SELECT $datos FROM $tabla WHERE $condicion") or die($this->conexion->error);
+       
+		if($resultado)
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        return false;
+    } 
+    //otrooo
+    public function buscarValiar($tabla, $condicion,$segCond){
+		
+        $resultado = $this->conexion->query("SELECT * FROM $tabla WHERE $condicion AND $segCond") or die($this->conexion->error);
+       
+		if($resultado)
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        return false;
+    } 
+    
     //busca todo
 
     public function buscarTodo($tabla){		

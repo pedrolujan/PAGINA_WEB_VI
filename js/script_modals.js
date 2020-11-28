@@ -76,6 +76,7 @@ $(document).on("click", ".btnActualizarPro", function (e) {
                 beforeSend: function () {},
                 success: function (response) {
                     $(".cargarDatos").html(response);
+                    $(".btnCargaDescrip").click();
                 },
                 error: function () {
                     alert("error")

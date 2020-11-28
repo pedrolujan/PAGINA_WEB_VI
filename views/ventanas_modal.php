@@ -87,7 +87,7 @@
             </div>
         </div> 
         <label for="">Descripcion</label><br>
-        <input type="text" name="txtidDescripProModal" id="txtidDescripProModal">
+        <input type="text" name="txtidDescripProModal" id="txtidDescripProModal" style="display:none">
         <textarea name="txtdescripcion" id="TAdescripcionnn" cols="30" rows="10"></textarea><br>
         <a href="#close-modal" rel="modal:close" class="btnGuardarDescripP">
             <input type="submit" id="averr" value="Guardar" >

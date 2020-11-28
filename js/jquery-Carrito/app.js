@@ -1,6 +1,6 @@
 
 $(document).ready(function($) {
-  $(".bolsa").css("display", "block");
+ 
   /* Función jQuery para el evento clic en la etiqueta "x" con la clase (.carrito-total)*/
   $('.carrito-total').click(function() {
     //Mostrar los items del carrito
@@ -33,17 +33,14 @@ checkout: {
 
 });
 $(document).on("click",".item_add",function(){  
-  
+
 /* let id = $(element).attr('capId');
 alert(otro); // 
 $(".item_idpro").val(id); */
 })
-var jObject=Array();
-var cantidad=Array();
-var subTotal=Array();
-var matrix=Array();
-$(document).on("click",".itemRow",function(){  
 
+var matrix=Array();
+$(document).on("click",".itemRow",function(){
 matrix.push([
 [$(this).children(".item-idpro").html()],
 [$(this).children(".item-image").children("img").attr("src")],
@@ -52,28 +49,8 @@ matrix.push([
 [$(this).children(".item-price").html()],
 [$(this).children(".item-total").html()]]); // Matrix
 
-/*  jObject.push($(this).children(".item-idpro").html());
-
-
-cantidad.push($(this).children(".item-quantity").html());
-let precio =  $(this).children(".item-price").html();
-subTotal.push($(this).children(".item-total").html()); */
-/*document.location.href = "detalleProducto.php?id=" + id + "&cant=" + cantidad; */
-/* $.ajax({
-    data: {id,cantidad,precio,subTotal,imagen},
-    url: 'RegistrarCarrito.php',
-    type: 'post',
-    beforeSend: function () {},
-    success: function (response) {
-        alert(response);
-    },
-    error: function () {
-        alert("error")
-    }
-});
-
-irADetalle(id, cantidad, precio, subTotal); */
 })
+
 $(document).on("click",".btnDetalleCarrito",function(){
 $(".itemRow").click();
 mat=JSON.stringify(matrix);
@@ -90,14 +67,17 @@ $.ajax({
 
 $(document).on("click",".simpleCart_remove",function(){
   let element = $(this)[0].parentElement.parentElement;
-  let id= $(element).children(".item-idpro").html()
+  let id= $(element).children(".item-idpro").html();
   $.ajax({
     type:'post',
      cache:false,
      url:"borrarDatos.php",
     data:{id},
     success:function(server){
-      location.reload();
+      location.reload(function(){
+        $(".bolsa").css("display", "block");
+      });
+      
     }
   });
 });

@@ -1,7 +1,7 @@
 :root {
   --width: 250px;
   --padding: 10px;
-  --bgcolor:  rgb(1, 19, 9);
+  --bgcolor:  rgb(0, 7, 3);
   --hovercolor: rgb(23, 23, 23);
   --width-collapsed: 50px;
 }
@@ -106,17 +106,56 @@ display: flex;
 
 .header-main .contenHMain .divCarrito .row .carrito .bolsa{
   position: absolute;
-	background-color: rgb(236, 236, 236);
+	background-color: #F6F7F8;
   display: none;
   right: 0px;
-  width: 50%;
+  width: auto;
   top: 60px;
+  padding: 10px;
   max-height: 500px;
+  box-sizing: border-box;
   overflow: auto;
-	padding:  5px;
-	z-index:  9999;
-	box-shadow: 2px 2px 2px 2px #000;
+  border: solid 1px #ccc;
+  box-shadow: 12px 5px 0px  #ccc;
  }
+ .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow>td{
+   text-align: center;
+ }
+ .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-decrement{
+  width: 20px;
+  text-align: center;
+ }
+ .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-decrement>a{
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  background-color: #ca0101;
+  margin: 10px;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+ }
+ .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-increment{
+ 
+  width: 20px;
+  text-align: center;
+ }
+ .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-increment>a{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: #0c5812;
+  margin: 10px;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+   }
  .header-main .contenHMain .divCarrito .row .carrito .bolsa::-webkit-scrollbar {
   display: none;
 }
@@ -126,6 +165,7 @@ display: flex;
   height: 100%;
   display: flex;
   justify-content: center;
+  border:  solid 1px #ccc;
   align-items: center;
   padding:5px;
   cursor: pointer;
@@ -145,21 +185,26 @@ display: flex;
   background-color: #D9DFE6;
 }
 
-.header-main .contenHMain .divCarrito .row .carrito .carrito-total> .cantidadUnidades { 
-  display: flex;
-  font-size: 12px;
-  color: #fff;
-  height: 10px;
-  width: 10px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-top: -15px;
-  margin-left: -10px;
-  background-color: rgb(253, 15, 15);
-  z-index: 590;
-  margin-right: 10px;
+.header-main 
+  .contenHMain 
+    .divCarrito 
+      .row 
+        .carrito
+          .carrito-total> .cantidadUnidades { 
+              display: flex;
+              font-size: 10px;
+              color: #fff;
+              height: 10px;
+              width: 10px;
+              padding: 4px;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              margin-top: -15px;
+              margin-left: -10px;
+              background-color: rgb(253, 15, 15);
+              z-index: 590;
+              margin-right: 10px;
 }
 .header-main .contenHMain .datos_usuario {
   width: 25%;
@@ -210,6 +255,39 @@ display: flex;
   padding-top: 60px;
   padding-left: 20px;
   padding-right: 5px;
+}
+.cargarBaner{
+  margin-top: -10px;
+  width: 70%;
+  margin-top: 10px;
+}
+.cargarBaner ul{
+  width: 400%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  animation: cambio 20s infinite alternate;
+}
+.cargarBaner ul:hover{
+   animation-play-state: paused;
+   cursor: pointer;
+}
+.cargarBaner li{
+  width: 50%;
+  list-style: none;
+  box-sizing: border-box;
+}
+.cargarBaner img{
+  width: 100%;
+  height: 450px;
+}
+@keyframes cambio{
+  0%{margin-left: 0%;}
+  20%{margin-left: 0%;}
+  25%{margin-left: -132%;}
+  45%{margin-left: -132%;}
+  50%{margin-left: -270%;}
+  70%{margin-left: -270%;}
 }
 .cargarDatos{
   width: 100%;
@@ -294,7 +372,7 @@ display: flex;
 }
 #sidemenu #menu-items .item {
   width: var(--width);
-  border-bottom: solid 1px #d81111;
+  border-bottom: solid 1px rgb(95, 90, 90);
 }
 #sidemenu #menu-items .item .icon {
   display: inline-block;
@@ -416,7 +494,8 @@ display: flex;
   color: #000;
   overflow: hidden;
   text-align: center;
-  top: 6.4%;
+  top: 42px;
+  right: 0px;
   padding: 0px;
   border-radius: 0px 0px 5px 10px;
   border:  solid #ccc 1px;
@@ -554,7 +633,7 @@ buscar producto*/
 .messagechat:active {
   transform: scale(0.99);
 }
-.conten_chat {  
+.conten_chat{  
   background-color: #fff;
   box-shadow: -1px 1px 15px 1px #000;
   width: 300px;

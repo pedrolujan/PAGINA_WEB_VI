@@ -272,14 +272,10 @@ padding: 5px 10px;
     padding: 10px;
     height: inherit;
   }
-  .DetProNombre_pro {
-    padding: 10px;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 32px;
+  .DetProNombre_pro {  
+  font-size: 20px;
+    height: 30px;    
     font-family: "OpenSans-SemiBold",sans-serif!important;
-    margin-bottom: 20px;
-    box-sizing: border-box;
     border-bottom: solid 1px rgb(236, 233, 233);
   }
   .DetProMarca_pro {

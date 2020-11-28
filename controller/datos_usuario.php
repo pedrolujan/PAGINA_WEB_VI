@@ -75,8 +75,8 @@
             </div>
         </div>
     </form>
-    <script src="js/principal.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
+   <!--  <script src="js/principal.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script> -->
 
 </body>
 
