@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html>
 
@@ -8,7 +11,12 @@
 </head>
 
 <body>
+    <a href="#login-form" rel="modal:open" class="aAbrirLogeo"></a>
+    <?php if(!isset($_SESSION["usuarioLogeado"]) and !isset($_SESSION["usuarioLogeado"])){?>
+    <div class="datos_usuarioEsp abrirLogeo">
+    <?php }else{?>
     <div class="datos_usuarioEsp" onclick="desplemenulogin()">
+    <?php }?>
         <?php
             if ( is_file( "imagenes/usuarios/" . $_SESSION[ 'usuarioLogeado' ] . ".jpg" ) ) {
                 ?>
@@ -22,7 +30,11 @@
 
         <p class="bievenido_usu"></p>
     </div>
+   <?php if(isset($_SESSION["usuarioLogeado"])){?>
+        <ul class="celusubmenuUsuario" id="celusubmenu" onClick="desplemenulogin()">
+    <?php }else{?>
     <ul class="celusubmenu" id="celusubmenu" onClick="desplemenulogin()">
+    <?php }?>
         <li><a href="php/cambiar_contrasena">Cabiar Contraseña</a></li>
         <li><a id="btnperfil">Perfil</a></li>
         <li><a href="controller/salir.php">Salir</a></li>

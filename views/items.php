@@ -59,6 +59,48 @@ session_start();
                 <div class="title"><span>Equipos de Sonido</span></div>
             </a>
         </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>Equipos de Sonido</span></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>Equipos de Sonido</span></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>Equipos de Sonido</span></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>Equipos de Sonido</span></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>Equipos de Sonido</span></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>Equipos de Sonido</span></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="icon"> <span class="icon-speaker_group"></span></div>
+                <div class="title"><span>finalllll</span></div>
+            </a>
+        </div>
         <?php }elseif($_SESSION['adminLogeado']){?>
         <div class="item">
             <a href="#" class="btnregistraProducto">

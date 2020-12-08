@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="css/estilos_modals.css">
+<link rel="stylesheet" href="http://localhost/PAGINA_WEB_VI/css/estilos_modals.css">
+<link rel="stylesheet" href="http://localhost/PAGINA_WEB_VI/js/jquery.modal.min.css">
+
 
 <div class="modalActualizaPro" id="modalActualizaPro"> </div>
 <form action="#" method="post" enctype="multipart/form-dat" id="formularioActPro">
@@ -137,6 +139,6 @@
 
 
 
-<script src="js/script_modals.js"></script><!-- 
+<script src="http://localhost/PAGINA_WEB_VI/js/script_modals.js"></script><!-- 
 <script src="js/jquery-3.5.1.min.js"></script> -->
-<script src="js/jquery.modal.min.js"></script>
+<script src="http://localhost/PAGINA_WEB_VI/js/jquery.modal.min.js"></script>

@@ -1,0 +1,80 @@
+
+/* footer */
+.contenFooter{
+    width: 100%;
+    height: 370px;
+    background-image: url("../imagenes/fuentes/empresa.jpg");
+    display: flex;
+    color: #fff;
+}
+.CFooter{
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(0, 0, 0,0.9);
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+
+}
+.CFooter h4{
+    display: inline-block ;
+    width: 100%;
+    background-color: #167240;
+    color: #fff;
+    padding: 5px;
+}
+.CFIsquierda .CFMetodosPago{
+    width: 100%;
+    justify-content: center;
+}
+.CFIsquierda .CFMetodosPago .MPagos{
+    background-color: blue;
+    display: block; 
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+}
+.CFIsquierda .CFMetodosPago  img{
+    width: 120px;
+    margin: 10px;
+    margin-top: 30px;
+}
+.CFooter ul{
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    margin-left: 20%;
+}
+.CFooter ul li{
+    list-style: none;
+    margin-top: 15px;
+}
+.CFooter ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+.CFooter ul li a:hover{
+    color: rgb(105, 104, 104);
+}
+.CFooter a>span{
+    background-color: #0C55AF;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.CFooter a>span:hover{
+    background-color: #6882a1;
+}
+.masContacto{
+    text-align: left;
+    padding-left: 20px;
+}
+.masContacto span{
+   margin-right: 10px;
+}

@@ -114,7 +114,7 @@ $(document).on("click", ".btnaccederM", function (e) {
             if(resp.exito !== undefined) {
                 $("#container").hide();
                 $("#msgerror").fadeIn(100).text(resp.error).hide();
-                setTimeout("location.href='index.php'", 1000);
+                setTimeout("location.href='Usuario.php'", 1000);
                 $(".respuestas").fadeIn(100).text(resp.exito).show();
             }
         })      

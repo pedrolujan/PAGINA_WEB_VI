@@ -3,7 +3,9 @@ mostrarMensajes();
 cargar_datosUsuLogeado();
 
 /* escript para el chat */
-
+$(document).on("click",".abrirLogeo",function(){
+    $(".aAbrirLogeo").click();
+})
 function desplemenulogin() {}
 $(document).on("click", "#messagechat", function () {
    
@@ -90,8 +92,8 @@ $(document).on('click', '.contenProductos', function (e) {
     e.preventDefault();
     let element = $(this)[0];
     let id = $(element).attr('capturoid');
-    /* document.location.href = "views/detalleProducto.php?id=" +id ; */
-    $.ajax({
+    document.location.href = "views/detalle_Producto.php?id=" +id ;
+    /* $.ajax({
         data: {id},
         url: 'controller/detalle_producto.php',
         type: 'post',
@@ -107,7 +109,7 @@ $(document).on('click', '.contenProductos', function (e) {
         error: function () {
             alert("error")
         }
-    });
+    }); */
 
 });
 

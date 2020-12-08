@@ -1,0 +1,230 @@
+
+.header-main {
+    height: 60px;
+   /* width: calc(100% - calc(var(--width-collapsed)) - 10px); */
+   
+    width: 100%;
+    background-image: url("../imagenes/fuentes/header.png");
+    background-position: top;
+    position: relative;
+    box-sizing: border-box;/* 
+    left: calc(var(--width-collapsed) + 10px); */
+    
+    left: 0px;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    color: #fff;
+  }
+  
+  .header-main .contenHMain {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    position: relative;
+    background:rgb(0, 0, 0,0.5);
+    border-bottom: 1px solid #ccc;
+    z-index: 1;
+    padding-right: 20px;
+    height: inherit;
+    align-items: center;
+  }
+  .header-main .contenHMain .contenMenu{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    align-items: center;
+    box-sizing: border-box;
+    height: 70%;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .header-main .contenHMain .contenMenu > span{
+    font-size: 40px;
+    color: rgb(238, 235, 235);
+    cursor: pointer;
+  }
+  .header-main .contenHMain >img{
+    width: 80px;
+    padding: 10px;
+    filter: brightness(10)
+  }
+  
+  .header-main .contenHMain .busqueda {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-main .contenHMain .busqueda input {
+    outline: none;
+    border: none;
+    background-color: #d9dfe6;
+    color: #1c1c1d;
+    font-size: 16px;
+    border: solid 1px #ccc;
+  }
+  
+  .header-main .contenHMain .divCarrito {
+    width: 20%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  @media screen and (max-width: 700px){
+    .header-main .contenHMain .divCarrito{
+      justify-content: flex-start;
+    }
+  }
+  .header-main .contenHMain .divCarrito .row{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  }
+  .header-main .contenHMain .divCarrito .row .carrito{
+   width: 100%;
+   height: 90%;
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+  }
+  
+  .header-main .contenHMain .divCarrito .row .carrito .bolsa{
+    position: absolute;
+      background-color: #F6F7F8;
+    display: none;
+    right: 0px;
+    width: auto;
+    top: 60px;
+    padding: 10px;
+    color: #000;
+    max-height: 400px;
+    box-sizing: border-box;
+    overflow: auto;
+    border: solid 1px #ccc;
+    box-shadow: 12px 5px 0px  #ccc;
+   }
+   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow>td{
+     text-align: center;
+   }
+   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-decrement{
+    width: 20px;
+    text-align: center;
+   }
+   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-decrement>a{
+    font-size: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    background-color: #ca0101;
+    margin: 10px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+   }
+   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-increment{
+   
+    width: 20px;
+    text-align: center;
+   }
+   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-increment>a{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: #0c5812;
+    margin: 10px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+     }
+   .header-main .contenHMain .divCarrito .row .carrito .bolsa::-webkit-scrollbar {
+    display: none;
+  }
+  .header-main .contenHMain .divCarrito .row .carrito .carrito-total{
+    font-size: 1.4rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    cursor: pointer;
+  }
+  .header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr{
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    background-color: rgb(236, 236, 236);
+    border-radius: 50%;
+    padding:10px;
+    cursor: pointer;
+  }
+  .header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr:hover{
+    background-color: #D9DFE6;
+  }
+  
+  .header-main 
+    .contenHMain 
+      .divCarrito 
+        .row 
+          .carrito
+            .carrito-total> .cantidadUnidades { 
+                display: flex;
+                font-size: 10px;
+                color: #fff;
+                height: 10px;
+                width: 10px;
+                padding: 4px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                margin-top: -15px;
+                margin-left: -10px;
+                background-color: rgb(253, 15, 15);
+                z-index: 590;
+                margin-right: 10px;
+  }
+  .header-main .contenHMain .datos_usuario {
+    width: 20%;
+    height: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .header-main .contenHMain .datos_usuario .datos_usuarioEsp{
+    display: flex;
+    justify-content: center;
+    border: solid 0.01px #ccc;
+    align-items: center;
+    height: 70%;
+    background-color: rgb(238, 235, 235);
+    margin-right: 5%;
+    cursor: pointer;
+    padding: 0 20px 0px 0px;
+    border-radius: 50px;
+  }
+  .header-main .contenHMain .datos_usuario .datos_usuarioEsp p {
+    font-size: 12px;
+    color: #000;
+    margin: auto;
+  }
+  .header-main .contenHMain .datos_usuario .datos_usuarioEsp:hover{
+    background-color: #d9dfe6;
+  
+  }
+  .img_usuario {
+    width: 40px;
+    margin-right: var(--padding);
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }

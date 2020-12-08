@@ -33,10 +33,6 @@ checkout: {
 
 });
 $(document).on("click",".item_add",function(){  
-
-/* let id = $(element).attr('capId');
-alert(otro); // 
-$(".item_idpro").val(id); */
 })
 
 var matrix=Array();

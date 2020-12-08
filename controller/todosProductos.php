@@ -39,7 +39,7 @@ $html="";
 							<label class='marca_pro'>".$v["marca_pro"]."</label></br>
 						</div>
 						<div class='precio_pro'>
-							<label>S/ ".$v["precio_pro"]."</label>
+							
 						</div>
 					</div>
 				</div>"; 
