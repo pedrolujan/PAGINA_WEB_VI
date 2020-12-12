@@ -18,13 +18,13 @@ $user = new ApptivaDB();
 			$tmp_name1=$imagen1["tmp_name"];
 			$name1=$imagen1["name"];			
 			$carpeta1="../imagenes/descripcionProductos/".$fecha_actual.$idProdcto."_".$n_aleatorio.$name1;
-			$rutabd1="imagenes/descripcionProductos/".$fecha_actual.$idProdcto."_".$n_aleatorio.$name1;
+			$rutabd1="../imagenes/descripcionProductos/".$fecha_actual.$idProdcto."_".$n_aleatorio.$name1;
 			
 			/* segunda imagen */
 			$tmp_name2=$imagen2["tmp_name"];
 			$name2=$imagen2["name"];			
 			$carpeta2="../imagenes/descripcionProductos/".$fecha_actual.$idProdcto."_".$n_aleatorio.$name2;
-			$rutabd2="imagenes/descripcionProductos/".$fecha_actual.$idProdcto."_".$n_aleatorio.$name2;
+			$rutabd2="../imagenes/descripcionProductos/".$fecha_actual.$idProdcto."_".$n_aleatorio.$name2;
 			
 			$consul=$user->buscar("descripcionproducto","descripcionproducto.ID_PRODUCTO=".$idProdcto);
 			if($consul){

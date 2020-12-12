@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block" src="imagenes/fuentes/haver.png" alt="Third slide">
+                <img class="d-block" src="imagenes/fuentes/car3.png" alt="Third slide">
                 <div class="cantenInfoIndex">
                     <div class="carInfo">Oferta Navideña pejatec</div>
                     <p class="subCarInfo">siempre a tu servicio</p>

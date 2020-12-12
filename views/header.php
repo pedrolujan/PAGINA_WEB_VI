@@ -9,15 +9,15 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/estilosUsuComun.css">
 
 </head>
 
 <body>
+     
     <div class="headerGeneral">       
         <div id="header-main" class="header-main">
             <div class="contenHMain">
-                <img src="imagenes/mi-logo.gif" alt="" srcset="">
+                <img src="http://localhost/L&M.StoreTecnology/imagenes/mi-logo.gif" alt="" srcset="" class="logoEmpresa">
                 <div class="contenMenu">
                 <?php
                 if(!isset($_SESSION["usuarioLogeado"]) && !isset($_SESSION["adminLogeado"])){ ?>
@@ -56,15 +56,32 @@ session_start();
                     <?php
 				    include("controller/datos_usuario.php");
 			        ?>
+                         <a href="#login-form" rel="modal:open" class="aAbrirLogeo"></a>
+                    <?php if(!isset($_SESSION["usuarioLogeado"]) and !isset($_SESSION["adminLogeado"])){?>
+                    <div class="datos_usuarioEsp abrirLogeo">               
+                    <?php }else{?>
+                        <div class="datos_usuarioEsp" onclick="desplemenulogin()">
+                        <?php }?>
+                    
+                        <img src="http://localhost/L&M.StoreTecnology/imagenes/usuarioblanco.jpg" width="150" onclick="desplemenulogin()" / class="img_usuario" />
+                    
+
+                        <p class="bievenido_usu"></p>
+                    </div>
+                <?php if(isset($_SESSION["usuarioLogeado"])){?>
+                        <ul class="celusubmenuUsuario" id="celusubmenu" onClick="desplemenulogin()">
+                    <?php }else{?>
+                    <ul class="celusubmenu" id="celusubmenu" onClick="desplemenulogin()">
+                    <?php }?>
+                        <li><a href="php/cambiar_contrasena">Cabiar Contraseña</a></li>
+                        <li><a id="btnperfil">Perfil</a></li>
+                        <li><a href="../controller/salir.php">Salir</a></li>
+                    </ul>
                     <!-- <a href="views/login.php" class="btnlogin">login</a> -->
                 </div>
             </div>
-            <?php
-            if(isset($_SESSION["usuarioLogeado"])){ ?>
-        <div class="logoEBaners">
-            <div class="banerCabecera"><img src="imagenes/fuentes/baner3.png" alt="" srcset="" width="50px"></div>
-        </div>
-        <?php }?>
+            
+           
 
         </div>
         <?php
@@ -87,6 +104,7 @@ session_start();
         menu.classList.toggle("menuProcutos-collapsed");
     }
     </script>
+   <!--  <script src="../js/principal.js"></script> -->
 </body>
 
 </html>

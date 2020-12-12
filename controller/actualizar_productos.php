@@ -28,7 +28,7 @@ if(isset($_POST["capIdPro"])){
 		$n_aleatorio = rand(10, 99);
 		
 		$carpeta="../imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
-		$rutabd="imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
+		$rutabd="http://localhost/L&M.StoreTecnology/imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
 	if(isset($_SESSION["adminLogeado"])){
 		$tabla="productos";
 		if(empty($name) || !in_array($imagenActPro["type"],$tipoImagen)){

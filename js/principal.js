@@ -1,7 +1,20 @@
 mostrarProductos();
+mostrarProductos1();
 mostrarMensajes();
 cargar_datosUsuLogeado();
+cargar_datosUsuLogeadoIndex();
+$(document).on("click",".logoEmpresa",function(){
+    document.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php";
+})
+function abrirMenu() {
+    console.log("aca toy");
+    const menu = document.querySelector('.sidemenu');
+    menu.classList.toggle("menu-espanded");
+    menu.classList.toggle("menu-collapsed");
 
+    document.querySelector('body').classList.toggle('body-expanded');
+
+}
 /* escript para el chat */
 $(document).on("click",".abrirLogeo",function(){
     $(".aAbrirLogeo").click();
@@ -20,7 +33,18 @@ function desplemenulogin() {
     menuchico.classList.toggle('celmenuchico');
 }
 /* cargar datos del usuario */
-function cargar_datosUsuLogeado() {
+function    cargar_datosUsuLogeado() {
+    $.ajax({
+        url: '../controller/funciones.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function (resp2) {
+            $('.bievenido_usu').html(resp2.datos);
+            $('.img_usuario').attr("src", resp2.img);
+        }
+    })
+}
+function  cargar_datosUsuLogeadoIndex() {
     $.ajax({
         url: 'controller/funciones.php',
         type: 'GET',
@@ -34,11 +58,11 @@ function cargar_datosUsuLogeado() {
 /* codigo para buscar productos */
 $(document).ready(function () {
     $("#searchBuscar").keyup(function () {
-        $(".contengif").html('<div class="loading"><img src="imagenes/loader.gif" style="height: 20px; margin-left: 10px;"/></div>').show();
+        $(".contengif").html('<div class="loading"><img src="../imagenes/loader.gif" style="height: 20px; margin-left: 10px;"/></div>').show();
         var parametros = "search=" + $("#searchBuscar").val();
         $.ajax({
             data: parametros,
-            url: 'controller/buscar_producto.php',
+            url: '../controller/buscar_producto.php',
             type: 'post',
             beforeSend: function () {},
             success: function (response) {
@@ -56,43 +80,13 @@ $(document).on("click",".carritoDeCompras",function(){
 })
 
 
-$(document).on('click', '.btnatualizar', function () {
-    let element = $(this)[0].parentElement.parentElement;
-    let id = $(element).attr('capturaId');
-    alert(id);
-    $.post('controller/actualizar_datos.php', {
-        id
-    }, function (resp) {
-
-        let datResividos = JSON.parse(resp);
-        let tem = '';
-        datResividos.forEach(recorrer => {
-            tem += `
-						<tr captura_id2="${
-                recorrer.id
-            }">	
-						<td><input class="InputActualizaDatos" type="text" id="txtnombre1" value="${
-                recorrer.nombre
-            }"></td>
-						<td><input class="InputActualizaDatos" type="text" id="txtapellido1" value="${
-                recorrer.apellido
-            }"></td>
-						<td><input class="InputActualizaDatos" type="text" id="txtcorreo1" value="${
-                recorrer.correo
-            }"></td>				
-						<td><button width="80" class="btnactualizarok">actualizarok</button></td>
-						</tr>	`
-        });
-        $('.cargar_datos').html(tem);
-    })
-});
-
 /* codigo para el detalle del producto */
 $(document).on('click', '.contenProductos', function (e) {
     e.preventDefault();
     let element = $(this)[0];
     let id = $(element).attr('capturoid');
-    document.location.href = "views/detalle_Producto.php?id=" +id ;
+    
+    document.location.href = "http://localhost/L&M.StoreTecnology/views/detalle_Producto.php?id=" +id ;
     /* $.ajax({
         data: {id},
         url: 'controller/detalle_producto.php',
@@ -121,6 +115,19 @@ $(document).on("click",".icon-arrow-left2",function(){
 /* codigo para mostrar todo los productos */
 function mostrarProductos() {
     $.ajax({
+        url: '../controller/todosProductos.php',
+        type: 'GET',
+        beforeSend: function () {},
+        success: function (res) {
+            $(".cargarDatos").html(res);
+        },
+        error: function () {
+            /* alert("error") */
+        }
+    })
+}
+function mostrarProductos1() {
+    $.ajax({
         url: 'controller/todosProductos.php',
         type: 'GET',
         beforeSend: function () {},
@@ -128,7 +135,7 @@ function mostrarProductos() {
             $(".cargarDatos").html(res);
         },
         error: function () {
-            alert("error")
+            /* alert("error") */
         }
     })
 }
@@ -246,7 +253,7 @@ $(document).ready(function () {
         e.preventDefault();
         var datos = new FormData($("#formularioRegPro")[0]);
         $.ajax({
-            url: "controller/registro_productos.php",
+            url: "../controller/registro_productos.php",
             data: datos,
             type: "POST",
             dataType: "json",
@@ -261,8 +268,8 @@ $(document).ready(function () {
             if (resp.exito !== undefined) {
                 $("#msg").html(resp.exito);
                 mostrarProductos();
-                cerrarRegistro();
-                /* setTimeout("location.href='login.php'", 1000); */
+                cerrarRegistro(); 
+                /* setTimeout("location.href='login.php'", 1000);*/
             }
         })
     }
@@ -286,7 +293,7 @@ $(document).on("change", "#imagenActProducto", function () {
 });
 
 $(document).on("click", "#btnperfil", function () {
-    $(".cargarDatos").load("views/actualizar_datos.php");
+    $(".cargarDatos").load("actualizar_datos.php");
 })
 
 
@@ -324,7 +331,7 @@ $(document).on("click", "#btnActualizaDU", function (e) {
     let id = $(element).attr('capIdUpdate');
     let datos = new FormData($("#form_actualizarDU")[0]);
     $.ajax({
-        url: "controller/actualizar_datos.php",
+        url: "../controller/actualizar_datos.php",
         data: datos,
         type: "POST",
         dataType: "json",
@@ -377,9 +384,11 @@ $(document).ready(function () {
 /* codigo para mensajes */
 $(document).on("click", ".CHFoterImg", function () {
     var mensaje = $("#txtmensaje").val();
-    $.ajax({url: "controller/insertar_mensaje.php", data: {
-            mensaje
-        }, type: "POST", dataType: "json"}).done(function correcto(resp) {
+    $.ajax({
+        url: "controller/insertar_mensaje.php", 
+        data: {mensaje},
+        type: "POST", dataType: "json"
+    }).done(function correcto(resp) {
         if (resp.error !== undefined) {
             $("#msg").html(resp.error);
             return false;
@@ -400,7 +409,56 @@ function mostrarMensajes() {
             $(".contenCH_body").html(res);
         },
         error: function () {
-            alert("error")
+            /* alert("error") */
         }
     });
 }
+
+ $(document).on("click",".MostLaptop",function(){
+    DatosFiltrados(0);
+ });
+ $(document).on("click",".Mostceluares",function(){
+    DatosFiltrados(1)
+ });
+ $(document).on("click",".MostMouses",function(){
+    DatosFiltrados(2);
+ });
+ $(document).on("click",".MostDiscos",function(){
+    DatosFiltrados(3);
+ });
+ $(document).on("click",".MostTelevisores",function(){
+    DatosFiltrados(4);
+ });
+ $(document).on("click",".MostTeclados",function(){
+    DatosFiltrados(5);
+ });
+ $(document).on("click",".MostEquiposSonido",function(){
+    DatosFiltrados(6);
+ });
+        
+ 
+ function DatosFiltrados(dato){
+     $.ajax({
+         url: "../controller/todosProductos_filtrados.php", 
+         data: {dato},
+         type: "POST",
+        }).done(function correcto(resp) {
+            $(".cargarDatos").html(resp);
+        })
+    }
+    
+    
+$(document).on("click",".verClientes",function(){
+    $.ajax({
+        url: '../controller/todosUsuarios.php',
+        type: 'GET',
+        beforeSend: function () {},
+        success: function (res) {
+            $(".cargarDatos").html(res);
+        },
+        error: function () {
+            /* alert("error") */
+        }
+    })
+});
+           

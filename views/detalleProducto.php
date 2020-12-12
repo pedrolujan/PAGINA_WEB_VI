@@ -17,7 +17,7 @@ include("../model/conexion.php");
             
             <input type="text" class="item_idpro" value="<?php echo $recor["id_pro"] ?>" style="display:none;">
             <h4 class="item_name"><?php echo $recor["nombre_pro"] ?></h4>
-            <img class="item_" src="../<?php echo $recor["imagen_pro"] ?>" width="300px" alt="" srcset="">
+            <img class="item_" src="<?php echo $recor["imagen_pro"] ?>" width="300px" alt="" srcset="">
             <img class="item_image" src="<?php echo $recor["imagen_pro"] ?>" width="300px" alt="" style="display:none;" srcset="">
             ingrese cantidad
             <input class="item_quantity" type="number" min="1" max="10" value="1" name="" id="">

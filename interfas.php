@@ -19,9 +19,13 @@ session_start();
     <link rel="stylesheet" href="js/jquery.modal.min.css">
     <link rel="icon" href="imagenes/monitor.png" type="image/png">
     <script src="https://kit.fontawesome.com/0c226161df.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosHeader.css">
+    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilos_regProducto.css" type="text/css">
+
 </head>
 
 <body>
+<?php include("views/header.php"); ?>
     
     
 </body>

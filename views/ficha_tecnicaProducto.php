@@ -31,7 +31,9 @@ session_start();
             <li><span>Alto</span><span class="ftec-altoP">25.1 cm</span></li>
         </ul>
     </div>
+    <?php include("footer.php"); ?>
     <script src="js/jquery-3.5.1.min.js"></script>
+
 </body>
 
 </html>

@@ -1,5 +1,8 @@
 <?php
 session_start();
+include("model/conexion.php");
+include("../model/conexion.php");
+$user=new ApptivaDB();      
 ?>
 <!doctype html>
 <html>
@@ -7,46 +10,9 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>Documento sin título</title>
-    <link rel="stylesheet" href="css/estilos_regProducto.css" type="text/css">
 </head>
 
 <body>
-    <a href="#login-form" rel="modal:open" class="aAbrirLogeo"></a>
-    <?php if(!isset($_SESSION["usuarioLogeado"]) and !isset($_SESSION["usuarioLogeado"])){?>
-    <div class="datos_usuarioEsp abrirLogeo">
-    <?php }else{?>
-    <div class="datos_usuarioEsp" onclick="desplemenulogin()">
-    <?php }?>
-        <?php
-            if ( is_file( "imagenes/usuarios/" . $_SESSION[ 'usuarioLogeado' ] . ".jpg" ) ) {
-                ?>
-        <img src="imagenes/usuarios/<?php echo($_SESSION['usuarioLogeado'])?>.jpg" width="150"
-            onclick="desplemenulogin()" / class="img_usuario" />
-        <?php
-            } else {
-                ?>
-        <img src="imagenes/usuarioblanco.jpg" width="150" class="img_usuario" />
-        <?php }?>
-
-        <p class="bievenido_usu"></p>
-    </div>
-   <?php if(isset($_SESSION["usuarioLogeado"])){?>
-        <ul class="celusubmenuUsuario" id="celusubmenu" onClick="desplemenulogin()">
-    <?php }else{?>
-    <ul class="celusubmenu" id="celusubmenu" onClick="desplemenulogin()">
-    <?php }?>
-        <li><a href="php/cambiar_contrasena">Cabiar Contraseña</a></li>
-        <li><a id="btnperfil">Perfil</a></li>
-        <li><a href="controller/salir.php">Salir</a></li>
-    </ul>
-    <!--<div class="texbienvenida">
-		
-          <?php
-         /* include( "php/funciones.php" );
-          echo "<h1 class='bieusua'>" . fnMostrarNombreUsuario( $_SESSION[ 'usuariologeado' ] ) . "</h1>";
-          */?>
-        </div>-->
-
     <!-- aca creo una vetana modal -->
     <div class="modalRegpro" id="modal"> </div>
     <form action="#" method="post" enctype="multipart/form-dat" id="formularioRegPro">
@@ -69,14 +35,14 @@ session_start();
                             <select name="cbocategoria" id="cbocategoria">
                                 <option value="">Selec. categoria</option>
                                 <?php
-                                include("model/conexion.php");
-                                $user=new ApptivaDB();                
+                              
+                                          
                                 echo $categorias=$user->buscarTodo("categorias");   
-                                foreach($categorias as $cat):   ?>
+                                foreach($categorias as $cat){?>
                                 <option value="<?php echo $cat['id_cat'] ?>">
                                     <?php  echo $cat['nombre_cat'] ?>
                                 </option>
-                                <?php   endforeach;   ?>
+                                <?php   }   ?>
                             </select>
                         </div>
                         <button class="btnRegistrarPro"> Registrar</button>
@@ -87,8 +53,8 @@ session_start();
             </div>
         </div>
     </form>
-   <!--  <script src="js/principal.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script> -->
+   <!--  <script src="../js/principal.js"></script> -->
+    
 
 </body>
 

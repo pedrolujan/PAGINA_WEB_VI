@@ -227,56 +227,75 @@ padding: 5px 10px;
     display: flex;
     width: 100%;
     height: auto;
+    margin-top: 20px;
     justify-content: space-around;
   }
-  .contenDetPro .imgDet_Pro {
+  .contenDatosDetProMain{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:  solid 1px #ccc;
+  }
+  .contenDetPro .contenDatosDetProMain .imgDet_Pro {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 60%;
     border-right: solid 1px #ccc;
     padding: 20px;
   }
-  .contenDetPro .imgDet_Pro .icon-undo2{
-    font-size: 18px;
-    margin-top: -90%;
-    background-color: #000;
-    margin-left: -30%;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor:pointer;
+  .contenDetPro .contenDatosDetProMain .imgDet_Pro >.carruselImagenes{
+  background-color: blue;
+  padding: 5px 0px;
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100px;
+  text-align: center;
   }
-  .contenDetPro .imgDet_Pro .icon-undo2:hover{
-    transform: scale(1.09);
+  .contenDetPro .contenDatosDetProMain .imgDet_Pro >.carruselImagenes::before{
+  content: url("../imagenes/fuentes/up.png");
+  position: absolute;
+  display: flex;
+  margin-top: -30px;
+  margin-left: 25%;
+  width: 50px;
+  cursor: pointer;
+  height: 30px;
+
   }
-  .contenDetPro .imgDet_Pro .icon-undo2:active{
-    transform: scale(1);
+  .contenDetPro .contenDatosDetProMain .imgDet_Pro >.carruselImagenes::after{
+  content: url("../imagenes/fuentes/down.png");
+  position: absolute;
+  margin-left: -60px;
+  top: 270px;
+  cursor: pointer;
+  padding-bottom:  -90px;
+  width: 50px;
+  height: 30px;
+
   }
-  .contenDetPro .imgDet_Pro img {
+  .contenDetPro .contenDatosDetProMain .imgDet_Pro img{
     width: 70%;
-    height: 80%;
+    height: auto;
   }
-  .contenDetPro .contenDatosDetProMain {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .contenDetPro .contenDatosDetPro {
+  .contenDetPro .contenDatosDetProMain .contenDatosDetPro {
     display: inline-block;
-    width: 80%;
+    width: 60%;
+    margin-left: 50px;
     height: inherit;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 50px;
     height: inherit;
   }
   .DetProNombre_pro {  
-  font-size: 20px;
-    height: 30px;    
-    font-family: "OpenSans-SemiBold",sans-serif!important;
-    border-bottom: solid 1px rgb(236, 233, 233);
+    font-size: 22px;
+    line-height: 35px;
+    font-weight: bold;
+    padding: 0;
+    color: #000;
+    font-family: "Gotham-Black",sans-serif;
   }
   .DetProMarca_pro {
     padding: 5px 20px;
@@ -289,18 +308,16 @@ padding: 5px 10px;
     text-align: left;
     font-size: 16px;
     padding: 10px 0;
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px rgb(212, 212, 212);
     color: #000;
     line-height: inherit;
     font-family: "OpenSans-Regular",sans-serif;
   }
-  .DetProPrecio_pro {
-    padding: 5px 20px;
-    text-align: left;
-    color: red;
-    font-weight: bold;
-    text-decoration: underline;
-    margin: 10px 0;
+  .DetProPrecio_pro,#DetProPrecio_pro {
+    font-size: 22px!important;
+    color: #e40521!important;
+    margin: 10px;
+    font-family: "Gotham-Bold",sans-serif!important;
   }
   .btnAdicionarCar {
     width: 180px;
@@ -327,7 +344,7 @@ padding: 5px 10px;
 .contenDetAddCar{
     display: flex;
     width: 100%;
-    border: solid 1px rgb(248, 247, 247);
+    border: solid 1px rgb(224, 224, 224);
     padding:8px;
     
 }
@@ -381,10 +398,12 @@ padding: 5px 10px;
 
 
 /*codigo para la ficha tecnica*/
-
+.ftbody{
+  text-align: center;
+}
 .conten_fTecnicaPro{
     width: 100%;
-    margin-top: 2%;   
+    margin-top: 30px; 
 }
 .conten_fTecnicaPro .ftcaberera{
     height: inherit;

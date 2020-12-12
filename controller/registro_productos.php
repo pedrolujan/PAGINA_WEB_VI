@@ -28,12 +28,13 @@ $user = new ApptivaDB();
 			$fecha_actual=date("dmyGi");
 			$n_aleatorio = rand(10, 99);			
 			$carpeta="../imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
-			$rutabd="imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
+			$rutabd="http://localhost/L&M.StoreTecnology/imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
+			$estado=true;
 			
 			$u = $user->insertar(
 				"productos",
 				"'$nombre','$descripcion','$marca','$precio','$categoria',
-				'$rutabd'");			
+				'$rutabd','$estado'");			
 			if ($u) {	
 				move_uploaded_file($tmp_name,$carpeta);
 				$areglo['exito'] = 'Registro corecto';

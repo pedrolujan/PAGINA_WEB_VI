@@ -67,32 +67,36 @@
 }
 /* //codigo para el logeo si desea comprar */
 #login-form{
-    width: 30%;
+    width: 400px;
+    padding: 15px 20px;
+}
+#login-form>img{
+    width: 50%;
 }
 #login-form h1{
     font-family: 'roboto';
-    color: #166FE5;
+    color: #166FE5;    
     font-weight: bold;
     display: block;
-    margin-bottom: 40px;
 }
 #login-form input{
    width: 90%;
    outline:none;
    border: solid #ccc 1px;
-   font-size: 17px;
-    padding: 14px 16px;
-    margin-bottom: 40px;
+   font-size: 14px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
     border-radius: 6px;
 }
 #login-form input:focus{
     border: solid 1.5px #166FE5;
 }
 #login-form .btnaccederM{
- width: 100%;
+ width: 60%;
  background-color: #166FE5;
  color: #fff;
  cursor: pointer;
+ margin-top: 20px;
  font-weight: bold;
 }
 #login-form .btnaccederM:hover{

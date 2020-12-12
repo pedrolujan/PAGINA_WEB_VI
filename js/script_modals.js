@@ -21,27 +21,26 @@ $(document).on('click', '.btnCerrar', cerrarConfirElimina);
 $(document).on('click', '.btn_cancelar', cerrarConfirElimina);
 
 /* codigo para elimminar producto */
-
 $(document).on('click', '.btn_eliminar', function () {
     var id = $("#txtObtId").val();
     $.ajax({
-        url: 'controller/eliminar_productos.php',
+        url: '../controller/eliminar_productos.php',
         data: {id},
          type: 'post',
          dataType: 'json'
         })
          .done(function correcto(resp) {
         if (resp.exito != undefined) {
-            $(".respuestas").html(resp.exito).fadeIn();
-            cerrarConfirElimina();
-            mostrarProductos();
+            document.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php" ;
+
         }
         if (resp.error != undefined) {
             $(".respuestas").html(resp.error).fadeIn();
-            cerrarConfirElimina();
+            /* cerrarConfirElimina(); */
+            
         }
     }).fail(function error(e) {
-        $(".respuestas").html("No se pudo eliminar el producto").fadeIn();
+        document.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php" ;
         cerrarConfirElimina();
     }).always(function final() {});
     setTimeout(function () {
@@ -53,7 +52,7 @@ $(document).on("click", ".btnActualizarPro", function (e) {
     e.preventDefault();
     var datos = new FormData($("#formularioActPro")[0]);
     $.ajax({
-        url: "controller/actualizar_productos.php",
+        url: "../controller/actualizar_productos.php",
         data: datos,
         type: "POST",
         dataType: "json",
@@ -67,7 +66,7 @@ $(document).on("click", ".btnActualizarPro", function (e) {
         }
         if (resp.exito !== undefined) {
             cerrarRegistroA();
-            $(".respuestas").html(resp.exito).fadeIn();
+           /*  $(".respuestas").html(resp.exito).fadeIn();
             let id = $("#capIdPro").val();
             $.ajax({
                 data: {id},
@@ -81,7 +80,7 @@ $(document).on("click", ".btnActualizarPro", function (e) {
                 error: function () {
                     alert("error")
                 }
-            });
+            }); */
         }
     })
     setTimeout(function () {
@@ -93,31 +92,30 @@ $(document).on("click", ".btnActualizarPro", function (e) {
 /* codigo para logearse si desea comprar a carrito */
 $(document).on("click", ".btnaccederM", function (e) {
     e.preventDefault();
-        var usuario = $("#txtusuario").val();
-        var clave = $("#txtpassword").val();
-        $.ajax({
-            data: {
-                usuario,
-                clave
-            },
-            url: "controller/validar_acceso.php",
-            type: "post",
-            dataType: "json",
-            async: true
-        }).done(function correcto(resp) {
-            if (resp.error !== undefined) {
-                $("#msgerror").fadeIn(100).text(resp.error).show();
-                $("#container").hide();
-                $("#msgexito").text(resp.exito).hide();
-                return false;
-            }
-            if(resp.exito !== undefined) {
-                $("#container").hide();
-                $("#msgerror").fadeIn(100).text(resp.error).hide();
-                setTimeout("location.href='Usuario.php'", 1000);
-                $(".respuestas").fadeIn(100).text(resp.exito).show();
-            }
-        })      
+    var usuario = $("#txtusuario").val();
+    var clave = $("#txtpassword").val();
+    $.ajax({
+        data: {
+            usuario,
+            clave
+        },
+        url: "http://localhost/L&M.StoreTecnology/controller/validar_acceso.php",
+        type: "post",
+        dataType: "json",
+        async: true
+    }).done(function correcto(resp) {
+        if(resp.exito!=undefined){
+            $("#salidaSMS").addClass("exito").text(resp.exito).show(300).delay(3000).hide(300);              
+            $("#salidaSMS").removeClass("error");
+            window.setTimeout(function(){
+                window.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php";
+     
+            }, 4000);
+        }else{
+            $("#salidaSMS").removeClass("exito");
+            $("#salidaSMS").addClass("error").fadeIn(100).text(resp.error).show(300).delay(3000).hide(300)
+        }      
+    })      
     
 })
 /*codigo para adicionar a carrito*/
@@ -128,20 +126,20 @@ $(document).on("click",".btnAdicionarCar",function(){
 })
 /*codigo para despachos */
 $(document).on("click",".bntConsulCostoPro",function(){
-    $(".ftbody").load("views/descripcion_producto.php");
+    $(".ftbody").load("descripcion_producto.php");
    
 })
 
  /*codigo para cargar la descripcion y ficha tecnica de los productos*/
 $(document).on("click",".btnCargaDescrip",function(){
-    $(".ftbody").load("views/descripcion_producto.php");
+    $(".ftbody").load("descripcion_producto.php");
    
 })
 $(document).on("click",".btnCargaFichaT",function(){
     /* capturo el id del producto luego cago la ficha tecnica y le envio el id */
     let element = $(this)[0].parentElement.parentElement;
-    var id = $(element).attr('capturoid');    
-    $(".ftbody").load("views/ficha_tecnicaProducto.php",function(){
+    var id = $(element).attr('capturoid');
+    $(".ftbody").load("ficha_tecnicaProducto.php",function(){
         mostrarFichaT(id);
         $("#txtidFT").val(id);
         
@@ -151,7 +149,7 @@ $(document).on("click",".btnCargaFichaT",function(){
 /* CODIGO PARA MANDAR EL ID DE PRODUCTO A LA VENTANA MODAL */
 $(document).on("click",".btnEditFT",function(){
    let id= $("#txtidFT").val();
-    $("#txtidFtModal").val(id);     
+    $("#txtidFtModal").val(id);   
   
 })
 /* cargo los datos de la descripcion de producto a la ventana modal */
@@ -191,7 +189,7 @@ setTimeout(function () {
 function mostrarFichaT(id){
     $.ajax({
         data:{id},
-        url: "controller/mostrar_fichaTecnica.php",
+        url: "../controller/mostrar_fichaTecnica.php",
         type: "post",
         datatype: "json",
         beforeSend: function () {},
@@ -251,7 +249,7 @@ $(document).on("click",".btnCargaDescrip",function(){
     /* capturo el id del producto luego cago la ficha tecnica y le envio el id */
     let element = $(this)[0].parentElement.parentElement;
     var id = $(element).attr('capturoid');    
-    $(".ftbody").load("views/descripcion_producto.php",function(){
+    $(".ftbody").load("descripcion_producto.php",function(){
         mostrarDEscripcionPro(id);
         $("#txtidDescripPro").val(id);
         
@@ -273,7 +271,7 @@ $(document).ready(function () {
         var datos = new FormData($("#form-DescripcionProducto")[0]);
        let id= $("#txtidDescripProModal").val();
         $.ajax({
-            url: "controller/registroDescripcion_productos.php",
+            url: "../controller/registroDescripcion_productos.php",
             data: datos,
             type: "POST",
             dataType: "json",
@@ -297,14 +295,13 @@ $(document).ready(function () {
 })
 /* codigo para mostrar descripcion  de producto */
 function mostrarDEscripcionPro(id){
-    
     $.ajax({
         data:{id},
-        url: "controller/mostrarDescripcion_producto.php",
+        url: "../controller/mostrarDescripcion_producto.php",
         type: "post",
         datatype: "json",
         beforeSend: function () {},
-        success: function (response) {    
+        success: function (response) { 
             let datosRes = JSON.parse(response);
             datosRes.exito.forEach(recor => {				
                 $(".imagen1DescripPro").attr("src",`${recor.fotoUno_descripPro}`);

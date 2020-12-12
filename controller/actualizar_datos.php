@@ -47,16 +47,16 @@ if(isset($_POST["txtid"])){
 		}
 	}elseif(isset($_SESSION["adminLogeado"])){
 		$usuLogeado=$_SESSION["adminLogeado"];
-		$idVar="administrador.id_admin=";
-		$tabla="administrador";
+		$idVar="usuarios.id_usu=";
+		$tabla="usuarios";
 		if(empty($name) || !in_array($imagenUsu["type"],$tipoImagen)){
-			$datos="nombre_admin='".$nombre."',apellido_admin='".$apellido."', dni_admin='".$dni."', telefono_admin='".$telefono."', 
-			pais_admin='".$pais."', provincia_admin='".$provincia."', correo_admin='".$correo."', imagen_admin='".$imagenUsuActual."'";
+			$datos="nombre_usu='".$nombre."',apellido_usu='".$apellido."', dni_usu='".$dni."', telefono_usu='".$telefono."', 
+			pais_usu='".$pais."', provincia_usu='".$provincia."', correo_usu='".$correo."', imagen_usu='".$imagenUsuActual."'";
 			$aux.="pero no la imagen";
 		}else{
-			$datos="nombre_admin='".$nombre."',apellido_admin='".$apellido."', dni_admin='".$dni."', telefono_admin='".$telefono."', 
-			pais_admin='".$pais."', provincia_admin='".$provincia."', correo_admin='".$correo."', imagen_admin='".$rutabd."'";
-			$aux.="";
+			$datos="nombre_usu='".$nombre."',apellido_usu='".$apellido."', dni_usu='".$dni."', telefono_usu='".$telefono."', 
+				pais_usu='".$pais."', provincia_usu='".$provincia."', correo_usu='".$correo."', imagen_usu='".$rutabd."'";
+				$aux.="";
 		}
 	}
 

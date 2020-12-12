@@ -64,6 +64,7 @@ $.ajax({
 $(document).on("click",".simpleCart_remove",function(){
   let element = $(this)[0].parentElement.parentElement;
   let id= $(element).children(".item-idpro").html();
+  alert(id);
   $.ajax({
     type:'post',
      cache:false,

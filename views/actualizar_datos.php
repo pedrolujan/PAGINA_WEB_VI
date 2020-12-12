@@ -11,16 +11,16 @@
  $imagen;
     $user=new ApptivaDB();
     if(isset($_SESSION['adminLogeado'])){
-        $us=$user->buscar("administrador","administrador.id_admin=".$_SESSION['adminLogeado']); 
-        foreach ($us as $key ){  
-        $id=$key['id_admin'];
-         $nombre=$key['nombre_admin'];
-         $apellido=$key['apellido_admin'];
-         $dni=$key['dni_admin'];
-         $telefono=$key['telefono_admin'];
-         $coreo=$key['correo_admin'];
-         $imagen=$key['imagen_admin'];
-        }
+        $usu=$user->buscar("usuarios","usuarios.id_usu=".$_SESSION['adminLogeado']);   
+        foreach ($usu as $key ){  
+            $id=$key['id_usu'];
+            $nombre=$key['nombre_usu'];
+            $apellido=$key['apellido_usu'];
+            $dni=$key['dni_usu'];
+            $telefono=$key['telefono_usu'];
+            $coreo=$key['correo_usu'];
+            $imagen=$key['imagen_usu'];
+          }
     }elseif(isset($_SESSION['usuarioLogeado'])){
         $usu=$user->buscar("usuarios","usuarios.id_usu=".$_SESSION['usuarioLogeado']);   
         foreach ($usu as $key ){  
@@ -47,7 +47,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="fonts/fonts/style.css">
-    <link rel="stylesheet" href="css/stilos_login.css">
+    <link rel="stylesheet" href="../css/stilos_login.css">
     <link rel="stylesheet" href="fonts/style.css">
 </head>
 
@@ -59,7 +59,7 @@
                     <?php 
                     if(file_exists("../".$imagen)){
                     ?>
-                    <img src="<?php echo $imagen; ?>" width="150"
+                    <img src="../<?php echo $imagen; ?>" width="150"
                         class="imgcargarimagen" />
                     <?php }else{  ?>
                     <img src="imagenes/usuarioblanco.jpg" width="150" class="imgcargarimagen" />

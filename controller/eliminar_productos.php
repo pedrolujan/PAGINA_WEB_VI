@@ -4,8 +4,9 @@ $id=$_POST['id'];
 if(!empty($id)){
 	$activ=new ApptivaDB();
 	$tabla=  "productos";
-		$condicion="productos.id_pro='$id'";		
-		$sql=$activ->borrar($tabla,$condicion,);
+		$datos="productos.estado='0'";		
+		$sql=$activ->actualizar($tabla,$datos,"productos.id_pro=".$id);
+		
 		if($sql){
 			$repuesta["exito"]="Se elimino el producto";
 		}else{

@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="http://localhost/PAGINA_WEB_VI/css/estilos_modals.css">
-<link rel="stylesheet" href="http://localhost/PAGINA_WEB_VI/js/jquery.modal.min.css">
+<link rel="stylesheet" href="js/jquery.modal.min.css">
+<link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilos_modals.css">
 
 
 <div class="modalActualizaPro" id="modalActualizaPro"> </div>
@@ -9,7 +9,7 @@
             <div class="btnCerrar">X</div>
             <h3 id="msg">Actualiza producto</h3>
             <div class="contenFotoAct_prod">
-                <input type="hidden" name="txtimagen" id="txtimagen" value="<?php echo $imagen ?>">
+                <input type="text" name="txtimagen" id="txtimagen" value="">
                 <input type="file" name="imagenActProducto" id="imagenActProducto" style="display: none;">
                 <img src="" alt="" srcset="" id="acaFotoActProducto">
                 <div class="btnSubeImgActPro" id="btnSubeImgActPro"><span class="icon-camera"></span></div>
@@ -99,11 +99,12 @@
 
 <!-- codigo modal para el logeo del usuario -->
 <form action="#" method="post" id="login-form" class="modal">
-    <h1>Inicia session</h1>
+    <h1></h1>
+    <img src="imagenes/usuarioblanco.jpg" alt="" srcset="">
     <input type="text" name="txtusuario" id="txtusuario" Placeholder="Ingese Usuario"><br>
     <input type="password" name="txtpassword" id="txtpassword" Placeholder="•••••"><br>
+    <div class="exito" id="salidaSMS"></div>
     <input type="submit" class="btnaccederM" value="ACCEDER"><br>
-    <div class="respuestas respLogin2"></div>
     <a href="#">¿No tienes Cuenta/ Crear Cuenta?</a>
 </form>
 <!-- codigo modal consultar direccion para recojo de productos -->
@@ -138,7 +139,7 @@
 
 
 
+<script src="http://localhost/L&M.StoreTecnology/js/jquery.modal.min.js"></script>
 
-<script src="http://localhost/PAGINA_WEB_VI/js/script_modals.js"></script><!-- 
+<script src="http://localhost/L&M.StoreTecnology/js/script_modals.js"></script><!-- 
 <script src="js/jquery-3.5.1.min.js"></script> -->
-<script src="http://localhost/PAGINA_WEB_VI/js/jquery.modal.min.js"></script>

@@ -13,15 +13,43 @@ if(isset($_POST['search']) && ($_POST['search']!="")){
 	foreach ($u as $v)
 	if(file_exists("../".$v['imagen_pro'])){
 		
-	$html.="<div class='contenProductos' capturoid=".$v['id_pro']."><div class='imgPro_buscados'><img src=".$v['imagen_pro']." class='imagenMosProductos' ></div>
-	<div class='contenDatos'><div class='contenDatosProducto'><label class='nombre_pro'>".$v["nombre_pro"]."</label></br></div>
-						<div class='marca_pro'><label class='marca_pro'>".$v["marca_pro"]."</label></br></div>
-						<div class='precio_pro'><label>S/ ".$v["precio_pro"]."</label></div></div></div>"; 
+	$html.="<div class='contenProductos' capturoid=".$v['id_pro'].">
+	<div class='contenImgProBusq'>
+		<div class='imgPro_buscados'>
+			<img src='".$v['imagen_pro']."' class='imagenMosProductos' >
+		</div>
+	</div>
+	<div class='contenDatos'>
+		<div class='contenDatosProducto'>
+			<label class='nombre_pro'>".$v["nombre_pro"]."</label></br>
+		</div>
+		<div class='marca_pro'>
+			<label class='marca_pro'>".$v["marca_pro"]."</label></br>
+		</div>
+		<div class='precio_pro'>
+			<label>S/ ".$v["precio_pro"]."</label>
+		</div>
+	</div>
+</div>"; 
 	}else{
-		$html.="<div class='contenProductos'><div class='imgPro_buscados'><img src=imagenes/usuarioblanco.jpg class='imagenMosProductos' ></div>
-		<div class='contenDatos'><div class='contenDatosProducto'><label class='nombre_pro'>".$v["nombre_pro"]."</label></br></div>
-						<div class='marca_pro'><label class='marca_pro'>".$v["marca_pro"]."</label></br></div>
-						<div class='precio_pro'><label>".$v["precio_pro"]."</label></div></div></div>"; 
+		$html.="<div class='contenProductos' capturoid=".$v['id_pro'].">
+		<div class='contenImgProBusq'>
+			<div class='imgPro_buscados'>
+				<img src='".$v['imagen_pro']."' class='imagenMosProductos' >
+			</div>
+		</div>
+		<div class='contenDatos'>
+			<div class='contenDatosProducto'>
+				<label class='nombre_pro'>".$v["nombre_pro"]."</label></br>
+			</div>
+			<div class='marca_pro'>
+				<label class='marca_pro'>".$v["marca_pro"]."</label></br>
+			</div>
+			<div class='precio_pro'>
+				<label>S/ ".$v["precio_pro"]."</label>
+			</div>
+		</div>
+	</div>"; 
 
 	}
 }
@@ -31,15 +59,43 @@ if(isset($_POST['search']) && ($_POST['search']!="")){
 	foreach ($u as $v)
 	if(file_exists("../".$v['imagen_pro'])){
 		
-	$html.="<div class='contenProductos' capturoid=".$v['id_pro']."><div class='imgPro_buscados'><img src=".$v['imagen_pro']." class='imagenMosProductos' ></div>
-	<div class='contenDatos'><div class='contenDatosProducto'><label class='nombre_pro'>".$v["nombre_pro"]."</label></br></div>
-						<div class='marca_pro'><label class='marca_pro'>".$v["marca_pro"]."</label></br></div>
-						<div class='precio_pro'><label>S/ ".$v["precio_pro"]."</label></div></div></div>"; 
+	$html.="<div class='contenProductos' capturoid=".$v['id_pro'].">
+	<div class='contenImgProBusq'>
+		<div class='imgPro_buscados'>
+			<img src='".$v['imagen_pro']."' class='imagenMosProductos' >
+		</div>
+	</div>
+	<div class='contenDatos'>
+		<div class='contenDatosProducto'>
+			<label class='nombre_pro'>".$v["nombre_pro"]."</label></br>
+		</div>
+		<div class='marca_pro'>
+			<label class='marca_pro'>".$v["marca_pro"]."</label></br>
+		</div>
+		<div class='precio_pro'>
+			<label>S/ ".$v["precio_pro"]."</label>
+		</div>
+	</div>
+</div>"; 
 	}else{
-		$html.="<div class='contenProductos'><div class='imgPro_buscados'><img src=imagenes/usuarioblanco.jpg class='imagenMosProductos' ></div>
-		<div class='contenDatos'><div class='contenDatosProducto'><label class='nombre_pro'>".$v["nombre_pro"]."</label></br></div>
-						<div class='marca_pro'><label class='marca_pro'>".$v["marca_pro"]."</label></br></div>
-						<div class='precio_pro'><label>".$v["precio_pro"]."</label></div></div></div>"; 
+		$html.="<div class='contenProductos' capturoid=".$v['id_pro'].">
+		<div class='contenImgProBusq'>
+			<div class='imgPro_buscados'>
+				<img src='".$v['imagen_pro']."' class='imagenMosProductos' >
+			</div>
+		</div>
+		<div class='contenDatos'>
+			<div class='contenDatosProducto'>
+				<label class='nombre_pro'>".$v["nombre_pro"]."</label></br>
+			</div>
+			<div class='marca_pro'>
+				<label class='marca_pro'>".$v["marca_pro"]."</label></br>
+			</div>
+			<div class='precio_pro'>
+				<label>S/ ".$v["precio_pro"]."</label>
+			</div>
+		</div>
+	</div>"; 
 
 	}
 }

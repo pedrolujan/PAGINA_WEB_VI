@@ -65,13 +65,15 @@ background-color: rgb(58, 57, 57);
 }
 .cantenInfoIndex .carInfo{
     font-size: 100px;
-    color: #05381c;
+    color: #f8f8f8;
+    text-shadow: #000 2px 2px 8px;
     font-weight: bold;
     line-height: 90px;
 }
 .cantenInfoIndex .subCarInfo{
     font-size: 40px;
-    color: #328557;
+    color: #000;
+    text-shadow: #fff 2px 2px 8px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -84,6 +86,16 @@ background-color: rgb(58, 57, 57);
   border-radius: 50px;
   
   cursor: pointer;  
+}
+.masUevo{
+    background-color: #167240;
+    margin-top: 20px;
+    width: 100%;
+}
+.masUevo p{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
 }
 /* .cantenInfoIndex .contenBotones button{
     background-color: rgb(45, 172, 67);
