@@ -1,308 +1,317 @@
-
-.modalRegpro,.modalActualizaPro{
-    position: fixed;
-    background:rgb(0, 0, 0,0.6);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: none;
-    left: 0;
-    z-index: 100;
+.modalRegpro,
+.modalActualizaPro {
+  position: fixed;
+  background: rgb(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: none;
+  left: 0;
+  z-index: 100;
 }
-.conten_regProG,.conten_ActualizaProG{
-    display: none;
-    
-    
+.conten_regProG,
+.conten_ActualizaProG {
+  display: none;
 }
-.conten_regPro,.conten_ActualizaPro{
-    width: 80%;
-    height: 400px;
-    position: fixed;  
-    display: flex;
-    left: calc(100% - 90%);
-    justify-content: center;
-    top: 100px;
-    padding: 5% 10px 10px 10px;
-    border: solid 2px #ccc;
-    background-color: #ffffff;
-    border-radius: 1em;
-    z-index: 202;
+.conten_regPro,
+.conten_ActualizaPro {
+  width: 80%;
+  height: 400px;
+  position: fixed;
+  display: flex;
+  left: calc(100% - 90%);
+  justify-content: center;
+  top: 100px;
+  padding: 5% 10px 10px 10px;
+  border: solid 2px #ccc;
+  background-color: #ffffff;
+  border-radius: 1em;
+  z-index: 202;
 }
-.conten_regPro h3,.conten_ActualizaPro h3{
-    position: absolute;
-    margin: auto;
-    color: #000000;
-    font-size: 30px;
-    top: 4%;
+.conten_regPro h3,
+.conten_ActualizaPro h3 {
+  position: absolute;
+  margin: auto;
+  color: #000000;
+  font-size: 30px;
+  top: 4%;
 }
-.conten_regPro .btnCerrar,.conten_ActualizaPro .btnCerrar{
-    width: 25px;
-    height: 25px;
-    display: flex;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    padding: 5px;
-    background-color: #CF514F;
-    color: #fff;
-    font-weight: bold;
+.conten_regPro .btnCerrar,
+.conten_ActualizaPro .btnCerrar {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #cf514f;
+  color: #fff;
+  font-weight: bold;
 }
-.contenFoto_prod,.contenFotoAct_prod{
-    width: 40%;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0px 40px 20px;
+.contenFoto_prod,
+.contenFotoAct_prod {
+  width: 40%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 40px 20px;
 }
-.contenFoto_prod img,.contenFotoAct_prod img{
-    width: 350px;
-    border-radius: 5px;
-    height: 350px;
+.contenFoto_prod img,
+.contenFotoAct_prod img {
+  width: 350px;
+  border-radius: 5px;
+  height: 350px;
 }
-.contenFoto_prod .btnSubeImgPro,.contenFotoAct_prod .btnSubeImgActPro{
-    width: 350px;
-    position: relative;
-    display: flex;
-    font-size: 40px;
-    justify-content: center;
-    align-items: center;
-    bottom: 24.3%;
-    border-radius: 0px 0px 5px 5px;
-    padding: 20px;
-    color: #ccc;
-    cursor: pointer;
-    box-sizing: border-box;
-    background-color: rgb(0,0, 0,.5);
+.contenFoto_prod .btnSubeImgPro,
+.contenFotoAct_prod .btnSubeImgActPro {
+  width: 350px;
+  position: relative;
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  bottom: 24.3%;
+  border-radius: 0px 0px 5px 5px;
+  padding: 20px;
+  color: #ccc;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0, 0.5);
 }
-.contenFoto_prod .btnSubeImgPro:hover,.contenFotoAct_prod .btnSubeImgActPro:hover{
-    background-color: rgb(0,0, 0,.7);
-    color: rgb(233, 220, 220);
+.contenFoto_prod .btnSubeImgPro:hover,
+.contenFotoAct_prod .btnSubeImgActPro:hover {
+  background-color: rgb(0, 0, 0, 0.7);
+  color: rgb(233, 220, 220);
 }
-.contenFoto_prod .btnSubeImgPro:hover span, .contenFotoAct_prod .btnSubeImgActPro:hover span{
-    transform: scale(1.2);
+.contenFoto_prod .btnSubeImgPro:hover span,
+.contenFotoAct_prod .btnSubeImgActPro:hover span {
+  transform: scale(1.2);
 }
-.contenFoto_prod .btnSubeImgPro:active span,.contenFotoAct_prod .btnSubeImgActPro:active span{
-    transform: scale(0.8);
+.contenFoto_prod .btnSubeImgPro:active span,
+.contenFotoAct_prod .btnSubeImgActPro:active span {
+  transform: scale(0.8);
 }
 /* actualizar producto */
 
-.contenFoto_prod .btnSubeImgActPro{
-    width: 350px;
-    position: relative;
-    display: flex;
-    font-size: 40px;
-    justify-content: center;
-    align-items: center;
-    bottom: 21.3%;
-    border-radius: 0px 0px 5px 5px;
-    padding: 20px;
-    color: #ccc;
-    cursor: pointer;
-    box-sizing: border-box;
-    background-color: rgb(0,0, 0,.5);
+.contenFoto_prod .btnSubeImgActPro {
+  width: 350px;
+  position: relative;
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  bottom: 21.3%;
+  border-radius: 0px 0px 5px 5px;
+  padding: 20px;
+  color: #ccc;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0, 0.5);
 }
-.contenFoto_prod .btnSubeImgActPro:hover{
-    background-color: rgb(0,0, 0,.7);
-    color: rgb(233, 220, 220);
+.contenFoto_prod .btnSubeImgActPro:hover {
+  background-color: rgb(0, 0, 0, 0.7);
+  color: rgb(233, 220, 220);
 }
-.contenFoto_prod .btnSubeImgActPro:hover span{
-    transform: scale(1.2);
+.contenFoto_prod .btnSubeImgActPro:hover span {
+  transform: scale(1.2);
 }
-.contenFoto_prod .btnSubeImgActPro:active span{
-    transform: scale(0.8);
+.contenFoto_prod .btnSubeImgActPro:active span {
+  transform: scale(0.8);
 }
-.contenCajas{
-    color: #000000;
-    display: flex;
-    justify-content: center;
-    width: 60%;
+.contenCajas {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  width: 60%;
 }
-.contenInputs{
-    width: 60%;
+.contenInputs {
+  width: 60%;
 }
-.contenCajas input{
-width: 100%;
-height: 30px;
-border-style: none;
-border-bottom:solid 1px #000;
-outline: 0px;
-background: none;
-margin: 10px 0px;
-font-size: 16px;
-font-weight: bold;
-padding: 5px 10px;
+.contenCajas input {
+  width: 100%;
+  height: 30px;
+  border-style: none;
+  border-bottom: solid 1px #000;
+  outline: 0px;
+  background: none;
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
 }
-.contenCajas textarea{
-    width: 100%;
-    resize: none;
-    height: 120px;    
-    margin: 10px 0px;
-    font-size: 16px;
-    padding: 5px;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    background: none;
-    border-bottom: solid 1px #000;
+.contenCajas textarea {
+  width: 100%;
+  resize: none;
+  height: 120px;
+  margin: 10px 0px;
+  font-size: 16px;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: solid 1px #000;
 }
-.precio-cat{
-    display: flex;
+.precio-cat {
+  display: flex;
 }
-.precio-cat select, .precio-cat input{
-    width: 50%;
-    height: 30px;
-    outline: 0px;
-    background: none;
-    margin: 10px 0px;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px 10px;
+.precio-cat select,
+.precio-cat input {
+  width: 50%;
+  height: 30px;
+  outline: 0px;
+  background: none;
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
 }
-.precio-cat select{
-    margin-left: 20px;
+.precio-cat select {
+  margin-left: 20px;
 }
-.btnRegistrarPro{
-    width: 150px;
-    background: #59BA5B;
-    color: #ffffff;
-    border: none;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-    padding: 10px;
-    outline: none;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
+.btnRegistrarPro {
+  width: 150px;
+  background: #59ba5b;
+  color: #ffffff;
+  border: none;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  padding: 10px;
+  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.icon-checkmark{
-    margin-right: 10px;
-    color: #ccc;
-}
-
-.btnRegistrarPro:hover{
-    background: #2b812c;
-}
-.btnRegistrarPro:active{
-    transform: scale(0.9);
-}
-.btnAbreActualizaPro,.btnAbreEliminarPro{
-    border: none;
-    background: none;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 20px;
-    color: #fff;
-    font-weight: bold;
-    box-sizing: border-box;
-    background-color: #079243;
-    cursor: pointer;
-    outline: none;
-}
-.btnAbreActualizaPro{
-    padding: 10px 30px;
-}
-.btnAbreEliminarPro{     
-    background-color: #D9534F;
-    margin-left: 10%;
-}
-.btnAbreActualizaPro:hover,.btnAbreEliminarPro:hover{
-    transform: scale(1.05);
-}
-.btnAbreActualizaPro span,.btnAbreEliminarPro span{
-    width: 20px;
-    margin-right: 10px;
-    color: rgb(228, 226, 226);
+.icon-checkmark {
+  margin-right: 10px;
+  color: #ccc;
 }
 
+.btnRegistrarPro:hover {
+  background: #2b812c;
+}
+.btnRegistrarPro:active {
+  transform: scale(0.9);
+}
+.btnAbreActualizaPro,
+.btnAbreEliminarPro {
+  border: none;
+  background: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: #079243;
+  cursor: pointer;
+  outline: none;
+}
+.btnAbreActualizaPro {
+  padding: 10px 30px;
+}
+.btnAbreEliminarPro {
+  background-color: #d9534f;
+  margin-left: 10%;
+}
+.btnAbreActualizaPro:hover,
+.btnAbreEliminarPro:hover {
+  transform: scale(1.05);
+}
+.btnAbreActualizaPro span,
+.btnAbreEliminarPro span {
+  width: 20px;
+  margin-right: 10px;
+  color: rgb(228, 226, 226);
+}
 
 /* detalles del producto */
 .contenDetPro {
-    display: flex;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    justify-content: space-around;
-  }
-  .contenDatosDetProMain{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom:  solid 1px #ccc;
-  }
-  .contenDetPro .contenDatosDetProMain .imgDet_Pro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    border-right: solid 1px #ccc;
-    padding: 20px;
-  }
-  .contenDetPro .contenDatosDetProMain .imgDet_Pro >.carruselImagenes{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+  justify-content: space-around;
+}
+.contenDatosDetProMain {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.contenDetPro .contenDatosDetProMain .imgDet_Pro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+}
+.contenDetPro .contenDatosDetProMain .imgDet_Pro > .item_image {
+  width: 400px;
+  height: 400px;
+  object-fit: scale-down;
+}
+.contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes {
   background-color: blue;
-  padding: 5px 0px;
+  padding: 5px;
   position: absolute;
+  overflow: auto;
   display: block;
   left: 0;
-  width: 100px;
+  width: 70px;
+  height: 210px;
   text-align: center;
-  }
-  .contenDetPro .contenDatosDetProMain .imgDet_Pro >.carruselImagenes::before{
-  content: url("../imagenes/fuentes/up.png");
-  position: absolute;
-  display: flex;
-  margin-top: -30px;
-  margin-left: 25%;
-  width: 50px;
+}
+.contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes::-webkit-scrollbar{
+  display: none;
+}
+.contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes img{
   cursor: pointer;
-  height: 30px;
-
-  }
-  .contenDetPro .contenDatosDetProMain .imgDet_Pro >.carruselImagenes::after{
-  content: url("../imagenes/fuentes/down.png");
-  position: absolute;
-  margin-left: -60px;
-  top: 270px;
-  cursor: pointer;
-  padding-bottom:  -90px;
-  width: 50px;
-  height: 30px;
-
-  }
-  .contenDetPro .contenDatosDetProMain .imgDet_Pro img{
-    width: 70%;
-    height: auto;
-  }
-  .contenDetPro .contenDatosDetProMain .contenDatosDetPro {
-    display: inline-block;
-    width: 60%;
-    margin-left: 50px;
-    height: inherit;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    height: inherit;
-  }
-  .DetProNombre_pro {  
-    font-size: 22px;
-    line-height: 35px;
-    font-weight: bold;
-    padding: 0;
-    color: #000;
-    font-family: "Gotham-Black",sans-serif;
-  }
-  .DetProMarca_pro {
-    padding: 5px 20px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    margin: 10px 0;
-    font-size: 18px;
-  }
+}
+.contenDetPro .contenDatosDetProMain .contenDatosDetPro {
+  display: inline-block;
+  width: 60%;
+  margin-left: 50px;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  flex-direction: initial;
+  padding: 10px;
+  margin: 10px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  height: inherit;
+  border-left: solid 1px rgb(218, 218, 218);
+}
+.DetProNombre_pro {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 70%;
+  line-height: 35px;
+  margin-bottom: -40px;
+  padding: 0;
+  color: rgb(94, 92, 92);
+}
+.DetProMarca_pro {
+  padding: 5px 20px;
+  text-align: left;
+  margin-top: ;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(94, 92, 92);
+  font-size: 18px;
+}
+.DMarcaProducto{
+  margin-top: 50px;
+}
   .DetProDescrip_pro {
     width: 250px;
     text-align: left;
@@ -313,106 +322,116 @@ padding: 5px 10px;
     line-height: inherit;
     font-family: "OpenSans-Regular",sans-serif;
   }
-  .DetProPrecio_pro,#DetProPrecio_pro {
-    font-size: 22px!important;
-    color: #e40521!important;
-    margin: 10px;
-    font-family: "Gotham-Bold",sans-serif!important;
-  }
-  .btnAdicionarCar {
-    width: 180px;
-    background: #59ba5b;
-    color: #ffffff;
-    border: none;
-    text-decoration: none;
-    float: right;
-    padding: 10px;
-    outline: none;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .btnAdicionarCar:hover {
-    transform: scale(1.05);
-  }
-  .btnAdicionarCar:active {
-    transform: scale(0.95);
-  }
-  
+.DetProPrecio_pro,
+#DetProPrecio_pro {
+  font-size: 22px !important;
+  color: #e40521 !important;
+  margin: 10px;
+  font-family: "Gotham-Bold", sans-serif !important;
+}
+.btnAdicionarCar {
+  width: 180px;
+  background: #595fba;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  float: right;
+  padding: 10px;
+  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btnAdicionarCar:hover {
+  transform: scale(1.05);
+}
+.btnAdicionarCar:active {
+  transform: scale(0.95);
+}
+
 /*codigo para delibery y despacho en tienda*/
-.contenDetAddCar{
-    display: flex;
-    width: 100%;
-    border: solid 1px rgb(224, 224, 224);
-    padding:8px;
-    
+.contenDetAddCar {
+  width: 95%;
+  padding: 8px;
 }
-.contenDetAddCar .contenAddDesp{
-    width: 60%;
-    text-align: left;
+.contenDetAddCar .contenBtnAdd {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px;
 }
-
-.contenDetAddCar .contenAddDesp .truck-title{
-   margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.contenDetAddCar .contenBtnAdd a {
+  margin-left: 20px;
 }
-.contenDetAddCar .contenAddDesp .truck-title label{
-    font-size: .75em;
-    height: inherit;
-    display: block;
-    padding: 5px;
-}
-.contenDetAddCar .contenAddDesp .truck-title .estadoStok{
-    color: rgb(8, 138, 8);
-    font-size: .74em;
-}
-.contenDetAddCar .contenAddDesp .truck-title .imgDelivery{
-    width: 60px;
-    height: 60px;
-}
-.contenDetAddCar .contenBtnAdd{
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-
-.contenDetAddCar #cantidadPro{
-    width: 30px;
-    height: 20px;
-}
-.contenDetAddCar .contenAddDesp .truck-title .bntConsulCostoPro{
-    border: none;
-    background-color: rgb(12, 45, 155);
-    font-size: 12px;
-    color: #fff;
-    outline: none;
-    height: 70%;
-    text-decoration: none;
-    padding: 5px 15px;
-    border-radius: 20px;
+.contenDetAddCar .contenAddDesp {
+  width: 100%;
+  border: solid 1px rgb(236, 235, 235);
+  text-align: left;
+  border-radius: 10px;
+  padding: 8px;
 }
 
+.contenDetAddCar .contenAddDesp .truck-title {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contenDetAddCar .contenAddDesp .truck-title label {
+  font-size: 0.75em;
+  height: inherit;
+  display: block;
+  padding: 5px;
+}
+.contenDetAddCar .contenAddDesp .truck-title .estadoStok {
+  color: rgb(8, 138, 8);
+  font-size: 0.74em;
+}
+.contenDetAddCar .contenAddDesp .truck-title .imgDelivery {
+  width: 60px;
+  height: 60px;
+}
+
+.contenDetAddCar #cantidadPro {
+  width: 30px;
+  height: 20px;
+}
+.contenDetAddCar .contenAddDesp .truck-title .bntConsulCostoPro {
+  border: none;
+  background-color: rgb(12, 45, 155);
+  font-size: 0.7em;
+  color: #fff;
+  outline: none;
+  width: 105px;
+  height: auto;
+  text-align: center;
+  line-height: 0.75em;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 20px;
+}
 
 /*codigo para la ficha tecnica*/
-.ftbody{
+.ftbody {
   text-align: center;
+  margin-top: 30px;
 }
-.conten_fTecnicaPro{
-    width: 100%;
-    margin-top: 30px; 
+.contenDetPro > .conten_fTecnicaPro {
+  width: 100%;
 }
-.conten_fTecnicaPro .ftcaberera{
-    height: inherit;
-    display: flex;
-    justify-content: left;
-    align-items: center;    
-    
+.contenDetPro.conten_fTecnicaPro .ftcaberera {
+  height: inherit;
+  position: fixed;
+  display: block;
+  background-color: #a0ba59;
+  justify-content: left;
+  align-items: center;
+  margin-top: 70px;
 }
-.conten_fTecnicaPro .ftcaberera button{
+.contenDetPro .conten_fTecnicaPro .ftcaberera > button {
   border: none;
   background: none;
   font-size: 14px;
@@ -426,171 +445,188 @@ padding: 5px 10px;
   padding: 10px;
 }
 
-.conten_fTecnicaPro .contenFTPAcciones{
- padding: 5px;
- box-sizing: border-box;
- display: flex;
- justify-content: flex-end;
- overflow: auto; 
- border-top: 1px solid rgb(235, 228, 228);
- border-bottom: 1px solid rgb(243, 238, 238);
+.conten_fTecnicaPro .contenFTPAcciones {
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  overflow: auto;
+  border-top: 1px solid rgb(235, 228, 228);
+  border-bottom: 1px solid rgb(243, 238, 238);
 }
-.conten_fTecnicaPro .contenFTPAcciones a{
-  background-color:#D9DFE6;
+.conten_fTecnicaPro .contenFTPAcciones a {
+  background-color: #d9dfe6;
   padding: 3px;
   margin-right: 30px;
   border-radius: 50%;
   border: #ccc solid 2px;
 }
-.conten_fTecnicaPro .contenFTPAcciones a:hover{
-  background-color: #F6F7F8;
+.conten_fTecnicaPro .contenFTPAcciones a:hover {
+  background-color: #f6f7f8;
 }
-.conten_fTecnicaPro .contenFTPAcciones a img{
+.conten_fTecnicaPro .contenFTPAcciones a img {
   width: 45px;
   height: 40px;
   padding: 2px;
   box-sizing: border-box;
 }
-.imagen1DescripPro, .imagen2DescripPro{
+.imagen1DescripPro,
+.imagen2DescripPro {
   width: 30%;
+  margin-top: 0px;
 }
-.conten-ficha-tecnica{
-clear: both;
-font-size: 12px;
-padding: 5px 0px;
-color: #000;
-line-height: 22px;
+.conten-ficha-tecnica {
+  clear: both;
+  font-size: 12px;
+  padding: 5px 0px;
+  color: #000;
+  line-height: 22px;
 }
-.conten-ficha-tecnica ul{
-text-align: left;
-padding: 0px;
+.conten-ficha-tecnica ul {
+  text-align: left;
+  padding: 0px;
 }
-.conten-ficha-tecnica ul li{
+.conten-ficha-tecnica ul li {
   margin-top: 10px;
   font-style: none;
   display: flex;
-  }
-.conten-ficha-tecnica ul li:nth-child(2n){
-   background: rgba(0,0,0,.05);;
 }
-.conten-ficha-tecnica ul li span{
+.conten-ficha-tecnica ul li:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.05);
+}
+.conten-ficha-tecnica ul li span {
   width: 35%;
   display: block;
   padding: 10px 20px;
   box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .contenDetAddCar {
+    width: 100%;
+    border: solid 1px rgb(224, 224, 224);
+    padding: 8px;
+    background-color: teal;
   }
-@media screen and (max-width: 700px){
-    .btnAbreActualizaPro,.btnAbreEliminarPro{
-        border: none;
-        background: none;
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 20px;
-        color: #fff;
-        font-weight: bold;
-        box-sizing: border-box;
-        background-color: #079243;
-        cursor: pointer;
-        outline: none;
-    }
-    .btnAbreActualizaPro{
-        padding: 10px 30px;
-    }
-    .btnAbreEliminarPro{     
-        background-color: #D9534F;
-        
-    }
-    .contenDetPro {
-        display: block;
-        width: 100%;
-        border:none;
-        height: auto;
-        border: solid 1px #ccc;
-        justify-content: space-around;
-      }
-      .contenDetPro .imgDet_Pro {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        border:none;
-        padding: 20px;
-      }
-     
-      .contenDetPro .imgDet_Pro .icon-undo2:hover{
-        transform: scale(1.09);
-      }
-      .contenDetPro .imgDet_Pro .icon-undo2:active{
-        transform: scale(1);
-      }
-      .contenDetPro .imgDet_Pro img {
-        width: 70%;
-        height: 80%;
-      }
-      .contenDetPro .contenDatosDetProMain {
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .contenDetPro .contenDatosDetPro {
-        display: inline-block;
-        width: 80%;
-        height: inherit;
-        align-items: center;
-        justify-content: center;
-        padding: 5px;
-        height: inherit;
-      }
-      .DetProNombre_pro {
-        padding: 1px;
-        font-size: 19px;
-        width: 100%;
-        font-weight: bold;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        margin-bottom: 20px;
-        padding: 5px 0;
-        box-sizing: border-box;
-        border-bottom: solid 1px #ccc;
-      }
-      .DetProMarca_pro {
-        padding: 5px 20px;
-        font-family: Georgia, "Times New Roman", Times, serif;
-        margin: 10px 0;
-        font-size: 18px;
-      }
-      .DetProDescrip_pro {
-        width: 250px;
-        text-align: left;
-        font-size: 16px;
-        padding: 10px 0;
-        border-bottom: solid 1px #ccc;
-      }
-      .DetProPrecio_pro {
-        padding: 5px 20px;
-        text-align: left;
-        color: red;
-        font-weight: bold;
-        margin: 10px 0;
-      }
-      .btnAdicionarCar {
-        background: #59ba5b;
-        display: block;
-        color: #ffffff;
-        border: none;
-        text-decoration: none;
-        padding: 10px;
-        outline: none;
-        margin: 5% 10% 5% 0%;
-        font-weight: bold;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .btnAdicionarCar:hover {
-        transform: scale(1.05);
-      }
-      .btnAdicionarCar:active {
-        transform: scale(0.95);
-      }
+  .contenDetAddCar .contenAddDesp .truck-title {
+    margin-top: 10px;
+    display: flex;
+    background-color: turquoise;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 700px) {
+  .btnAbreActualizaPro,
+  .btnAbreEliminarPro {
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: #079243;
+    cursor: pointer;
+    outline: none;
+  }
+  .btnAbreActualizaPro {
+    padding: 10px 30px;
+  }
+  .btnAbreEliminarPro {
+    background-color: #d9534f;
+  }
+  .contenDetPro {
+    display: block;
+    width: 100%;
+    border: none;
+    height: auto;
+    border: solid 1px #ccc;
+    justify-content: space-around;
+  }
+  .contenDetPro .imgDet_Pro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border: none;
+    padding: 20px;
+  }
+
+  .contenDetPro .imgDet_Pro .icon-undo2:hover {
+    transform: scale(1.09);
+  }
+  .contenDetPro .imgDet_Pro .icon-undo2:active {
+    transform: scale(1);
+  }
+  .contenDetPro .imgDet_Pro img {
+    width: 70%;
+    height: 80%;
+  }
+  .contenDetPro .contenDatosDetProMain {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenDetPro .contenDatosDetPro {
+    display: inline-block;
+    width: 80%;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: inherit;
+  }
+  .DetProNombre_pro {
+    padding: 1px;
+    font-size: 19px;
+    width: 100%;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border-bottom: solid 1px #ccc;
+  }
+  .DetProMarca_pro {
+    padding: 5px 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .DetProDescrip_pro {
+    width: 250px;
+    text-align: left;
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: solid 1px #ccc;
+  }
+  .DetProPrecio_pro {
+    padding: 5px 20px;
+    text-align: left;
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .btnAdicionarCar {
+    background: #59ba5b;
+    display: block;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    outline: none;
+    margin: 5% 10% 5% 0%;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btnAdicionarCar:hover {
+    transform: scale(1.05);
+  }
+  .btnAdicionarCar:active {
+    transform: scale(0.95);
+  }
 }

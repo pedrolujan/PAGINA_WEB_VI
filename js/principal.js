@@ -182,7 +182,7 @@ function cerrarRegistroA() {
 $(document).on('click', '.btnAbreActualizaPro', abrirRegistroA);
 $(document).on('click', '.btnAbreActualizaPro', function () {
     let element = $(this)[0].parentElement.parentElement.parentElement;
-    let id = $(element).attr('capturoid');    
+    let id = $(element).attr('capturoid');
     $('#acaFotoActProducto').attr("src",$('#imagenDetPro').attr("src"));
     $('#capIdPro').val(id);
     $('#txtnobre').val( $('.nombre_pro').html());

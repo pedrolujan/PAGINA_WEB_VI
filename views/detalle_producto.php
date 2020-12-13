@@ -24,7 +24,9 @@ session_start();
     <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilos_regProducto.css" type="text/css">
     <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosFooter.css">
 	<link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosHeader.css">
-	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -41,20 +43,20 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 	foreach ($u as $v){
 		if(isset($_SESSION['adminLogeado'])){	?>			
 				<div class='contenDetPro' capturoid="<?php echo $v['id_pro']?>">
-				<div class='contenDatosDetProMain simpleCart_shelfItem' id="contenDatosDetProMain">
+					<div class='contenDatosDetProMain simpleCart_shelfItem' id="contenDatosDetProMain">
 						<div class='imgDet_Pro'>
 							<div class="carruselImagenes">
 								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
 								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
 								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
 							</div>
-						<img src="<?php echo $v['imagen_pro']?>" class='imagenDetPro' id='imagenDetPro'>
+							<img src="<?php echo $v['imagen_pro']?>" class='item_image' id="imagenDetPro">
 						</div>
 						<div class='contenDatosDetPro ' capId="<?php echo $v['id_pro']?>">
-						<div class='DetProNombre_pro'>
-										<label class='nombre_pro'><?php echo $v["nombre_pro"];?></label></br>
+							<div class='DetProNombre_pro'>
+									<label class='nombre_pro'><?php echo $v["nombre_pro"];?></label></br>
 									</div>
-									<div class='DetProMarca_pro'>
+									<div class='DetProMarca_pro DMarcaProducto'>
 										<label class='marca_pro'><?php echo $v["marca_pro"]?></label></br>
 									</div>
 									<div class='DetProDescrip_pro'>
@@ -63,47 +65,29 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 									<div class='DetProPrecio_pro'>
 										S/ <label class='precio_pro'><?php echo $v["precio_pro"]?></label>
 									</div>
-									<div class='contenDetAddCar'>
-										<div class='contenAddDesp'>
-											<div class='truck-title'>
-												<img src='../imagenes/fuentes/delivery.png' alt='' class='imgDelivery'>
-												<div>
-													<label>Despacho a Domicilio</label>
-													<label class='estadoStok'>Stok disponible</label>												
-												</div>
-												<a href='#localizar-form' rel='modal:open' class='bntConsulCostoPro'>Editar</a>
-											</div>
-											<div class='truck-title'>
-												<img src='../imagenes/fuentes/tienda.png' alt='' class='imgDelivery'>
-												<div>
-													<label>Despacho en tienda</label>
-													<label class='estadoStok'>Stok disponible</label>												
-												</div>
-												<button class='bntConsulCostoPro'>Editar</button>
-											</div>
-										</div>
-									</div>
+									
 									<button class='btnAbreActualizaPro'><span class='icon-pencil'></span>Editar</button>
 									<button class='btnAbreEliminarPro'><span class='icon-bin'></span>Eliminar</button>
 						</div>
 						
 					</div>
-				</div>
-				<div class='conten_fTecnicaPro' capturoid="<?php echo $v['id_pro']?>">
-					<div class='ftcaberera'>
-						<button class='btnCargaDescrip'> Descripcion</button>
-						<button class='btnCargaFichaT'>Ficha Tecnica</button>
+					<div class='conten_fTecnicaPro' id="okok" capturoid="<?php echo $v['id_pro']?>">
+						<div class='ftcaberera'>
+							<button class='btnCargaDescrip'> Descripcion</button>
+							<button class='btnCargaFichaT'>Ficha Tecnica</button>
+						</div>
+						<div class='ftbody'>
+						</div>					
 					</div>
-					<div class='ftbody'>
-					</div>					
-				</div>		
+				</div>
+					
 			
 	
 			<?php 
 		}	
 		elseif(isset($_SESSION['usuarioLogeado'])){?>
 					
-					<div class='contenDetPro'  capturoid="<?php echo $v['id_pro']?>">					
+				<div class='contenDetPro' id="contenDetPro"  capturoid="<?php echo $v['id_pro']?>">					
 					<div class='contenDatosDetProMain simpleCart_shelfItem' id="contenDatosDetProMain">
 						<div class='imgDet_Pro'>
 							<div class="carruselImagenes">
@@ -121,17 +105,20 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 							<div class='DetProMarca_pro'>
 								<label> <?php echo $v["marca_pro"]?></label></br>
 							</div>
-							<div class='DetProDescrip_pro'>
+							<!-- <div class='DetProDescrip_pro'>
 								<label> <?php echo $v["descripcion_pro"] ?></label></br>
-							</div>
+							</div> -->
 							<div class='DetProPrecio_pro precio_pro' id="DetProPrecio_pro">
 								<div class='item_price'>S/  <?php echo $v["precio_pro"] ?></div>
 							</div>
-							<div class='contenDetAddCar'>
-								<div class='contenAddDesp'>
+							<div class='contenDetAddCar'>								
+								<div class='contenBtnAdd'>
 									<label for='#cantidadPro'>Cantidad
 										<input type='number' id='cantidadPro' value='1'>
-									</label></br>
+									</label>
+									<a href='javascript:;' class='item_add'> añadir a carrito</a>
+								</div>
+								<div class='contenAddDesp'>									
 									<div class='truck-title'>
 										<img src='../imagenes/fuentes/delivery.png' alt='' class='imgDelivery'>
 										<div>
@@ -146,35 +133,32 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 											<label>Despacho en tienda</label>
 											<label class='estadoStok'>Stok disponible</label>												
 										</div>
-										<button class='bntConsulCostoPro'>Consultar costo</button>
+										<a href='#localizar-form' rel='modal:open' class='bntConsulCostoPro'>Consultar costo</a>
 									</div>
-								</div>
-								
-								<div class='contenBtnAdd'>
-									<a href='javascript:;' class='item_add'> añadir a carrito</a>
-								</div>
+								</div>								
 							</div>
 						</div>
 						
 					</div>
-				</div>
-				<div class='conten_fTecnicaPro' capturoid="<?php echo $v['id_pro']?>">
-					<div class='ftcaberera'>
-						<button class='btnCargaDescrip'> Descripcion</button>
-						<button class='btnCargaFichaT'>Ficha Tecnica</button>
+
+					<div class='conten_fTecnicaPro' id="okok" capturoid="<?php echo $v['id_pro']?>">
+						<div class='ftcaberera'>
+							<button class='btnCargaDescrip'> Descripcion</button>
+							<button class='btnCargaFichaT'>Ficha Tecnica</button>
+						</div>
+						<div class='ftbody'>
+						</div>					
 					</div>
-					<div class='ftbody'>
-					</div>					
-				</div>
 				
+				</div>
 			
 		
 			<?php 
 		}else{?>
-				
-				<div class='contenDetPro'  capturoid="<?php echo $v['id_pro']?>">					
+				<div class='contenDetPro' id="contenDetPro"  capturoid="<?php echo $v['id_pro']?>">					
 					<div class='contenDatosDetProMain simpleCart_shelfItem' id="contenDatosDetProMain">
-						<div class='imgDet_Pro'>							
+						<div class='imgDet_Pro'>
+							
 							<img src="<?php echo $v['imagen_pro']?>" class='item_image'>
 						</div>
 						<div class='contenDatosDetPro ' capId="<?php echo $v['id_pro']?>">
@@ -186,16 +170,19 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 								<label> <?php echo $v["marca_pro"]?></label></br>
 							</div>
 							<div class='DetProDescrip_pro'>
-								<label> <?php echo $v["descripcion_pro"] ?></label></br>
+								
 							</div>
 							<div class='DetProPrecio_pro precio_pro' id="DetProPrecio_pro">
-							
+								
 							</div>
-							<div class='contenDetAddCar'>
-								<div class='contenAddDesp'>
+							<div class='contenDetAddCar'>								
+								<div class='contenBtnAdd'>
 									<label for='#cantidadPro'>Cantidad
 										<input type='number' id='cantidadPro' value='1'>
-									</label></br>
+									</label>
+									<a class='btnAdicionarCar abrirLogeoMId' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a>
+								</div>
+								<div class='contenAddDesp'>									
 									<div class='truck-title'>
 										<img src='../imagenes/fuentes/delivery.png' alt='' class='imgDelivery'>
 										<div>
@@ -210,33 +197,31 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 											<label>Despacho en tienda</label>
 											<label class='estadoStok'>Stok disponible</label>												
 										</div>
-										<button class='bntConsulCostoPro'>Consultar costo</button>
+										<a href='#localizar-form' rel='modal:open' class='bntConsulCostoPro'>Consultar costo</a>
 									</div>
-								</div>
-
-								<div class='contenBtnAdd'>
-									<a class='btnAdicionarCar' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a>
-								</div>
+								</div>								
 							</div>
 						</div>
 						
 					</div>
-				</div>
-				<div class='conten_fTecnicaPro' capturoid="<?php echo $v['id_pro']?>">
-					<div class='ftcaberera'>
-						<button class='btnCargaDescrip'> Descripcion</button>
-						<button class='btnCargaFichaT'>Ficha Tecnica</button>
-					</div>
-					<div class='ftbody'>
-					</div>					
-				</div>					
-		
+<!-- 
+					<div class='conten_fTecnicaPro' id="okok" capturoid="<?php echo $v['id_pro']?>">
+						<div class='ftcaberera'>
+							<button class='btnCargaDescrip'> Descripcion</button>
+							<button class='btnCargaFichaT'>Ficha Tecnica</button>
+						</div>
+						<div class='ftbody'>
+						</div>					
+					</div> -->
+				
+				</div>				
 	<?php 
 		}
 		
 	
 	}
 }
+
 include("ventanas_modal.php");
 ?>	
 <script>

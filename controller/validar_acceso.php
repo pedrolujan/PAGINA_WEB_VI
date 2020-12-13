@@ -3,7 +3,9 @@ session_start();
 session_destroy();
 /* sleep(1); */
 $arreglo=array();
-if($_POST["usuario"] ==null){
+if($_POST["id"] !=null){
+	$arreglo['redirec']=$_POST["id"];
+}if($_POST["usuario"] ==null){
 $arreglo['error']="Ingrese Usuario";
 }elseif($_POST["clave"]== null){
 	$arreglo['error']="Ingrese Clave";

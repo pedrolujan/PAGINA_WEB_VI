@@ -94,16 +94,23 @@ $(document).on("click", ".btnaccederM", function (e) {
     e.preventDefault();
     var usuario = $("#txtusuario").val();
     var clave = $("#txtpassword").val();
+    var id = $("#idDetalle").val();
     $.ajax({
         data: {
             usuario,
-            clave
+            clave,id
         },
         url: "http://localhost/L&M.StoreTecnology/controller/validar_acceso.php",
         type: "post",
         dataType: "json",
         async: true
     }).done(function correcto(resp) {
+        if(resp.redirec!=undefined && resp.exito!=undefined){
+            window.setTimeout(function(){
+                window.location.href = "http://localhost/L&M.StoreTecnology/views/detalle_producto.php?id="+resp.redirec;
+     
+            }, 3000);
+        }
         if(resp.exito!=undefined){
             $("#salidaSMS").addClass("exito").text(resp.exito).show(300).delay(3000).hide(300);              
             $("#salidaSMS").removeClass("error");
@@ -316,3 +323,9 @@ function mostrarDEscripcionPro(id){
         },
         });
 }
+
+$(document).on("click",".abrirLogeoMId",function(){
+    let element = $(this)[0].parentElement.parentElement.parentElement.parentElement.parentElement;
+    var id = $(element).attr('capturoid'); 
+   $("#idDetalle").val(id);
+});

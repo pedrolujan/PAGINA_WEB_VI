@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 if((isset($_SESSION["adminLogeado"])) || (isset($_SESSION["usuarioLogeado"]))){
-    header("Location: Usuario.php");
+    header("Location: views/Usuario.php");
 }
 
 ?>

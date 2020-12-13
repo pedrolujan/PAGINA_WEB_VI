@@ -99,7 +99,7 @@
 
 <!-- codigo modal para el logeo del usuario -->
 <form action="#" method="post" id="login-form" class="modal">
-    <h1></h1>
+   <input type="text" name="" id="idDetalle">
     <img src="imagenes/usuarioblanco.jpg" alt="" srcset="">
     <input type="text" name="txtusuario" id="txtusuario" Placeholder="Ingese Usuario"><br>
     <input type="password" name="txtpassword" id="txtpassword" Placeholder="•••••"><br>
