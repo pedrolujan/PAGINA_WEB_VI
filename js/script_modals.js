@@ -324,8 +324,3 @@ function mostrarDEscripcionPro(id){
         });
 }
 
-$(document).on("click",".abrirLogeoMId",function(){
-    let element = $(this)[0].parentElement.parentElement.parentElement.parentElement.parentElement;
-    var id = $(element).attr('capturoid'); 
-   $("#idDetalle").val(id);
-});

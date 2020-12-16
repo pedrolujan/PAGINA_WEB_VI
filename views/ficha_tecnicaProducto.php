@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(0);
+include("../model/url.php");
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@ session_start();
 <div class="contenFTPAcciones">
     <?php  if(isset($_SESSION["adminLogeado"])){?>
         <a href="#form-fichaTecnica" rel="modal:open">
-            <img src="imagenes/fuentes/icon_editar.png" alt="" srcset="" class="btnEditFT">
+            <img src="<?php echo $urlProyecto?>imagenes/fuentes/icon_editar.png" alt="" srcset="" class="btnEditFT">
         </a>
     <?php }?>
 </div>

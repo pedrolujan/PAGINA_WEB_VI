@@ -1,0 +1,61 @@
+.contenedorGeneral {
+  display: flex;
+  margin-top: 70px;
+  padding: 5px;
+  padding-bottom: 50px;
+}
+.contenedorGeneral .contenedor {
+    width: 80%;
+}
+.contenedorGeneral> .datosProductos {
+  background-color: rgb(0, 214, 71);
+  width: 20%;
+}
+.contenedorGeneral .contenedor .BVDatosUsuario{
+  width: 90%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin: auto;
+}
+.contenedorGeneral .contenedor .BVDatosUsuario > .BVDatUHeader,.BVDatProHeader {
+  background-color: rgb(19, 12, 12);
+  width: 100%;
+  color: #fff;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  margin: auto;
+}
+.contenedorGeneral .contenedor .BVDatosCarrito {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+   text-align: center;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    
+}
+table tr{
+}
+table tr td{
+    text-align: left;
+    padding: 10px;
+}
+table tr td span{
+    text-align: left;
+    padding: 10px;
+}
+table tr .td{
+    padding: 5px;
+    border-bottom: solid 1px rgb(209, 205, 205);
+}
+.btnTerminarCompra{
+    margin: auto;
+    margin-top: 20px;
+ background-color: lightseagreen;
+
+}

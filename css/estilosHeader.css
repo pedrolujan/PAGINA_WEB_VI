@@ -1,34 +1,33 @@
-
 .header-main {
     height: 60px;
-   /* width: calc(100% - calc(var(--width-collapsed)) - 10px); */
-   
+    /* width: calc(100% - calc(var(--width-collapsed)) - 10px); */
+
     width: 100%;
     background-image: url("../imagenes/fuentes/header.png");
     background-position: top;
     position: relative;
-    box-sizing: border-box;/* 
+    box-sizing: border-box; /* 
     left: calc(var(--width-collapsed) + 10px); */
-    
-    left: 0px;
+
+    left: 0;
     border-top: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
     color: #fff;
-  }
-  
-  .header-main .contenHMain {
+}
+
+.header-main .contenHMain {
     color: #fff;
     width: 100%;
     display: flex;
     position: relative;
-    background:rgb(0, 0, 0,0.5);
+    background: rgb(0, 0, 0, 0.5);
     border-bottom: 1px solid #ccc;
     z-index: 1;
     padding-right: 20px;
     height: inherit;
     align-items: center;
-  }
-  .header-main .contenHMain .contenMenu{
+}
+.header-main .contenHMain .contenMenu {
     display: flex;
     justify-content: center;
     width: 20%;
@@ -38,125 +37,122 @@
     margin-left: 20px;
     text-align: center;
     border-radius: 10px;
-  }
-  .header-main .contenHMain .contenMenu > span{
+}
+.header-main .contenHMain .contenMenu > span {
     font-size: 40px;
     color: rgb(238, 235, 235);
     cursor: pointer;
-  }
-  .header-main .contenHMain >img{
+}
+.header-main .contenHMain > img {
     width: 80px;
     padding: 10px;
     filter: brightness(10)
-  }
-  
-  .header-main .contenHMain .busqueda {
+}
+
+.header-main .contenHMain .busqueda {
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .header-main .contenHMain .busqueda input {
+}
+.header-main .contenHMain .busqueda input {
     outline: none;
     border: none;
     background-color: #d9dfe6;
     color: #1c1c1d;
     font-size: 16px;
     border: solid 1px #ccc;
-  }
-  
-  .header-main .contenHMain .divCarrito {
+}
+
+.header-main .contenHMain .divCarrito {
     width: 20%;
     height: inherit;
     display: flex;
     align-items: center;
     color: #fff;
-  }
-  @media screen and (max-width: 700px){
-    .header-main .contenHMain .divCarrito{
-      justify-content: flex-start;
-    }
-  }
-  .header-main .contenHMain .divCarrito .row{
-  width: 100%;
-  height: 90%;
-  display: flex;
-  }
-  .header-main .contenHMain .divCarrito .row .carrito{
-   width: 100%;
-   height: 90%;
-   display: flex;
-   justify-content: center;
-   align-items: center; 
-  }
-  
-  .header-main .contenHMain .divCarrito .row .carrito .bolsa{
-    position: absolute;
-      background-color: #F6F7F8;
+}
+.bolsa_carrito{
+ position: fixed;
+ top: 60px;
+ right: 0px;
+ width: 500px;
+ max-height: 300px;
+ overflow: auto;
+ border-radius: 0px 0px 0px 10px;
+ padding-bottom:5px;
+ display: block;
+ background-color: #ffffff;
+ box-shadow: 2px 2px 22px #000;
+ clip-path: circle(0px at top right);
+ transition: clip-path ease-in-out 700ms;
+}
+.bolsa_carrito::-webkit-scrollbar {
     display: none;
-    right: 0px;
-    width: auto;
-    top: 60px;
-    padding: 10px;
-    color: #000;
-    max-height: 400px;
-    box-sizing: border-box;
-    overflow: auto;
-    border: solid 1px #ccc;
-    box-shadow: 12px 5px 0px  #ccc;
-   }
-   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow>td{
-     text-align: center;
-   }
-   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-decrement{
-    width: 20px;
-    text-align: center;
-   }
-   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-decrement>a{
-    font-size: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 2px;
-    background-color: #ca0101;
-    margin: 10px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-   }
-   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-increment{
+}
+.bolsa_carritoExpanded{
+  clip-path: circle(150% at top right);
+
+}
+.bolsa_carrito table{
+width: 100%;
+display: block;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+.bolsa_carrito .btnDetalleCarrito{
+ margin-left: 20px;
+}
+.bolsa_carrito table>thead{
+}
+.bolsa_carrito table>thead> tr>th{
+ background-color: rgb(184, 184, 184);
+ padding: 10px;
+}
+.bolsa_carrito table>tbody{
+ padding: 0px 30px;
+ width: 100%;
+ font-size: 14px;
+ text-align: center;
+ font-weight: normal;
+}
+.bolsa_carrito table>tbody>tr{
+    width: 100%;
+    margin-left: 20px;
    
-    width: 20px;
-    text-align: center;
-   }
-   .header-main .contenHMain .divCarrito .row .carrito .bolsa .itemRow .item-increment>a{
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    padding: 2px;
-    background-color: #0c5812;
-    margin: 10px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-     }
-   .header-main .contenHMain .divCarrito .row .carrito .bolsa::-webkit-scrollbar {
-    display: none;
-  }
-  .header-main .contenHMain .divCarrito .row .carrito .carrito-total{
+}
+.bolsa_carrito table>tbody>tr>td{
+ 
+ 
+}
+.bolsa_carrito table>tbody>tr>td>.imagenProBolsaCar{
+ background-color: rgb(68, 12, 223);
+ width: 150px;
+ object-fit: scale-down;
+ 
+}
+.bolsa_carrito table>tbody>tr>td>h3{
+ font-weight: normal;
+ color: #000;
+ 
+}
+
+@media screen and(max-width: 700px) {
+    .header-main .contenHMain .divCarrito {
+        justify-content: flex-start;
+    }
+}
+
+.header-main .contenHMain .divCarrito .row .carrito .carrito-total {
     font-size: 1.4rem;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:5px;
+    padding: 5px;
     cursor: pointer;
-  }
-  .header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr{
+}
+.header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr {
     font-size: 22px;
     display: flex;
     justify-content: center;
@@ -164,43 +160,38 @@
     color: #000;
     background-color: rgb(236, 236, 236);
     border-radius: 50%;
-    padding:10px;
+    padding: 10px;
     cursor: pointer;
-  }
-  .header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr:hover{
+}
+.header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr:hover {
     background-color: #D9DFE6;
-  }
-  
-  .header-main 
-    .contenHMain 
-      .divCarrito 
-        .row 
-          .carrito
-            .carrito-total> .cantidadUnidades { 
-                display: flex;
-                font-size: 10px;
-                color: #fff;
-                height: 10px;
-                width: 10px;
-                padding: 4px;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                margin-top: -15px;
-                margin-left: -10px;
-                background-color: rgb(253, 15, 15);
-                z-index: 590;
-                margin-right: 10px;
-  }
-  .header-main .contenHMain .datos_usuario {
+}
+
+.header-main .contenHMain .divCarrito .row .carrito .carrito-total > .cantidadUnidades {
+    display: flex;
+    font-size: 10px;
+    color: #fff;
+    height: 10px;
+    width: 10px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-top: -15px;
+    margin-left: -10px;
+    background-color: rgb(253, 15, 15);
+    z-index: 590;
+    margin-right: 10px;
+}
+.header-main .contenHMain .datos_usuario {
     width: 20%;
     height: inherit;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
-  
-  .header-main .contenHMain .datos_usuario .datos_usuarioEsp{
+}
+
+.header-main .contenHMain .datos_usuario .datos_usuarioEsp {
     display: flex;
     justify-content: center;
     border: solid 0.01px #ccc;
@@ -209,22 +200,48 @@
     background-color: rgb(238, 235, 235);
     margin-right: 5%;
     cursor: pointer;
-    padding: 0 20px 0px 0px;
+    padding: 0 20px 0 0;
     border-radius: 50px;
-  }
-  .header-main .contenHMain .datos_usuario .datos_usuarioEsp p {
+}
+.header-main .contenHMain .datos_usuario .datos_usuarioEsp p {
     font-size: 12px;
     color: #000;
     margin: auto;
-  }
-  .header-main .contenHMain .datos_usuario .datos_usuarioEsp:hover{
+}
+.header-main .contenHMain .datos_usuario .datos_usuarioEsp:hover {
     background-color: #d9dfe6;
-  
-  }
-  .img_usuario {
+
+}
+.img_usuario {
     width: 40px;
     margin-right: var(--padding);
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-  }
+}
+.respuestaOk {
+    position: fixed;
+    top: 60px;
+    display: block;
+    color: #207920;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    display: none;
+    text-align: center;
+    background: rgb(23, 156, 23, 0.1);
+}
+.respuestaError{
+  position: fixed;
+  display: block;  
+  top: 60px;
+  color: #792020; 
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  display: none;
+  width: 100%;
+  text-align: center;
+  background: rgba(156, 23, 23, 0.1);
+}

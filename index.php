@@ -4,7 +4,7 @@ session_start();
 if((isset($_SESSION["adminLogeado"])) || (isset($_SESSION["usuarioLogeado"]))){
     header("Location: views/Usuario.php");
 }
-
+include("model/url.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,15 +15,15 @@ if((isset($_SESSION["adminLogeado"])) || (isset($_SESSION["usuarioLogeado"]))){
     <title>Document</title>
    
     <!-- <link rel="stylesheet" href="CSS/carrito/bootstrap-grid.css"> -->
-    <link rel="stylesheet" href="css/estilos_principal.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilos_principal.css">
 	
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/carrito/estilos.css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/fonts/style.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/carrito/estilos.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>fonts/style.css">
     <link rel="stylesheet" href="fonts/fonts/style.css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilos_regProducto.css" type="text/css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosUsuComun.css" type="text/css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosFooter.css">
-	<link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosHeader.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilos_regProducto.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosUsuComun.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosFooter.css">
+	<link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosHeader.css">
 </head>
 
 <body>

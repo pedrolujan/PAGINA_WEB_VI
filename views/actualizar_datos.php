@@ -2,6 +2,7 @@
  session_start();
  error_reporting(0);
  include("../model/conexion.php");
+ include("../model/url.php");
  $id;
  $nombre;
  $apellido;

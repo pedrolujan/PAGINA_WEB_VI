@@ -1,13 +1,18 @@
+
 mostrarProductos();
+var urlProyecto="http://localhost/L&M.StoreTecnology/";
 mostrarProductos1();
 mostrarMensajes();
 cargar_datosUsuLogeado();
 cargar_datosUsuLogeadoIndex();
+$(document).ready(function(){
+    $("#TOTALCARRITO").val();
+    $(".cantidadUnidades").text($("#TOTALUNIDADES").val());
+})
 $(document).on("click",".logoEmpresa",function(){
-    document.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php";
+    document.location.href = urlProyecto+"views/Usuario.php";
 })
 function abrirMenu() {
-    console.log("aca toy");
     const menu = document.querySelector('.sidemenu');
     menu.classList.toggle("menu-espanded");
     menu.classList.toggle("menu-collapsed");
@@ -19,7 +24,7 @@ function abrirMenu() {
 $(document).on("click",".abrirLogeo",function(){
     $(".aAbrirLogeo").click();
 })
-function desplemenulogin() {}
+
 $(document).on("click", "#messagechat", function () {
    
     let menuchico = document.getElementById('conten_chat');
@@ -28,7 +33,6 @@ $(document).on("click", "#messagechat", function () {
 
 /* codigo para submenu usuario */
 function desplemenulogin() {
-    console.log("aca toy");
     let menuchico = document.getElementById('celusubmenu');
     menuchico.classList.toggle('celmenuchico');
 }
@@ -79,14 +83,14 @@ $(document).on("click",".carritoDeCompras",function(){
     alert("esta opcion No esta disponible");
 })
 
-
 /* codigo para el detalle del producto */
-$(document).on('click', '.contenProductos', function (e) {
+
+$(document).on('click', '#contenProductos', function (e) {
     e.preventDefault();
     let element = $(this)[0];
     let id = $(element).attr('capturoid');
     
-    document.location.href = "http://localhost/L&M.StoreTecnology/views/detalle_Producto.php?id=" +id ;
+    document.location.href = urlProyecto+"views/detalle_Producto.php?id=" +id ;
     /* $.ajax({
         data: {id},
         url: 'controller/detalle_producto.php',
@@ -106,7 +110,13 @@ $(document).on('click', '.contenProductos', function (e) {
     }); */
 
 });
+$(document).on("click","#btnLogearse",function(){    
+    let element = $(this)[0];
+    var id = $(element).attr('capturoid');
+        $("#idDetalle").val(id);
 
+   
+});
 /* codigo boton atras */
 $(document).on("click",".icon-arrow-left2",function(){
     mostrarProductos();
@@ -199,40 +209,6 @@ $(document).on('click', '.btnSubeImgPro', function () {
     $('#imagenProducto').click();
 })
 
-/* tipos mime de imagen 
- image/jpg
- image/png
- image/gif */
-/*
-$(document).on("change", "#imagenProducto", function () {
-  var tipoImagen = ["image/jpeg", "image/png", "image/gif"];
-  var imagen = this.files[0].type;
-  var imgname = this.files[0].name;
-  var tmp = this.files[0].tmp;
-  
-  $('#acaFotoProducto').attr("src",imgname);
-  if (tipoImagen.indexOf(imagen) != -1) {
-    
-    var formData = new FormData($("#formularioRegPro")[0]);
-    $.ajax({
-      url: "controller/registro_productos.php",
-      type: "post",
-	  data: formData,
-	  dataType: "json",
-      cache: false,
-      contentType: false,
-      processData: false,
-      beforeSend: function () {},
-      success: function (respuesta) {
-		  $('#acaFotoProducto').attr("src","imagenes/"+respuesta.foto);
-		 },
-      error: function (e) {
-      },
-    });
-  }else{
-	  alert("Suba una imagen valida .jpg,png,gif");
-  } 
-});*/
 
 /* previsualizar la imagen de producto antes de subir */
 $(document).on("change", "#imagenProducto", function () {
@@ -292,6 +268,8 @@ $(document).on("change", "#imagenActProducto", function () {
     }
 });
 
+
+/* cargo el perfil del usuario */
 $(document).on("click", "#btnperfil", function () {
     $(".cargarDatos").load("actualizar_datos.php");
 })
@@ -353,34 +331,7 @@ $(document).on("click", "#btnActualizaDU", function (e) {
         $(".respuestas").fadeOut(1500);
     }, 3000);
 })
-/* codigo para registro de productos *//* 
-$(document).ready(function () {
-    $('#formularioRegPro').submit(insertardatos);
-    function insertardatos(e) {
-        e.preventDefault();
-        var datos = new FormData($("#formularioRegPro")[0]);
-        $.ajax({
-            url: "controller/registro_productos.php",
-            data: datos,
-            type: "POST",
-            dataType: "json",
-            contentType: false,
-            processData: false
-        }).done(function correcto(resp) {
-            if (resp.error !== undefined) {
-                $("#msg").html(resp.error);
-                mostrarProductos();
-                return false;
-            }
-            if (resp.exito !== undefined) {
-                $("#msg").html(resp.exito);
-                mostrarProductos();
-                setTimeout("location.href='login.php'", 1000);
-            }
-        })
-    }
-})
- */
+
 /* codigo para mensajes */
 $(document).on("click", ".CHFoterImg", function () {
     var mensaje = $("#txtmensaje").val();

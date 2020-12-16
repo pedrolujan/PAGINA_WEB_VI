@@ -1,9 +1,9 @@
 <?php
 session_start();
-/* if(!isset($_SESSION["usuarioLogeado"]) and !isset($_SESSION["adminLogeado"])){
+if(!isset($_SESSION["usuarioLogeado"]) and !isset($_SESSION["adminLogeado"])){
     header("Location: ../index.php");
-} */
-
+}
+include("../model/url.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,18 +12,16 @@ session_start();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="../js/jquery-3.5.1.min.js"></script>    
-    <script src="../js/jquery-Carrito/simpleCart.min.js"></script>
-    <script src="../js/jquery-Carrito/app.js"></script>
     <!-- <link rel="stylesheet" href="CSS/carrito/bootstrap-grid.css"> -->
 	<link rel="stylesheet" href="../js/jquery.modal.min.css">
     <link rel="stylesheet" href="../css/estilos_principal.css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/carrito/estilos.css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/fonts/style.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/carrito/estilos.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>fonts/style.css">
 	<link rel="stylesheet" href="../fonts/fonts/style.css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosUsuComun.css" type="text/css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilos_regProducto.css" type="text/css">
-    <link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosFooter.css">
-	<link rel="stylesheet" href="http://localhost/L&M.StoreTecnology/css/estilosHeader.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosUsuComun.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilos_regProducto.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosFooter.css">
+	<link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosHeader.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
@@ -98,7 +96,7 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 							<img src="<?php echo $v['imagen_pro']?>" class='item_image'>
 						</div>
 						<div class='contenDatosDetPro ' capId="<?php echo $v['id_pro']?>">
-							<input type='text' class='item_idpro' value='<?php echo $v['id_pro']?>' style='display:none;'>
+							<input type='hidden' class='item_idpro' id="idProducto" value="<?php echo $v['id_pro']?>" style='display:blok;'>
 							<div class='DetProNombre_pro'>
 								<h4 class='item_name nombre_pro' > <?php echo $v["nombre_pro"] ?></h4></br>
 							</div>
@@ -109,14 +107,19 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 								<label> <?php echo $v["descripcion_pro"] ?></label></br>
 							</div> -->
 							<div class='DetProPrecio_pro precio_pro' id="DetProPrecio_pro">
+								<input type="hidden" id="precioProducto" value="<?php echo $v["precio_pro"] ?>">
 								<div class='item_price'>S/  <?php echo $v["precio_pro"] ?></div>
 							</div>
-							<div class='contenDetAddCar'>								
+							<div class='contenDetAddCar'>	
+							
+								<input type="hidden" name="" class="item_stokpro" id="stokDisponible" value="<?php echo $stokDisponible?>">							
+								<div class="mostStokDisponible"></div>
 								<div class='contenBtnAdd'>
 									<label for='#cantidadPro'>Cantidad
-										<input type='number' id='cantidadPro' value='1'>
+										<input type='number' class="item_quantity" id='cantidadPro' value='1'>
 									</label>
 									<a href='javascript:;' class='item_add'> añadir a carrito</a>
+									<input type="hidden" id="subTotalPro">
 								</div>
 								<div class='contenAddDesp'>									
 									<div class='truck-title'>
@@ -180,7 +183,7 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 									<label for='#cantidadPro'>Cantidad
 										<input type='number' id='cantidadPro' value='1'>
 									</label>
-									<a class='btnAdicionarCar abrirLogeoMId' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a>
+									<!-- <a class='btnAdicionarCar abrirLogeoMId' id='btnAdLogeate' href='#login-form' rel='modal:open'>Añadir a carrito</a> -->
 								</div>
 								<div class='contenAddDesp'>									
 									<div class='truck-title'>
@@ -227,8 +230,13 @@ include("ventanas_modal.php");
 <script>
 $(".btnCargaDescrip").click();
 </script>
+<!-- 
+<script src="../js/jquery-Carrito/simpleCart.min.js"></script>
+<script src="../js/jquery-Carrito/app.js"></script> -->
+
 <script src="../js/principal.js"></script>
 <script src="../js/scrip_modals.js"></script>
+<script src="../js/scripVentas.js"></script>
 </body>
 </html>
 

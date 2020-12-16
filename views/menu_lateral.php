@@ -25,14 +25,14 @@
                 </div>
                 <div id="profile" class="profile">
                     <div id="photo" class="photo"><?php
-            if ( is_file( "imagenes/usuarios/" . $_SESSION[ 'usuarioLogeado' ] . ".jpg" ) ) {
+            if ( is_file($urlProyecto."imagenes/usuarios/" . $_SESSION[ 'usuarioLogeado' ] . ".jpg" ) ) {
                 ?>
-                        <img src="imagenes/usuarios/<?php echo($_SESSION['usuarioLogeado'])?>.jpg" width="150"
+                        <img src="<?php echo $urlProyecto?>imagenes/usuarios/<?php echo($_SESSION['usuarioLogeado'])?>.jpg" width="150"
                             onclick="desplemenulogin()" class="img_usuario" />
                         <?php
             } else {
                 ?>
-                        <img src="imagenes/usuarioblanco.jpg" width="150" class="img_usuario"
+                        <img src="<?php echo $urlProyecto?>imagenes/usuarioblanco.jpg" width="150" class="img_usuario"
                             onclick="desplemenulogin()" />
                         <?php }?>
                     </div>

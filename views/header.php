@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@ session_start();
     <div class="headerGeneral">       
         <div id="header-main" class="header-main">
             <div class="contenHMain">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/mi-logo.gif" alt="" srcset="" class="logoEmpresa">
+                <img src="<?php echo $urlProyecto?>imagenes/mi-logo.gif" alt="" srcset="" class="logoEmpresa">
                 <div class="contenMenu">
                 <?php
                 if(!isset($_SESSION["usuarioLogeado"]) && !isset($_SESSION["adminLogeado"])){ ?>
@@ -33,17 +34,36 @@ session_start();
                
             
                 <div class="divCarrito">
-                <?php if(isset($_SESSION["usuarioLogeado"])){ ?>
+                <?php
+                                
+                
+                if(isset($_SESSION["usuarioLogeado"])){                     
+                   ?>
                     <div class="row">
                         <div class="carrito">
-                            <div class="carrito-total">
+                            <div class="carrito-total" onclick="desplegarCarrito()">
                                 <span class="lnr lnr-cart"></span>
-                                <p class="simpleCart_quantity cantidadUnidades">0</p>
-                                <span class="simpleCart_total">0.00</span>
+                                <p class="simpleCart_quantity cantidadUnidades"><?php echo $TOTALUNIDADES?></p>
+                                <span class="simpleCart_total" id="totalAPagar"> <?php echo $TOTALCARRITO ?></span>
                             </div>
-                            <div class="bolsa">
-                                <div class="simpleCart_items"></div>
+                            <div class="bolsa_carrito" id="bolsa_carrito" >
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colSpan="2">producto</th>
+                                            <th>Cantidad</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class='mostrarBolsa'>  
+                                    </tbody>   
+                                </table>
+                               <!--  <div class="itemBolsaCarito">
+                                
+
+                                </div> -->
                                 <button class="btn btnDetalleCarrito btn-primary">ver carrito</button>
+                                
                             </div>
 
                         </div>
@@ -63,7 +83,7 @@ session_start();
                         <div class="datos_usuarioEsp" onclick="desplemenulogin()">
                         <?php }?>
                     
-                        <img src="http://localhost/L&M.StoreTecnology/imagenes/usuarioblanco.jpg" width="150" onclick="desplemenulogin()" / class="img_usuario" />
+                        <img src="<?php echo $urlProyecto?>imagenes/usuarioblanco.jpg" width="150" onclick="desplemenulogin()" / class="img_usuario" />
                     
 
                         <p class="bievenido_usu"></p>
@@ -84,8 +104,6 @@ session_start();
            
 
         </div>
-        <?php
-        ?>
     </div>
     <div class="menuProcutos-espanded" id="menuProductos">
         <ul>
@@ -104,7 +122,8 @@ session_start();
         menu.classList.toggle("menuProcutos-collapsed");
     }
     </script>
-   <!--  <script src="../js/principal.js"></script> -->
+   <div class="respuesta" id="respuesta"></div>
+
 </body>
 
 </html>

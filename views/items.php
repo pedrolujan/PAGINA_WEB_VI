@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>L&M TECNO STORE</title>
 </head>
 
 <body>
@@ -104,68 +104,68 @@ session_start();
         <?php }elseif($_SESSION['adminLogeado']){?>
         <div class="item">
             <a href="#" class="btnregistraProducto">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/addProductos.png" alt="" srcset=""></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/addProductos.png" alt="" srcset=""></div>
                 <div class="title"><span>REGISTRAR PRODUCTOS</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#" class="verClientes">
-                <div class="icon"> <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/usuarios.png" alt="" srcset=""></span></div>
+                <div class="icon"> <img src="<?php echo $urlProyecto?>imagenes/fuentes/usuarios.png" alt="" srcset=""></span></div>
                 <div class="title"><span>USUARIOS REGISTRADOS</span></div>
             </a>
         </div>
         
         <div class="item">
             <a href="#">
-                <div class="icon"> <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/ventas.png" alt="" srcset=""></div>
+                <div class="icon"> <img src="<?php echo $urlProyecto?>imagenes/fuentes/ventas.png" alt="" srcset=""></div>
                 <div class="title"><span>TOTAL VENTAS</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/dinero.png" alt="" srcset=""></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/dinero.png" alt="" srcset=""></div>
                 <div class="title"><span>GANANCIAS</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
         </div>
         <div class="item">
             <a href="#">
-                <div class="icon"><img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/add.png" alt="" srcset=""></span></div>
+                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/add.png" alt="" srcset=""></span></div>
                 <div class="title"><span>final</span></div>
             </a>
         </div>

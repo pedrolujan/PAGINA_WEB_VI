@@ -1,3 +1,6 @@
+<?php
+include("../model/url.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,12 +15,12 @@
         <div class="CFooter CFIsquierda">
             <h4>Metodos de Pago</h4>
             <div class="CFMetodosPago">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/paypal.png" alt="" srcset="">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/visa.svg" alt="" srcset="">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/america.svg" alt="" srcset="">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/dinerClub.svg" alt="" srcset="">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/efectivo.svg" alt="" srcset="">
-                <img src="http://localhost/L&M.StoreTecnology/imagenes/fuentes/mastercard.svg" alt="" srcset="">
+                <img src="<?php echo $urlProyecto?>imagenes/fuentes/paypal.png" alt="" srcset="">
+                <img src="<?php echo $urlProyecto?>imagenes/fuentes/visa.svg" alt="" srcset="">
+                <img src="<?php echo $urlProyecto?>imagenes/fuentes/america.svg" alt="" srcset="">
+                <img src="<?php echo $urlProyecto?>imagenes/fuentes/dinerClub.svg" alt="" srcset="">
+                <img src="<?php echo $urlProyecto?>imagenes/fuentes/efectivo.svg" alt="" srcset="">
+                <img src="<?php echo $urlProyecto?>imagenes/fuentes/mastercard.svg" alt="" srcset="">
             </div>
         </div>
         <div class="CFooter CFcentro">

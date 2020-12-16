@@ -1,4 +1,5 @@
 
+var urlProyecto="http://localhost/L&M.StoreTecnology/";
 $(document).ready(function($) {
  
   /* Función jQuery para el evento clic en la etiqueta "x" con la clase (.carrito-total)*/
@@ -19,6 +20,7 @@ cartColumns: [
     { view: "decrement", label: "-"}, //Resta el producto
     { attr: "quantity", label: "Cant"}, //obtiene la cantidad del producto
     { attr: "idpro", label: "IdProducto"}, //obtiene el id del producto
+    //{ attr: "stokpro", label: "stokProducto"},  obtiene stok
     { view: "increment", label: "+"}, //Suma el producto
     { view: "currency", attr: "total", label: "SubTotal" },// Obtiene el precio total del producto
     { view: "remove", text: "Quitar", label: false} //Quita o remueve el producto
@@ -32,8 +34,6 @@ checkout: {
 }
 
 });
-$(document).on("click",".item_add",function(){  
-})
 
 var matrix=Array();
 $(document).on("click",".itemRow",function(){
@@ -43,23 +43,12 @@ matrix.push([
 [$(this).children(".item-name").html()],
 [$(this).children(".item-quantity").html()],
 [$(this).children(".item-price").html()],
+/* [$(this).children(".item-stokpro").html()], */
 [$(this).children(".item-total").html()]]); // Matrix
 
 })
 
-$(document).on("click",".btnDetalleCarrito",function(){
-$(".itemRow").click();
-mat=JSON.stringify(matrix);
-$.ajax({
-  type:'post',
-   cache:false,
-   url:"RegistrarCarrito.php",
-  data:{jObject:  mat},
-  success:function(server){
-    document.location.href = "detalle2Producto.php?dat=" +server ;
-     }
-});
-});
+
 
 $(document).on("click",".simpleCart_remove",function(){
   let element = $(this)[0].parentElement.parentElement;

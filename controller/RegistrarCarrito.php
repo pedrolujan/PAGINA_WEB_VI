@@ -4,43 +4,64 @@ session_start();
 include("../model/conexion.php");
 $user = new ApptivaDB();
 
-$data = json_decode($_POST['jObject'], true);
-$cantidad=count($data);
+/* $data = json_decode($_POST['jObject'], true);
+$cantidad=count($data); */
 
 $id_usuario=$_SESSION["usuarioLogeado"];
 $codCarrito="CAR_".$id_usuario ;
+
 $ZonaHoraria= date_default_timezone_set('America/lima'); 
 $fecha_actual=date("d-m-Y H:i:s");
-$result="";
-$msg="";
+$idProducto=$_POST["idPro"];
+$stokProducto=$_POST["stok"];
+$precioProducto=$_POST["precio"];
+$cantidadProducto=$_POST["cantidad"];
 
-for($i=0;$i<$cantidad;$i++){
-/* $consul=$user->buscar("carrito","carrito.ID_PRODUCTOS=".$data[$i][0][0]); */
-$consul=$user->buscar("carrito","carrito.ID_PRODUCTOS=".$data[$i][0][0]." AND carrito.ID_USUARIOS=".$_SESSION["usuarioLogeado"]);
+$subTotal=($precioProducto*$cantidadProducto);
+$resultUnidades="";
+$msg="";
+$consul=$user->buscar("carrito","carrito.ID_PRODUCTOS=".$idProducto." AND carrito.ID_USUARIOS=".$_SESSION["usuarioLogeado"]);
 if($consul){
+	$cUnidades=$user->buscarCar("carrito.unidades_car,carrito.subTotal_car","carrito","carrito.ID_PRODUCTOS=".$idProducto." AND carrito.ID_USUARIOS=".$_SESSION["usuarioLogeado"]);
+	foreach($consul as $bus){
+		$resultUnidades= $bus["unidades_car"];
+		$resultSubTotal= $bus["subTotal_car"];
+	}
+	$sumaCantidad=($resultUnidades+$cantidadProducto);
+	$sumaSubTotal=($resultSubTotal+$subTotal);
 	$actualiza = $user->actualizar(
         "carrito"        
-        ,"unidades_car='".$data[$i][3][0]."',
+        ,"unidades_car='".$sumaCantidad."',
         fecha_car='".$fecha_actual."',
-		subTotal_car='".$data[$i][5][0]."',
+		subTotal_car='".$sumaSubTotal."',
 		estado_car='0'"        
-		,"carrito.ID_PRODUCTOS=".$data[$i][0][0]." AND carrito.ID_USUARIOS=".$id_usuario);
+		,"carrito.ID_PRODUCTOS=".$idProducto." AND carrito.ID_USUARIOS=".$id_usuario);
 	if ($actualiza) {
-		$msg.=  'Actualizacion corecta';
+		$msg.=  'ok';
 	} else {
-		$msg.= 'Hubo un error en la Actualizacion';
+		$msg.= 'Error';
 	}
 }else{
 	$u = $user->insertar(
 		"carrito",
-		"'$codCarrito','$id_usuario','".$data[$i][0][0]."','".$data[$i][3][0]."','".$fecha_actual."','".$data[$i][5][0]."','0'");
+		"'$codCarrito','$id_usuario','".$idProducto."','".$cantidadProducto."','".$fecha_actual."','".$subTotal."','0'");
 	if ($u) {
-		$result= 'Registro corecto';
+		$msg= 'ok';
 	} else {
-		$result= 'Hubo un error en el registro';
+		$msg= 'Error';
 	}
 }
-}
+echo $msg;
+
+
+
+
+
+
+/* for($i=0;$i<$cantidad;$i++){ */
+/* $consul=$user->buscar("carrito","carrito.ID_PRODUCTOS=".$data[$i][0][0]); */
+
+/* } */
 
 /* 
 for($i=0;$i<$cantidad;$i++){
