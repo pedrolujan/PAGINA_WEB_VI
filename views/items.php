@@ -116,13 +116,13 @@ session_start();
         </div>
         
         <div class="item">
-            <a href="#">
+            <a href="todasLasCompras.php" class="verCompras">
                 <div class="icon"> <img src="<?php echo $urlProyecto?>imagenes/fuentes/ventas.png" alt="" srcset=""></div>
                 <div class="title"><span>TOTAL VENTAS</span></div>
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="#" class="verTodoElDinero">
                 <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/dinero.png" alt="" srcset=""></div>
                 <div class="title"><span>GANANCIAS</span></div>
             </a>

@@ -22,7 +22,7 @@ session_start();
     <div class="container-form login-form">
         <div class="headerLogin">
             <div class="logo-title">
-                <img src="../imagenes/mi-logo.gif" alt="" srcset="">
+            <img src="../imagenes/fuentes/logo.png" alt="" srcset="">
             </div>
             <div class="menu">
                 <a href="login.php">
@@ -45,7 +45,7 @@ session_start();
                 </div>
                 <div class="password line-input">
                     <label class="lnr lnr-lock"></label>
-                    <input type="password" placeholder="Contraseña" name="clave">
+                    <input type="password" placeholder="Contraseña" name="clave" id="txtclave">
                 </div>
                 <div class="container" id="container"></div>
                 <div class="mensajeerror" id="msgerror"></div>

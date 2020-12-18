@@ -199,6 +199,7 @@ $(document).on('click', '.btnAbreActualizaPro', function () {
     $('#txtdescripcion').val( $('.descripcion_pro').html());
     $('#txtmarca').val( $('.marca_pro').html());
     $('#txtprecio').val( $('.precio_pro').html());
+    $('#txtstok').val( $('.stok_pro').html());
     $('#txtimagen').val( $('#imagenDetPro').attr("src"));  
 })
 $(document).on('click', '.modalActualizaPro', cerrarRegistroA)
@@ -400,6 +401,19 @@ function mostrarMensajes() {
     
     
 $(document).on("click",".verClientes",function(){
+    $.ajax({
+        url: '../controller/todosUsuarios.php',
+        type: 'GET',
+        beforeSend: function () {},
+        success: function (res) {
+            $(".cargarDatos").html(res);
+        },
+        error: function () {
+            /* alert("error") */
+        }
+    })
+});
+$(document).on("click",".verCompras",function(){
     $.ajax({
         url: '../controller/todosUsuarios.php',
         type: 'GET',

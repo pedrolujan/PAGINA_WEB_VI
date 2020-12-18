@@ -1,242 +1,258 @@
 .header-main {
-    height: 60px;
-    /* width: calc(100% - calc(var(--width-collapsed)) - 10px); */
-
-    width: 100%;
-    background-image: url("../imagenes/fuentes/header.png");
-    background-position: top;
-    position: relative;
-    box-sizing: border-box; /* 
+  height: 72px;
+  /* width: calc(100% - calc(var(--width-collapsed)) - 10px); */
+  margin-left: 0px;
+  padding-left: 0px;
+  width: 100%;
+  background-image: url("../imagenes/fuentes/header.png");
+  background-position: left;
+  position: relative;
+  box-sizing: border-box; /* 
     left: calc(var(--width-collapsed) + 10px); */
 
-    left: 0;
-    border-top: solid 1px #ccc;
-    border-bottom: solid 1px #ccc;
-    color: #fff;
+  left: 0;
+  border-top: solid 1px #ccc;/* 
+  border-bottom: solid 1px #ccc; */
+  color: #fff;
 }
 
 .header-main .contenHMain {
-    color: #fff;
-    width: 100%;
-    display: flex;
-    position: relative;
-    background: rgb(0, 0, 0, 0.5);
-    border-bottom: 1px solid #ccc;
-    z-index: 1;
-    padding-right: 20px;
-    height: inherit;
-    align-items: center;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  position: relative;
+  background: rgb(0, 0, 0,0.4);
+ /*  background: #F0F2F5; */
+  border-bottom: 1px solid #ccc;
+  z-index: 1;
+  padding-right: 20px;
+  height: inherit;
+  align-items: center;
 }
 .header-main .contenHMain .contenMenu {
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    align-items: center;
-    box-sizing: border-box;
-    height: 70%;
-    margin-left: 20px;
-    text-align: center;
-    border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 70%;
+  margin-left: 20px;
+  text-align: center;
+  border-radius: 10px;
 }
 .header-main .contenHMain .contenMenu > span {
-    font-size: 40px;
-    color: rgb(238, 235, 235);
-    cursor: pointer;
+  font-size: 40px;
+  color: rgb(238, 235, 235);
+  cursor: pointer;
 }
-.header-main .contenHMain > img {
-    width: 80px;
-    padding: 10px;
-    filter: brightness(10)
+.header-main .contenHMain > .logo {
+  height: inherit;
+  padding: 0px;
+  width: 29%;
+}
+.header-main .contenHMain > .logo img {
+  width: 100%;
+  object-fit: scale-down;
+  height: inherit;
 }
 
 .header-main .contenHMain .busqueda {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 60%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header-main .contenHMain .busqueda input {
-    outline: none;
-    border: none;
-    background-color: #d9dfe6;
-    color: #1c1c1d;
-    font-size: 16px;
-    border: solid 1px #ccc;
+  outline: none;
+  border: none;
+  background-color: #d9dfe6;
+  color: #1c1c1d;
+  font-size: 16px;
+  border: solid 1px #ccc;
 }
 
 .header-main .contenHMain .divCarrito {
-    width: 20%;
-    height: inherit;
-    display: flex;
-    align-items: center;
-    color: #fff;
+  width: 20%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  color: #fff;
 }
-.bolsa_carrito{
- position: fixed;
- top: 60px;
- right: 0px;
- width: 500px;
- max-height: 300px;
- overflow: auto;
- border-radius: 0px 0px 0px 10px;
- padding-bottom:5px;
- display: block;
- background-color: #ffffff;
- box-shadow: 2px 2px 22px #000;
- clip-path: circle(0px at top right);
- transition: clip-path ease-in-out 700ms;
+.bolsa_carrito {
+  position: fixed;
+  top: 75px;
+  right: 0px;
+  width: 500px;
+  max-height: 300px;
+  padding: 2px 10px;
+  overflow: auto;
+  border-radius: 0px 0px 0px 5px;
+  padding-bottom: 5px;
+  display: block;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 22px #000;
+  clip-path: circle(0px at top right);
+  transition: clip-path ease-in-out 700ms;
 }
 .bolsa_carrito::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-.bolsa_carritoExpanded{
+.bolsa_carritoExpanded {
   clip-path: circle(150% at top right);
-
 }
-.bolsa_carrito table{
-width: 100%;
-display: block;
-border-collapse: collapse;
-margin-bottom: 20px;
+.bolsa_carrito table {
+  width: 100%;
+  display: block;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
-.bolsa_carrito .btnDetalleCarrito{
- margin-left: 20px;
+.bolsa_carrito .btnDetalleCarrito {
+  margin-left: 20px;
 }
-.bolsa_carrito table>thead{
+.bolsa_carrito table > thead {
 }
-.bolsa_carrito table>thead> tr>th{
- background-color: rgb(184, 184, 184);
- padding: 10px;
+.bolsa_carrito table > thead > tr > th {
+  border-bottom: solid 1px #ccc;
+  padding: 10px;
+  color: #000;
 }
-.bolsa_carrito table>tbody{
- padding: 0px 30px;
- width: 100%;
- font-size: 14px;
- text-align: center;
- font-weight: normal;
+.bolsa_carrito table > thead > tr > .productoCantidadCarrito {
+  border-right: solid 1px #ccc;
 }
-.bolsa_carrito table>tbody>tr{
-    width: 100%;
-    margin-left: 20px;
-   
+.bolsa_carrito table > tbody {
+  padding: 0px 30px;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
 }
-.bolsa_carrito table>tbody>tr>td{
- 
- 
+.bolsa_carrito table > tbody > tr {
+  width: 100%;
+  margin-left: 20px;
 }
-.bolsa_carrito table>tbody>tr>td>.imagenProBolsaCar{
- background-color: rgb(68, 12, 223);
- width: 150px;
- object-fit: scale-down;
- 
+.bolsa_carrito table > tbody > tr:nth-child(2n) {
+  width: 100%;
+  margin-left: 20px;
+  background-color: rgb(243, 240, 240);
 }
-.bolsa_carrito table>tbody>tr>td>h3{
- font-weight: normal;
- color: #000;
- 
+.bolsa_carrito table > tbody > tr > td {
+}
+.bolsa_carrito table > tbody > tr > td > .imagenProBolsaCar {
+  width: 60px;
+  object-fit: scale-down;
+}
+.bolsa_carrito table > tbody > tr > td > h3 {
+  font-weight: normal;
+  color: #000;
 }
 
 @media screen and(max-width: 700px) {
-    .header-main .contenHMain .divCarrito {
-        justify-content: flex-start;
-    }
+  .header-main .contenHMain .divCarrito {
+    justify-content: flex-start;
+  }
 }
 
 .header-main .contenHMain .divCarrito .row .carrito .carrito-total {
-    font-size: 1.4rem;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
 }
 .header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr {
-    font-size: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    background-color: rgb(236, 236, 236);
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background-color: rgb(236, 236, 236);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
 }
 .header-main .contenHMain .divCarrito .row .carrito .carrito-total .lnr:hover {
-    background-color: #D9DFE6;
+  background-color: #d9dfe6;
 }
 
-.header-main .contenHMain .divCarrito .row .carrito .carrito-total > .cantidadUnidades {
-    display: flex;
-    font-size: 10px;
-    color: #fff;
-    height: 10px;
-    width: 10px;
-    padding: 4px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin-top: -15px;
-    margin-left: -10px;
-    background-color: rgb(253, 15, 15);
-    z-index: 590;
-    margin-right: 10px;
+.header-main
+  .contenHMain
+  .divCarrito
+  .row
+  .carrito
+  .carrito-total
+  > .cantidadUnidades {
+  display: flex;
+  font-size: 10px;
+  color: #fff;
+  height: 10px;
+  width: 10px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: -15px;
+  margin-left: -10px;
+  background-color: rgb(253, 15, 15);
+  z-index: 590;
+  margin-right: 10px;
 }
 .header-main .contenHMain .datos_usuario {
-    width: 20%;
-    height: inherit;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  width: 20%;
+  height: inherit;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header-main .contenHMain .datos_usuario .datos_usuarioEsp {
-    display: flex;
-    justify-content: center;
-    border: solid 0.01px #ccc;
-    align-items: center;
-    height: 70%;
-    background-color: rgb(238, 235, 235);
-    margin-right: 5%;
-    cursor: pointer;
-    padding: 0 20px 0 0;
-    border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  border: solid 0.01px #ccc;
+  align-items: center;
+  height: 70%;
+  background-color: rgb(238, 235, 235);
+  margin-right: 5%;
+  cursor: pointer;
+  padding: 0 20px 0 0;
+  border-radius: 50px;
 }
 .header-main .contenHMain .datos_usuario .datos_usuarioEsp p {
-    font-size: 12px;
-    color: #000;
-    margin: auto;
+  font-size: 12px;
+  color: #000;
+  margin: auto;
 }
 .header-main .contenHMain .datos_usuario .datos_usuarioEsp:hover {
-    background-color: #d9dfe6;
-
+  background-color: #d9dfe6;
 }
 .img_usuario {
-    width: 40px;
-    margin-right: var(--padding);
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
+  width: 46px;
+  margin-right: var(--padding);
+  height: 46px;
+  border-radius: 50%;
+  object-fit: scale-down;
+  cursor: pointer;
 }
 .respuestaOk {
-    position: fixed;
-    top: 60px;
-    display: block;
-    color: #207920;
-    width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px;
-    display: none;
-    text-align: center;
-    background: rgb(23, 156, 23, 0.1);
-}
-.respuestaError{
   position: fixed;
-  display: block;  
-  top: 60px;
-  color: #792020; 
+  top: 75px;
+  display: block;
+  color: #207920;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  display: none;
+  text-align: center;
+  background: rgb(23, 156, 23, 0.1);
+}
+.respuestaError {
+  position: fixed;
+  display: block;
+  top: 75px;
+  color: #792020;
   font-size: 20px;
   font-weight: bold;
   padding: 5px;
@@ -244,4 +260,13 @@ margin-bottom: 20px;
   width: 100%;
   text-align: center;
   background: rgba(156, 23, 23, 0.1);
+}
+.item_add{
+  background-color:#403F5D;
+  padding: 8px 50px;
+  color: #fff;
+  border-radius: 5px;
+}
+.item_add:hover{
+  background-color:#605f92;
 }

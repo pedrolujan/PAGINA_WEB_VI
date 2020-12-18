@@ -1,7 +1,10 @@
+<?php
+include("../model/url.php");
+?>
 <script src="../js/jquery-3.5.1.min.js"></script>    
     <script src="../js/jquery-Carrito/simpleCart.min.js"></script>
     <!-- <link rel="stylesheet" href="CSS/carrito/bootstrap-grid.css"> -->
-    <link rel="stylesheet" href="http://localhost/PAGINA_WEB_VI/CSS/carrito/estilos.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>CSS/carrito/estilos.css">
     <link rel="stylesheet" href="../fonts/fonts/style.css">
 <?php
 

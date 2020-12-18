@@ -11,7 +11,7 @@ body {
   border: solid 2px #282638;
   border-radius: 10px;
   padding-bottom: 50px;
-  background: rgb(233, 227, 229);
+  background: rgb(241, 241, 241);
 }
 .login-form {
   width: 40%;
@@ -22,7 +22,8 @@ body {
   height: 80px;
   padding: 0px;
 
-  background: #187432;
+  background: #cccbcb;
+  color: #000;
   display: flex;
   position: relative;
 }
@@ -34,14 +35,15 @@ body {
 }
 
 .logo-title img {
-  width: 80px;
+  width: 250px;
   height: 60px;
+  object-fit: scale-down;
 }
 
 .logo-title h2 {
   margin-left: 10px;
   margin-top: 8px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 
@@ -52,7 +54,7 @@ body {
   align-items: center;
   right: 0px;
   top: 0px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .menu li {
@@ -72,7 +74,7 @@ body {
 }
 
 a {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 /*formulario Login*/
@@ -290,19 +292,20 @@ a {
 }
 .imagen_usuario img {
   width: 250px;
-  height: 280px;
+  height: 250px;
+  object-fit: scale-down;
   border-radius: 50%;
   border: solid 2px #2A3F54;
 }
 
 .btnSubeImgUsu {
-  width: 252px;
-  height: 282px;
+  width: 251px;
+  height: 252px;
   position: relative;
   display: flex;
   opacity: 0;
-  margin-top: -113%;
-  margin-left: 0.5%;
+  margin-top: -101%;
+  margin-left: 0.6%;
   font-size: 40px;
   justify-content: center;
   align-items: center;

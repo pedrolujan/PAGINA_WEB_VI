@@ -1,4 +1,4 @@
-
+var urlProyecto="http://localhost/L&M.StoreTecnology/";
 function abrirConfirElimina() {
     $('.modal_confirmar').fadeIn(100, function () {
         $('.contenMConfirmar').fadeIn(0);
@@ -31,7 +31,7 @@ $(document).on('click', '.btn_eliminar', function () {
         })
          .done(function correcto(resp) {
         if (resp.exito != undefined) {
-            document.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php" ;
+            document.location.href = urlProyecto+"views/Usuario.php" ;
 
         }
         if (resp.error != undefined) {
@@ -40,7 +40,7 @@ $(document).on('click', '.btn_eliminar', function () {
             
         }
     }).fail(function error(e) {
-        document.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php" ;
+        document.location.href = urlProyecto+"views/Usuario.php" ;
         cerrarConfirElimina();
     }).always(function final() {});
     setTimeout(function () {
@@ -66,6 +66,7 @@ $(document).on("click", ".btnActualizarPro", function (e) {
         }
         if (resp.exito !== undefined) {
             cerrarRegistroA();
+            location.reload();
            /*  $(".respuestas").html(resp.exito).fadeIn();
             let id = $("#capIdPro").val();
             $.ajax({
@@ -100,14 +101,14 @@ $(document).on("click", ".btnaccederM", function (e) {
             usuario,
             clave,id
         },
-        url: "http://localhost/L&M.StoreTecnology/controller/validar_acceso.php",
+        url: urlProyecto+"controller/validar_acceso.php",
         type: "post",
         dataType: "json",
         async: true
     }).done(function correcto(resp) {
         if(resp.redirec!=undefined && resp.exito!=undefined){
             window.setTimeout(function(){
-                window.location.href = "http://localhost/L&M.StoreTecnology/views/detalle_producto.php?id="+resp.redirec;
+                window.location.href = urlProyecto+"views/detalle_producto.php?id="+resp.redirec;
      
             }, 3000);
         }
@@ -115,7 +116,7 @@ $(document).on("click", ".btnaccederM", function (e) {
             $("#salidaSMS").addClass("exito").text(resp.exito).show(300).delay(3000).hide(300);              
             $("#salidaSMS").removeClass("error");
             window.setTimeout(function(){
-                window.location.href = "http://localhost/L&M.StoreTecnology/views/Usuario.php";
+                window.location.href = urlProyecto+"views/Usuario.php";
      
             }, 4000);
         }else{

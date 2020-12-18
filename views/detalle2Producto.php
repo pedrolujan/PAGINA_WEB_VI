@@ -49,14 +49,15 @@ $bus=new ApptivaDB();
         <div class="contenPDC">
             <div><img src="<?php echo $recor["imagen_pro"]; ?>" alt="" srcset="" width="80px"></div>
             <div><?php echo $recor["nombre_pro"];?></div>
-            <div>S/ <?php echo $recor["precio_pro"];?></div>
+            <div>S/ <?php echo number_format($recor["precio_pro"],1);?></div>
             <div><?php echo $recor["unidades_car"]; ?> Un</div>
-            <div><?php echo $recor["subTotal_car"]; ?></div>
+            <div>S/ <?php echo number_format($recor["subTotal_car"],1); ?></div>
 
         </div>
         <?php }
          foreach($totalPago as $TP){   ?>
-          <input type="text" name="" id="totalCarrito" value="<?php echo  $TOTALCARRITO=$TP["TOTAL"];?>">
+          <input type="hidden" name="" id="totalCarrito" value="<?php echo  $TP["TOTAL"];?>">
+          <input type="hidden" name="" id="CostoEnvioBolet" value="<?php echo $TP["TOTAL"];?>">
            
             <?php  } ?>
         
@@ -93,17 +94,16 @@ $bus=new ApptivaDB();
                         <td><span class="simpleCart_total"></span></td>
                     </tr>
                     <tr>    
-                        <td><label>igv</label></td>
-                        <td> S/<span class="CostoEnvio"></span></td>
+                        <td><label>Envio</label></td>
+                        <td> S/ <span class="CostoEnvio"></span></td>
                     </tr>
                     <tr>
                         <td><label>Total</label></td>
-                        <td> S/<span class="totalAPagarCarrito">33333</span></td>
+                        <td> S/  <span class="totalAPagarCarrito"></span></td>
                     </tr>
                 </table>
             </div>       
            <div class="botonesCarrito">
-                <button class="btn simpleCart_checkout"> PAGAR </button>
                 <button class="btn " id="btnRalizarCompra"> realizar compra </button>
             </div>    
         </div>

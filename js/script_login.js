@@ -20,7 +20,7 @@ $(document).ready(function () {
         $("#cbo_provincia").html(response);
       },
       error: function () {
-        alert("error");
+       /*  alert("error"); */
       },
     });
   });
@@ -77,7 +77,7 @@ $(document).ready(function () {
           $("#txtusuario").val("");
           $("#txtclave").val("");
           $("#txtconfclave").val("");
-          setTimeout("location.href='login.php'", 1000);
+          setTimeout("location.href='../index.php'", 1000);
         }
       })
       .fail(function error(e) {})
@@ -95,9 +95,8 @@ $(document).ready(function () {
       .show();
     $("#msgexito").hide();
     $("#msgerror").hide();
-    var usuario = $("input[name='usuario']").val();
-    var clave = $("input[name='clave']").val();
-    
+    var usuario = $("#txtusuario").val();
+    var clave = $("#txtclave").val();
     $.ajax({
       data: { usuario, clave },
       url: "../controller/validar_acceso.php",
@@ -106,23 +105,16 @@ $(document).ready(function () {
       async: true,
     }).done(function correcto(resp) {
       if (resp.error !== undefined) {
-        $("#msgerror").fadeIn(100).text(resp.error).show();
+       /*  $("#msgerror").fadeIn(100).text(resp.error).show();
         $("#container").hide();
-        $("#msgexito").text(resp.exito).hide();
-        cont=cont+1;
-        if(cont>=3){
-          $("#msgerror").html("intentelo en un minuto");
-          $("#btnacceder").fadeOut();
-       
-        }
+        $("#msgexito").text(resp.exito).hide(); */       
         
-      console.log(cont);
         return false;
       }
       if (resp.exito !== undefined) {
-        $("#container").hide();
+       /*  $("#container").hide();
         $("#msgexito").fadeIn(100).text(resp.exito).show();
-        $("#msgerror").fadeIn(100).text(resp.error).hide();
+        $("#msgerror").fadeIn(100).text(resp.error).hide(); */
         setTimeout("location.href='../index.php'", 1000);
       }
     });

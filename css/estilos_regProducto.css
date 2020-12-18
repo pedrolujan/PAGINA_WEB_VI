@@ -130,7 +130,7 @@
   width: 60%;
 }
 .contenInputs {
-  width: 60%;
+  width: 70%;
 }
 .contenCajas input {
   width: 100%;
@@ -159,6 +159,7 @@
 }
 .precio-cat {
   display: flex;
+  width: 100%;
 }
 .precio-cat select,
 .precio-cat input {
@@ -172,6 +173,7 @@
   padding: 5px 10px;
 }
 .precio-cat select {
+  width: 180px;
   margin-left: 20px;
 }
 .btnRegistrarPro {
@@ -238,7 +240,7 @@
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 70px;
+  margin-top: 90px;
   justify-content: space-around;
 }
 .contenDatosDetProMain {
@@ -273,8 +275,9 @@
 .contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes::-webkit-scrollbar{
   display: none;
 }
-.contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes img{
+.contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes> img{
   cursor: pointer;
+  width: 80%;
 }
 .contenDetPro .contenDatosDetProMain .contenDatosDetPro {
   display: inline-block;

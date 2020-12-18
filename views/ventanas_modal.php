@@ -9,7 +9,7 @@
             <div class="btnCerrar">X</div>
             <h3 id="msg">Actualiza producto</h3>
             <div class="contenFotoAct_prod">
-                <input type="text" name="txtimagen" id="txtimagen" value="">
+                <input type="hidden" name="txtimagen" id="txtimagen" value="">
                 <input type="file" name="imagenActProducto" id="imagenActProducto" style="display: none;">
                 <img src="" alt="" srcset="" id="acaFotoActProducto">
                 <div class="btnSubeImgActPro" id="btnSubeImgActPro"><span class="icon-camera"></span></div>
@@ -21,7 +21,9 @@
                     <textarea name="txtdescripcion" id="txtdescripcion"></textarea>
                     <input type="text" name="txtmarca" id="txtmarca" placeholder="Marca del Producto"
                         value="<?php echo $recor['marca_pro']; ?>">
-                    <div class="precio-cat"> <input type="number" name="txtprecio" id="txtprecio">
+                    <div class="precio-cat">
+                         <input type="number" name="txtprecio" id="txtprecio">
+                         <input type="number" name="txtstok" id="txtstok" placeholder="Stock">
                         <select name="cbocategoria" id="cbocategoria">
                             <option value="">Selec. categoria</option>
                             <?php             

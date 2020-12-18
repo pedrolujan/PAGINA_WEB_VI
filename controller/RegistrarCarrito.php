@@ -20,9 +20,9 @@ $cantidadProducto=$_POST["cantidad"];
 $subTotal=($precioProducto*$cantidadProducto);
 $resultUnidades="";
 $msg="";
-$consul=$user->buscar("carrito","carrito.ID_PRODUCTOS=".$idProducto." AND carrito.ID_USUARIOS=".$_SESSION["usuarioLogeado"]);
+$consul=$user->buscar("carrito","carrito.ID_PRODUCTOS='".$idProducto."' AND carrito.ID_USUARIOS='".$_SESSION["usuarioLogeado"]."' AND carrito.estado_car='0'");
 if($consul){
-	$cUnidades=$user->buscarCar("carrito.unidades_car,carrito.subTotal_car","carrito","carrito.ID_PRODUCTOS=".$idProducto." AND carrito.ID_USUARIOS=".$_SESSION["usuarioLogeado"]);
+	$cUnidades=$user->buscarCar("carrito.unidades_car,carrito.subTotal_car","carrito","carrito.ID_PRODUCTOS='".$idProducto."' AND carrito.ID_USUARIOS='".$_SESSION["usuarioLogeado"]."' AND carrito.estado_car='0'");
 	foreach($consul as $bus){
 		$resultUnidades= $bus["unidades_car"];
 		$resultSubTotal= $bus["subTotal_car"];

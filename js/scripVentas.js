@@ -1,15 +1,30 @@
-
+const toCurrency=(number,currency,lang=1)=>
+Intl.NumberFormat({ style :'currency',currency},lang).format(number);
 alertasCarrito();
 mostrarStok();
 mostrarProductosEnBolsa();
-$(document).ready(function(){
-  let subTotal= parseFloat($("#totalCarrito").val());
-  let igv=parseFloat((subTotal*0.18));
-  let totalPagar=(subTotal+igv);
-  $(".CostoEnvio").html(igv);
-  $(".totalAPagarCarrito").html(totalPagar+".00");
-
+$(document).ready(function(){ 
+    $("#cbodeDartamento").click();
+    calcularTotalAPagar();
 })
+function calcularTotalAPagar(){  
+    let subTotal= parseFloat($("#totalCarrito").val());      
+        let costoEnvio=parseFloat($(".CostoEnvio").html());
+        $.ajax({
+            data: {subTotal,costoEnvio},
+            url: urlProyecto+'controller/calcularTotalAPagar.php',
+            type: 'post',
+            beforeSend: function () {},
+            success: function (response) {
+                $(".totalAPagarCarrito").html(response);
+            },
+             error: function () {
+                alert("error")
+            }
+          });
+        
+  
+}
 function desplegarCarrito(){
     let abreCarrito = document.getElementById('bolsa_carrito');
     abreCarrito.classList.toggle('bolsa_carritoExpanded');
@@ -21,8 +36,11 @@ function  alertasCarrito() {
         dataType: 'json',
         success: function (respuesta) {            
             $('.cantidadUnidades').html(respuesta.unidades);
-            $('.simpleCart_total').html("S/ "+parseFloat(respuesta.total)+".00");
+          /*   const conver=toCurrency(,'PEN'); */
+            $('.simpleCart_total').html("S/ "+respuesta.total);
+            $('#totalCarrito').val(conver);
         }
+        
     })
 }
 function  mostrarProductosEnBolsa() {
@@ -45,6 +63,7 @@ $(document).on("click",".btnDetalleCarrito",function(){/*
       data:{jObject:  mat},
       success:function(server){
        */
+      
         document.location.href = "detalle2Producto.php";
        /*   }
     }); */
@@ -79,6 +98,8 @@ $(document).on("keyup","#cantidadPro",function(){
     }
   })
 
+  /* codigo para adicionar al carrito */
+
 $(document).on("click",".item_add",function(e){
      e.preventDefault();  
      mostrarStok(); 
@@ -112,6 +133,7 @@ $(document).on("click",".item_add",function(e){
      }
       })
 
+ /* codigo para actualiuzar stok */
 function actualizaStok(){
      let stok=parseInt($("#stokDisponible").val());
     let cantidad=parseInt($("#cantidadPro").val());
@@ -131,6 +153,7 @@ function actualizaStok(){
   });
 }
 
+/* codigo para mostrar stok */
 function mostrarStok(){
        let idPro=parseInt($("#idProducto").val());
     $.ajax({
@@ -148,6 +171,8 @@ function mostrarStok(){
         }
       });
 }
+
+/* funcion para validar stok */
 function validaStok(){
     $(document).on("click","#stokDisponible",function(){
       $("#subTotalPro").val($("#stokDisponible").val());
@@ -160,22 +185,34 @@ function validaStok(){
     });
 
 }
-$(document).on("click","#btnRalizarCompra",function(){
-    document.location.href = "boletaDeVenta.php" ;
+
+/* codigo para mandar datos a la boleta */
+$(document).on("click","#btnRalizarCompra",function(e){
+    e.preventDefault();    
+   let departamento= $('select[name="cbodeDartamento"] option:selected').text();
+   let provincia= $('select[name="cboProvincia"] option:selected').text();
+   let distrito= $('select[name="cboDistrito"] option:selected').text();
+    
+   let costoEnvio=$("#CostoEnvioBolet").val();
+   let total_pagar=$(".totalAPagarCarrito").html();
+    var url = 'boletaDeVenta.php';
+var form = $('<form action="' + url + '" method="post">' +
+     '<input type="hidden" name="CostoEnvio" value="' + costoEnvio + '" />' +
+     '<input type="hidden" name="total" value="' + total_pagar + '" />' +
+     '<input type="hidden" name="departamento" value="' + departamento + '" />' +
+     '<input type="hidden" name="provincia" value="' + provincia + '" />' +
+     '<input type="hidden" name="distrito" value="' + distrito + '" />' +
+     '</form>');
+$('body').append(form);
+form.submit();
     
 })
 
-$(document).on("change","#cbodeDartamento",function(){
+/* codigo para cargar combox en la ventana de ver el carrito de compras */
+
+$(document).on("click","#cbodeDartamento",function(){
   let idDepa= $("#cbodeDartamento").val();
-
-
-falta calcularrrrrrrrrrrrrrrrr
-
-
-
-
-
-  let costoEnvio=$("#cbodeDartamento").children("#precio").attr("precio");
+  let costoEnvio=$("#cbodeDartamento").children("precio").val();
  $(".CostoEnvio").html(costoEnvio);
   $.ajax({
     data: {idDepa},
@@ -183,7 +220,16 @@ falta calcularrrrrrrrrrrrrrrrr
     type: 'post',
     beforeSend: function () {},
     success: function (response) {
-       $("#cboProvincia").html(response);
+        let datos=JSON.parse(response);
+        let temporal='';
+        datos.forEach(element => {
+            temporal +=`<option value="${element.valorCombo}">${element.combo}</option>`
+            $(".CostoEnvio").html(`${element.precio}`);
+            $("#CostoEnvioBolet").val(`${element.precio}`);
+        });
+        
+        $("#cboProvincia").html(temporal);
+        calcularTotalAPagar();
     },
     error: function () {
         alert("error")
@@ -206,6 +252,78 @@ $(document).on("change","#cboProvincia",function(){
       }
     });
   })
+  $(document).on("change","#cboDistrito",function(){
+   /*  $(".CostoEnvio").show();
+    $(".totalAPagarCarrito").show(); */
+  })
+
+
+  
+$(document).on("click",".contenCompras",function(){
+    let element = $(this)[0];
+    let fecha = $(element).attr('capturofecha');
+    $.ajax({
+        data: {fecha},
+        url: urlProyecto+'controller/mostarComprasEspecificas.php',
+        type: 'post',
+        beforeSend: function () {},
+        success: function (response) {
+            $("#respuesta").addClass("respuestaOk").text("Estas son tus Compras del dia:  "+fecha).show(300).delay(4000).hide(300);              
+            $("#respuesta").removeClass("respuestaError");
+            $(".cargarComprasDetalle").html(response);
+        },
+        error: function () {
+            alert("error")
+        }
+      });
+   
+      
+})
 $(document).on("click",".btnTerminarCompra",function(){
-    
+    let departamento=$(".BVdepartamento").html();
+    let provincia=$(".BVprovincia").html();
+    let distrito=$(".BVdistrito").html();
+    $.ajax({
+        data: {departamento,provincia,distrito},
+        url: urlProyecto+'controller/RegistrarCompra.php',
+        type: 'post',
+        beforeSend: function () {},
+        success: function (response) {
+            alert(response);
+              document.location.href = urlProyecto+"views/misCompras.php";
+        },
+        error: function () {
+            alert("error")
+        }
+      });
+  
+})
+$(document).on("click",".verTodoElDinero",function(){
+    let dato=3;
+    $.ajax({
+        url: '../controller/carritoAlertas.php',
+        type: 'post',
+        data:{dato},
+        dataType: 'json',
+        success: function (respuesta) {      
+            let plantilla=`
+            <div class='contenTotalGanancias'>
+                <div class='contenGanancia'>
+                <h1> TUS GANANCIAS HASTA HOY</h1>
+                <p>S/ ${respuesta.total}</p>
+            <td ><img src="../imagenes/fuentes/ganancias.png" alt='' srcset='' width="300px" ></td>
+
+                </div>
+                <div class='contenProdVendidos'>
+                <h1>PRODUCTOS VENDIDOS</h1>
+                <p>${respuesta.unidades} Un</p>
+                </div>
+            </div>`;      
+           
+
+            $('.cargarDatos').html(plantilla);
+           
+        }
+        
+    })
 })

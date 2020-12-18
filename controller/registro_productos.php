@@ -1,11 +1,13 @@
 <?php 
 include "../model/conexion.php";
+include("../model/url.php");
 $user = new ApptivaDB();
  $areglo=[];
 	$nombre=$_POST['txtnombre'];
 	$descripcion=$_POST['txtdescripcion'];
 	$marca=$_POST['txtmarca'];
 	$precio=$_POST['txtprecio'];
+	$stock=$_POST['txtstok'];
 	$categoria=$_POST['cbocategoria'];
 	if(empty($nombre)){
 		$areglo['error'] = "Complete el campo Nombre ";
@@ -15,6 +17,8 @@ $user = new ApptivaDB();
 		$areglo['error'] = "Complete el campo Marca ";
 	}elseif(empty($precio)){
 		$areglo['error'] = "Complete el campo Precio ";
+	}elseif(empty($stock)){
+		$areglo['error'] = "Complete el campo Stock ";
 	}elseif(empty($categoria)){
 		$areglo['error'] = "Seleccione Categoria ";
 	}else{
@@ -28,12 +32,12 @@ $user = new ApptivaDB();
 			$fecha_actual=date("dmyGi");
 			$n_aleatorio = rand(10, 99);			
 			$carpeta="../imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
-			$rutabd="http://localhost/L&M.StoreTecnology/imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
+			$rutabd=$urlProyecto."imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
 			$estado=true;
 			
 			$u = $user->insertar(
 				"productos",
-				"'$nombre','$descripcion','$marca','$precio','$categoria',
+				"'$nombre','$descripcion','$marca','$precio','$stock','$categoria',
 				'$rutabd','$estado'");			
 			if ($u) {	
 				move_uploaded_file($tmp_name,$carpeta);

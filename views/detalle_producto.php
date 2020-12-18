@@ -63,6 +63,10 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 									<div class='DetProPrecio_pro'>
 										S/ <label class='precio_pro'><?php echo $v["precio_pro"]?></label>
 									</div>
+															
+									<div class="mostStokDisponible">
+									Stok disponible	<label class='stok_pro'><?php echo $v["stok_pro"]?></label>
+									</div>
 									
 									<button class='btnAbreActualizaPro'><span class='icon-pencil'></span>Editar</button>
 									<button class='btnAbreEliminarPro'><span class='icon-bin'></span>Eliminar</button>

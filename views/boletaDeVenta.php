@@ -16,16 +16,18 @@ $bus=new ApptivaDB();
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosHeader.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/ventas.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosFooter.css">
-    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script><!-- 
     <script src="../js/jquery-Carrito/simpleCart.min.js"></script>
-    <script src="..7js/jquery-Carrito/app.js"></script>
+    <script src="..7js/jquery-Carrito/app.js"></script> -->
     <script src="../js/principal.js"></script>
 </head>
 <body>
     <div class="headerGeneral">       
         <div id="header-main" class="header-main">
             <div class="contenHMain">
-                <img src="<?php echo $urlProyecto?>imagenes/mi-logo.gif" alt="" srcset="" class="logoEmpresa">
+                <div class="logo">
+                    <img src="<?php echo $urlProyecto?>imagenes/fuentes/logo.jpg" alt="" srcset="" class="logoEmpresa">
+                </div>
                 <div class="contenMenu">
                 <?php
                 if(!isset($_SESSION["usuarioLogeado"]) && !isset($_SESSION["adminLogeado"])){ ?>
@@ -74,10 +76,7 @@ $bus=new ApptivaDB();
 
         </div>
     </div>
-
-    <div class="contenedorGeneral">
-        <div class="contenedor">
-            <?php
+    <?php
                $datos=$bus->buscarCar(
                "productos.id_pro,productos.imagen_pro,
                productos.nombre_pro,
@@ -88,79 +87,114 @@ $bus=new ApptivaDB();
                "carrito,productos,usuarios",
                "carrito.ID_PRODUCTOS=productos.id_pro
                AND carrito.ID_USUARIOS=usuarios.id_usu
+               AND carrito.estado_car=0
                AND usuarios.id_usu=".$_SESSION["usuarioLogeado"]);
                
                $datUsu=$bus->buscar("usuarios","usuarios.id_usu=".$_SESSION["usuarioLogeado"]);
                ?>
-           <div class="BVDatosUsuario">
-               <div class="BVDatUHeader">TUS DATOS PERSONALES</div>
-                <table border="1">
-                <?php foreach($datUsu as $dUs){?>
-                <tr>
-                    <td><?php echo $dUs["nombre_usu"];?></td>
-                    <td><?php echo $dUs["dni_usu"];?></td>
-                    <td><?php echo $dUs["telefono_usu"];?></td>
-                </tr>
-                
-                <tr>
-                    <td><?php echo $dUs["correo_usu"];?></td>
-                    <td><?php echo $dUs["provincia_usu"];?></td>
-                    <td><?php echo $dUs["pais_usu"];?></td>
-                    
-                </tr>
-                <?php }?>
-                
-                </table>
-            </div>
-            <div class="BVDatosCarrito">
-                <div class="BVDatProHeader">TUS PRODUCTOS</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="2">PRODUCTO</th>
-                            <th>CANTIDAD</th>
-                            <th>PRECIO UNIDAD</th>
-                            <th>SUBTOTAL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                     <?php foreach($datos as $recor){?>
-                        <tr>
-                            <td class="td"><div><img src="<?php echo $recor["imagen_pro"]; ?>" alt="" srcset="" width="80px"></div></td>
-                            <td class="td"><div><?php echo $recor["nombre_pro"];?></div></td>
-                            <td class="td"><div><?php echo $recor["unidades_car"]; ?> Un</div></td>
-                            <td class="td"><div>S/ <?php echo $recor["precio_pro"];?></div></td>
-                            <td class="td"><div><?php echo $recor["subTotal_car"]; ?></div></td>
-                        </tr>
-                     <?php }?>
-                     <tr>
-                         <td colspan="2"></td>                         
-                         <td colspan="1">SUBTOTAL</td>
-                         <td colspan="2"><span class="simpleCart_total"></span></td>
-                     </tr>
-                     <tr>
-                         <td colspan="2"></td>                         
-                         <td colspan="1">IGV</td>
-                         <td olspan="2" class="igv">18%</td>
-                     </tr>
-                     <tr>
-                         <td colspan="2"></td>                         
-                         <td colspan="1">TOTAL</td>
-                         <td olspan="2" class="totalAPagar">Por calcular</td>
-                     </tr>
-                     
-                    </tbody>
-
-                </table>
-                <button class="btn btnTerminarCompra">TERMINAR COMPRA</button>
+<div class="contenedorGeneralBoleta">
+    <div class="contenHeaderBoleta">
+        <div class="contenDatosEmpresa">
+            <h2>L&M TecnoStore</h2>
+            <div class="contactoEmpresa">
+                <p>Calle Macgregor #712 La Esperanza</p>
+                <p>http//L&M.StoreTecnology.in</p>
+                <p>910210378</p>
             </div>
         </div>
-        
-        <div class="datosProductos">dfghj</div>
+        <div class="contenLogoEmpresa">
+            <img src="../imagenes/fuentes/logo.png" alt="" srcset="">
+        </div>
     </div>
+    <div class="contenDatosCliente">
+        <div class="contenDatosCli">
+            <h2 class="dtCliente">Cliente</h2>
+            <?php foreach($datUsu as $dUs){?>
+                <p>NOMBRE  <span><?php echo $dUs["apellido_usu"];?> <?php echo $dUs["nombre_usu"];?></span></p>
+                <p>DNI  <span><?php echo $dUs["dni_usu"];?></span></p>
+                <p>TELEFONO <span><?php echo $dUs["telefono_usu"];?></span></p>
+                <p>CORREO <span><?php echo $dUs["correo_usu"];?></span></p>
+               
+            <?php }?>
+        </div>
+        <div class="contenDatosClieAEnviar">
+            <h2 class="dtCliente">Enviar A:</h2>
+            <p>Departamento <span class="BVdepartamento"><?php echo $_POST["departamento"];?></span></p>
+            <p>Provincia <span class="BVprovincia"><?php echo $_POST["provincia"];?></span></p>
+            <p>Distrito <span class="BVdistrito"><?php echo $_POST["distrito"];?></span></p>
+        </div>
+        <div class="contenFechaBoleta">  
+            <div class="fecha_Nfactura">
+                <p class="labelFecha">FECHA </p>
+                <?php
+                $ZonaHoraria= date_default_timezone_set('America/lima'); 
+                $fecha_actual=date("d/m/yy G:i");
+                ?>
+                <p><?php echo $fecha_actual;?></p>
+                <p class="labelNfactura">N° FACTURA</p>
+                <P>0000012</P>
+            </div>
+        </div>
+    </div>
+    <div class="contenDetalleBoleta">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">PRODUCTO</th>
+                    <th>CANTIDAD</th>
+                    <th>P. UNIDAD</th>
+                    <th>SUBTOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach($datos as $recor){?>
+                <tr>
+                    <td class="td"><div><img src="<?php echo $recor["imagen_pro"]; ?>" alt="" srcset="" width="80px"></div></td>
+                    <td class="td"><div><?php echo $recor["nombre_pro"];?></div></td>
+                    <td class="td"><div><?php echo $recor["unidades_car"]; ?> Un</div></td>
+                    <td class="td"><div>S/ <?php echo number_format($recor["precio_pro"],1);?></div></td>
+                    <td class="td"><div>S/ <?php echo number_format($recor["subTotal_car"],1); ?></div></td>
+                </tr>
+            <?php }?>
+            
+            </tbody>
+
+        </table>
+        <div class="boletadSaldosAPagar">
+            <div class="etiquetas">
+                <p>SUBTOTAL</p>
+                <p>Costo Envio</p>
+                <p>TOTAL</p>
+            </div>
+            <div class="etiquetasPrecios">
+                <p><span class="simpleCart_total"></span></p>
+                <p class="CostoEnvio">S/ <?php echo $_POST["CostoEnvio"];?></p>
+                <p class="totalAPagar">S/ <?php echo $_POST["total"];?></p>
+            </div>
+<!-- 
+                
+                <tr>
+                    <td colspan="2"></td>                         
+                    <td colspan="1">SUBTOTAL</td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>                         
+                    <td colspan="">Costo Envio</td>
+                    <td olspan="2" ></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>                         
+                    <td colspan="1">TOTAL</td>
+                    <td olspan="2" </td> -->
+                </tr>
+            </div>
+    </div>
+</div>
+<button class="btn btnTerminarCompra"> realizar pago</button>
     <?php include("footer.php"); ?>
-    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script><!-- 
+    <script src="../js/principal.js"></script> -->
     <script src="../js/scripVentas.js"></script>
-    <script src="../js/principal.js"></script>
 </body>
 </html>

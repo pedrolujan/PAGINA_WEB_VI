@@ -30,8 +30,10 @@ $user=new ApptivaDB();
                         <input type="text" name="txtnombre" placeholder="Nombre del Producto">
                         <textarea name="txtdescripcion" id="" placeholder="Escribe aca la descripcion"></textarea>
                         <input type="text" name="txtmarca" id="" placeholder="Marca del Producto">
-                        <div class="precio-cat"> <input type="number" name="txtprecio" id=""
-                                placeholder="Precio del Producto">
+
+                        <div class="precio-cat"> 
+                            <input type="number" name="txtprecio" id="" placeholder="Precio">
+                            <input type="number" name="txtstok" id="" placeholder="Stock">
                             <select name="cbocategoria" id="cbocategoria">
                                 <option value="">Selec. categoria</option>
                                 <?php

@@ -18,7 +18,9 @@ session_start();
     <div class="headerGeneral">       
         <div id="header-main" class="header-main">
             <div class="contenHMain">
-                <img src="<?php echo $urlProyecto?>imagenes/mi-logo.gif" alt="" srcset="" class="logoEmpresa">
+                <div class="logo">
+                    <img src="<?php echo $urlProyecto?>imagenes/fuentes/logo.jpg" alt="" srcset="" class="logoEmpresa">
+                </div>
                 <div class="contenMenu">
                 <?php
                 if(!isset($_SESSION["usuarioLogeado"]) && !isset($_SESSION["adminLogeado"])){ ?>
@@ -50,8 +52,8 @@ session_start();
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th colSpan="2">producto</th>
-                                            <th>Cantidad</th>
+                                            <th colSpan="2" class="productoCantidadCarrito">producto</th>
+                                            <th class="productoCantidadCarrito">Cantidad</th>
                                             <th>Precio</th>
                                         </tr>
                                     </thead>
@@ -95,6 +97,7 @@ session_start();
                     <?php }?>
                         <li><a href="php/cambiar_contrasena">Cabiar Contraseña</a></li>
                         <li><a id="btnperfil">Perfil</a></li>
+                        <li><a href="misCompras.php" id="btnMisCompras">Mis Compras</a></li>
                         <li><a href="../controller/salir.php">Salir</a></li>
                     </ul>
                     <!-- <a href="views/login.php" class="btnlogin">login</a> -->

@@ -55,6 +55,16 @@
             return $resultado->fetch_all(MYSQLI_ASSOC);
         return false;
     } 
+    //BUSCAR con return simple
+    public function buscarFech($datos,$tabla, $condicion){
+		
+        $resultado = $this->conexion->query("SELECT $datos FROM $tabla WHERE $condicion") or die($this->conexion->error);
+       
+		if($resultado)
+           /*  return $resultado->fetch_all(MYSQLI_ASSOC); */
+           return $resultado;
+        return false;
+    } 
     //otrooo
     public function buscarValiar($tabla, $condicion,$segCond){
 		

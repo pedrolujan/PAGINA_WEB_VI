@@ -16,8 +16,8 @@
 <div class="container-form">
         <div class="headerLogin">
         <div class="logo-title">
-            <img src="../imagenes/mi-logo.gif" alt="" srcset="">
-                <h2>PeJaTec Servis</h2>
+            <img src="../imagenes/fuentes/logo.png" alt="" srcset="">
+               
             </div>
             <div class="menu">
                 <a href="login.php"><li class="module-login ">Iniciar Sesion</li></a>
@@ -27,7 +27,7 @@
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
             <div class="conten-cajas">
-            <div class="welcome-form"><h1>Bienvenido</h1><h2>PeJaTec Servis</h2></div>
+            <div class="welcome-form"><h1>Bienvenido</h1></div>
                 <div class="datos-personales">
                     <div class="user line-input">
                         <label class="lnr lnr-user"></label>
@@ -58,17 +58,20 @@
                             $user=new ApptivaDB();
                             
                             $departamentos=$user->buscar("pais","1");   
-                            foreach($departamentos as $dep):   ?>
+                            foreach($departamentos as $dep){   ?>
                             <option value="<?php echo $dep['id_pais'] ?>">
                             <?php  echo $dep['nombre_pais'] ?>
                             </option>
-                            <?php   endforeach;   ?>
+                            <?php   }   ?>
                         </select>
                     </div>
                     <div class="combo line-input">
                     <label class="lnr lnr-map-marker"></label>
                     <select name="cbo_provincia" class="combobox" id="cbo_provincia" width="113">
-                        <option value="0">Seleccione Ciudad</option>
+                    <?php $dprov=$user->buscar("provincia","1");
+                   foreach($dprov as $pr){ ?>
+                        <option value="<?php echo $pr['id_provincia'] ?>"><?php echo $pr['prov_nombre'] ?></option>
+                    <?php } ?>
                     </select>
                     </div>
                 </div>

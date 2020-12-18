@@ -1,16 +1,25 @@
 <?php
 include("../model/conexion.php");
 $prov=new ApptivaDB();
-$provincias="";
+$provincias=array();
 $distritos="";
 if(isset($_POST["idDepa"])){
-    $provincia=$prov->buscarCar("id_provincia,prov_nombre",
-                                "provincia",
-                                "departamento_id_departamento=".$_POST["idDepa"]);
-    foreach($provincia as $pr){
-        $provincias.="<option value=".$pr['id_provincia'].">".$pr['prov_nombre']."</option>";
+    $provincia=$prov->buscarFech("provincia.id_provincia,provincia.prov_nombre,departamento.dep_costo_envio",
+                                "provincia
+                                INNER JOIN departamento 
+                                ON provincia.departamento_id_departamento=departamento.id_departamento",
+                                "provincia.departamento_id_departamento=".$_POST["idDepa"]);
+    /* foreach($provincia as $pr){
+        $provincias[]="<option value=".$pr['id_provincia'].">".$pr['prov_nombre']."</option>";
+    } */	
+    while($row =mysqli_fetch_array($provincia)){			
+        $provincias[] = array(			
+            'combo' => $row['prov_nombre'],
+            'valorCombo' => $row['id_provincia'],	
+            'precio' => $row['dep_costo_envio']	
+        );
     }
-    echo $provincias;
+    echo json_encode($provincias);
 }else if(isset($_POST["idProv"])){
     $distrit=$prov->buscarCar("id_distrito,dis_nombre",
                                 "distrito",

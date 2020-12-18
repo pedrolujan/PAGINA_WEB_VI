@@ -53,7 +53,7 @@ body {
   left: var(--width); */
  /*  width: calc(100% - var(--width)); */
  width: 100%;
-  height: 60px;
+  height: 72px;
 }
 .headerGeneral{
   margin: 0px;
@@ -69,7 +69,7 @@ body {
 }
 .logoEBaners{
   width: 100%;
-  margin-top: 60px;
+  margin-top: 75px;
   margin-left: 0px;
   display: flex;
   justify-content: center;
@@ -110,6 +110,7 @@ height: 60px;
 }
 
 .area_trabajo {
+  background-color: rgb(255, 255, 255,0.3);
   width: 100%;
   padding-top: 10px;
   padding-right: 5px;
@@ -131,11 +132,11 @@ height: 60px;
   position: fixed;
   height: 100%;
   left: 0;
-  top: 120px;
+  top: 130px;
   z-index: 200;
 }
 .sidemenuAdmin{
-  top: 60px;
+  top: 74px;
   background: #252525;
   border: none;
   color: #fff;
@@ -376,11 +377,10 @@ display: none;
   position: fixed;
   list-style: none;
   width: 200px;
-
   color: #000;
   overflow: hidden;
   text-align: center;
-  top:43px;
+  top:55px;
   right: 0px;
   padding: 0px;
   border-radius: 0px 0px 5px 10px;
@@ -659,9 +659,25 @@ a{
 
 
 .btn{
-  background: #0271D1;
+  background: #403F5D;
   padding: 10px 35px;
+  width: 95%;
   color: #fff;
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btnInicio{
+  background: #403F5D;
+  padding: 10px 35px;
+  width: 300px;
+  color: #fff;
+  margin: auto;
+  margin-bottom: 10px;
   font-size: 20px;
   border: none;
   outline: none;
@@ -684,4 +700,40 @@ a{
 .table tr>th{
   background-color: #ccc;
   padding: 10px;
+}
+
+.contenTotalGanancias{
+  display: flex;
+  justify-content: space-around;
+  padding-left: 50px;
+}
+.contenTotalGanancias .contenGanancia{
+ text-align: center;
+ border: solid 1px #ccc;
+ padding: 10px 15px;
+}
+.contenTotalGanancias .contenGanancia h1{
+  color: #187432;
+  font-size: 30px;
+}
+.contenTotalGanancias .contenGanancia p{
+  font-weight: bold;
+  color: #084419;
+  font-size: 50px;
+}
+.contenTotalGanancias .contenProdVendidos{
+  font-weight: bold;
+  color: #084419;
+  margin-left: 20PX;
+  border: solid 1px #ccc;
+  padding: 10px 15px;
+}
+.contenTotalGanancias .contenProdVendidos h1{
+  font-size: 30px;
+  margin-left: 20PX;
+}
+.contenTotalGanancias .contenProdVendidos p{
+  font-weight: bold;
+  color: #084419;
+  font-size: 50px;
 }
