@@ -139,6 +139,8 @@
     </div>
 </form>
 
+<form action="#" id="form-RegistroCategoria" class="modal" method="post"></form>
+
 
 
 <script src="http://localhost/L&M.StoreTecnology/js/jquery.modal.min.js"></script>

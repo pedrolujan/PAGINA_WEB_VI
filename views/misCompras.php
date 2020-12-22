@@ -24,11 +24,12 @@ $bus=new ApptivaDB();
     <?php
     include("header.php");
     ?>
-    <div class="contenedorMisCompras">
+    <div class="contenedorMisComprasGeneral">
     <?php
     $fechaCompra= 
     $bus->buscarFech("carrito.id_car,
-                carrito.ID_USUARIOS,               
+                carrito.ID_USUARIOS,
+                SUM(subTotal_car) AS TOTAL,               
                 productos.imagen_pro,                
                 compras.fecha_comp,
                 carrito.unidades_car,
@@ -53,18 +54,20 @@ $bus=new ApptivaDB();
                        "carrito.ID_USUARIOS='".$_SESSION["usuarioLogeado"]."'
                         AND compras.fecha_corta_comp='".$recor["fecha_corta_comp"]."'");?>
                         
-     
         <div class="contenCompras" capturofecha="<?php echo $recor["fecha_corta_comp"];?>">
-            
-            <i><?php echo $recor["fecha_corta_comp"];?></i>   
-            <p>COMPRAS <?php echo $recor["totalCompras"];?></p>
+            <div class="ComprasFechaYTotal">
+                <i><?php echo $recor["fecha_corta_comp"];?></i>   
+                <p>COMPRAS <?php echo $recor["totalCompras"];?></p>
+                <span>S/ <?php echo number_format($recor["TOTAL"],1);?></span>
+            </div>
+            <div class="ComprasImagenes">
+                
+                <?php foreach($imagenes as $imag){?>
+                    <div><img src="<?php echo $imag["imagen_pro"];?>" alt="" srcset=""></div>
+                <?php }?>
 
-            <?php foreach($imagenes as $imag){?>
-                 <div><img src="<?php echo $imag["imagen_pro"];?>" alt="" srcset=""></div>
-            <?php }?>
-
-        </div>
-        
+            </div>
+        </div>  
     <?php }?>
   
   

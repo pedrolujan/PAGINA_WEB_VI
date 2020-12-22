@@ -262,7 +262,7 @@
   object-fit: scale-down;
 }
 .contenDetPro .contenDatosDetProMain .imgDet_Pro > .carruselImagenes {
-  background-color: blue;
+  background-color: rgb(225, 225, 230);
   padding: 5px;
   position: absolute;
   overflow: auto;
@@ -460,6 +460,9 @@
   border-top: 1px solid rgb(235, 228, 228);
   border-bottom: 1px solid rgb(243, 238, 238);
 }
+.imagenesDescripcionPro{
+
+}
 .conten_fTecnicaPro .contenFTPAcciones a {
   background-color: #d9dfe6;
   padding: 3px;
@@ -473,12 +476,14 @@
 .conten_fTecnicaPro .contenFTPAcciones a img {
   width: 45px;
   height: 40px;
+  object-fit: scale-down;
   padding: 2px;
   box-sizing: border-box;
 }
 .imagen1DescripPro,
 .imagen2DescripPro {
   width: 30%;
+  object-fit: scale-down;
   margin-top: 0px;
 }
 .conten-ficha-tecnica {

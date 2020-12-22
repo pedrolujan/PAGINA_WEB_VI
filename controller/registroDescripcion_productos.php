@@ -1,5 +1,5 @@
 <?php 
-include "../model/conexion.php";
+include("../model/conexion.php");
 $user = new ApptivaDB();
  $areglo=[];
 	$descripcion=$_POST['txtdescripcion'];

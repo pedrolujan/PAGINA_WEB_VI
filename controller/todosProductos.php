@@ -7,7 +7,7 @@ $html="";
 	$u=$user->buscar("productos","productos.estado='1'");
 	foreach ($u as $v)		
 	if(isset($_SESSION['adminLogeado'])){		
-		$html.="<div class='contenProductos' id='contenProductos' capturoid=".$v['id_pro'].">
+		$html.="<div class='contenProductos contenProductosDetalle' id='contenProductos' capturoid=".$v['id_pro'].">
 					<div class='contenImgProBusq'>
 						<div class='imgPro_buscados'>
 							<img src='".$v['imagen_pro']."' class='imagenMosProductos' >
@@ -26,7 +26,7 @@ $html="";
 					</div>
 				</div>"; 
 	}else if(isset($_SESSION['usuarioLogeado'])){	
-		$html.="<div class='contenProductos' id='contenProductos' capturoid=".$v['id_pro'].">
+		$html.="<div class='contenProductos contenProductosDetalle' id='contenProductos' capturoid=".$v['id_pro'].">
 					<div class='contenImgProBusq'>
 						<div class='imgPro_buscados'>
 							<img src='".$v['imagen_pro']."' class='imagenMosProductos' >

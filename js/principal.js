@@ -85,7 +85,7 @@ $(document).on("click",".carritoDeCompras",function(){
 
 /* codigo para el detalle del producto */
 
-$(document).on('click', '#contenProductos', function (e) {
+$(document).on('click', '.contenProductosDetalle', function (e) {
     e.preventDefault();
     let element = $(this)[0];
     let id = $(element).attr('capturoid');

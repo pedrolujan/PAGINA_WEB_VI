@@ -170,28 +170,26 @@ $(document).on("click","#btnEditDetalle",function(){
 $(document).on("click",".btnGuardarFTP",function(e){
   e.preventDefault();
   let id=$("#txtidFtModal").val();
- 
   let datos=$("#form-fichaTecnica").serialize();
     $.ajax({
         data: datos,
-        url: "controller/Registrar_fichaTecnica.php",
+        url: "../controller/Registrar_fichaTecnica.php",
         type: "post",
         dataType: "json",
         async: true
     }).done(function correcto(resp) {
         if (resp.error !== undefined) {
-            /* alert(resp.error); */       
+            alert(resp.error);       
             return false;
         }
         if(resp.exito !== undefined) {
-            $(".respuestas").fadeIn(100).text(resp.exito).show();
+            $("#respuesta").addClass("respuestaOk").text(resp.exito+"✔").show(300).delay(2000).hide(300);              
+             $("#respuesta").removeClass("respuestaError");
             mostrarFichaT(id);
         }
     
     })   
-setTimeout(function () {
-    $(".respuestas").fadeOut(1500);
-}, 3000);   
+  
 })
  /* codigo para mostrar ficha tecnica de producto */
 function mostrarFichaT(id){
@@ -290,7 +288,8 @@ $(document).ready(function () {
                 return false;
             }
             if (resp.exito !== undefined) {
-                $(".respuestas").html(resp.exito).show();
+                $("#respuesta").addClass("respuestaOk").text(resp.exito+"✔").show(300).delay(2000).hide(300);              
+                $("#respuesta").removeClass("respuestaError");
                 mostrarDEscripcionPro(id);
                 /* setTimeout("location.href='login.php'", 1000); */
             }

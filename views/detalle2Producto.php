@@ -43,7 +43,8 @@ $bus=new ApptivaDB();
                AND carrito.estado_car=0
                AND usuarios.id_usu=".$_SESSION["usuarioLogeado"]);
 
-               $totalPago= $bus->buscarCar("SUM(subTotal_car) AS TOTAL","carrito","ID_USUARIOS=".$_SESSION["usuarioLogeado"]);
+               $totalPago= $bus->buscarCar("SUM(subTotal_car) AS TOTAL","carrito","ID_USUARIOS='"
+               .$_SESSION["usuarioLogeado"]."'AND carrito.estado_car='0'");
               
              foreach($datos as $recor){?>
         <div class="contenPDC">
@@ -52,7 +53,7 @@ $bus=new ApptivaDB();
             <div>S/ <?php echo number_format($recor["precio_pro"],1);?></div>
             <div><?php echo $recor["unidades_car"]; ?> Un</div>
             <div>S/ <?php echo number_format($recor["subTotal_car"],1); ?></div>
-
+            <img src="../imagenes/fuentes/iconos/eliminar.svg" width="80px">
         </div>
         <?php }
          foreach($totalPago as $TP){   ?>

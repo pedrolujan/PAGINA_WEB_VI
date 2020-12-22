@@ -26,74 +26,81 @@
 include("header.php");
 /* include("menu_lateral.php"); */
 $html="";?>
-<div class="contenedorMisCompras">
-<?php	$fechaCompra= 
-    $bus->buscarFech("carrito.id_car,
-                carrito.ID_PRODUCTOS,               
-				productos.imagen_pro,
-				usuarios.id_usu,                
-				usuarios.nombre_usu,                
-				usuarios.imagen_usu,                
-                compras.fecha_comp,
-                compras.ID_CARRITO,
-                carrito.unidades_car,
-                compras.fecha_corta_comp, COUNT(*) AS totalCompras",
+<div class="contenedorComprasGeneralAdmin">
+<?php	$usuarios= 
+    $bus->buscarFech("
+                usuarios.id_usu, usuarios.nombre_usu, usuarios.apellido_usu, usuarios.imagen_usu",
                 "compras
                 INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
                 INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
                 INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
-                "'1' GROUP BY carrito.ID_USUARIOS
-                HAVING COUNT(*)
-                ORDER BY compras.fecha_corta_comp");
-    
-     ?>
-   <?php foreach($fechaCompra as $recor){
-           $imagenes= 
-           $bus->buscarFech("carrito.id_car,             
-					   productos.imagen_pro,
-					   carrito.ID_PRODUCTOS",
-                       "compras
-                       INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
-                       INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
+                "'1' GROUP by carrito.ID_USUARIOS
+                ORDER BY compras.fecha_corta_comp");   ?>
+            
+  
+    <?php foreach($usuarios as $recor_Usuarios){
+           $fechas= 
+           $bus->buscarFech("carrito.id_car,
+                        usuarios.id_usu, 
+                        usuarios.imagen_usu, 
+                        compras.fecha_comp, 
+                        compras.ID_CARRITO, 
+                        carrito.unidades_car, 
+                        compras.fecha_corta_comp",
+                       "compras 
+                       INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car 
+                       INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu 
                        INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
-					   "carrito.ID_USUARIOS='".$recor["id_usu"]."'");
-           $sumas= 
-           $bus->buscarFech("carrito.id_car,             
-					   productos.imagen_pro,SUM(subTotal_car) AS TOTAL,
-					   carrito.ID_PRODUCTOS",
-                       "compras
-                       INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
-                       INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
-                       INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
-					   "carrito.ID_USUARIOS='".$recor["id_usu"]."'");?>
-                        
+					   "carrito.ID_USUARIOS=".$recor_Usuarios["id_usu"]."
+                       GROUP by compras.fecha_corta_comp
+                       ORDER BY compras.fecha_corta_comp");?>
+            <div class="contenedorUsuarioYCompras">
+                <div class="cDatosUsuario">
+                    <img src="../<?php echo $recor_Usuarios["imagen_usu"];?>" alt="" srcset="">
+                    <p><?php echo $recor_Usuarios["nombre_usu"];?></p>
+                </div>
+           
+                <?php foreach($fechas as $recor_fechas){
+                $compras= 
+                $bus->buscarFech("carrito.id_car,
+                            carrito.ID_PRODUCTOS,
+                            productos.imagen_pro,
+                            carrito.ID_USUARIOS,
+                            usuarios.nombre_usu,
+                            usuarios.imagen_usu,
+                            carrito.unidades_car,
+                            compras.fecha_corta_comp",
+                            "compras
+                            INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
+                            INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
+                            INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
+                            "compras.fecha_corta_comp ='".$recor_fechas["fecha_corta_comp"]."'
+                            AND carrito.ID_USUARIOS='".$recor_Usuarios["id_usu"]."'");?>
+                    <div class="contenCompras" capturoNombre="<?php echo $recor_Usuarios["nombre_usu"];?>" recor_Usuarios="<?php echo $recor["id_usu"];?>" capturofecha="<?php echo $recor_fechas["fecha_corta_comp"];?>">
+                        <div class="ComprasFechaYTotal">
+                            <i><?php echo $recor_fechas["fecha_corta_comp"];?></i>
+                            
+                          <!-- aca ban las suma del total de compras por fecha 
+                          
+                          -->
+                           
+                        </div>
+                        <div class="ComprasImagenes">
+                            <?php foreach($compras as $recor_compras){?>
+                                <div><img src="<?php echo $recor_compras["imagen_pro"];?>" alt="" srcset="" width="30px"></div>
+                            <?php }?>
+                        </div>
 
-                        <p><?php echo $recor["nombre_usu"];?></p>
-                        <?php foreach($sumas as $imag){?>
-                        <span>S/ <?php echo number_format($imag["TOTAL"],1);?></span>
-                        <?php }?>
-                         <div><img src="../<?php echo $recor["imagen_usu"];?>" alt="" srcset="" width="30px"></div>
-			<div class="contenCompras" capturofecha="<?php echo $recor["fecha_corta_comp"];?>">
-            <i><?php echo $recor["fecha_corta_comp"];?></i>        
+                     </div>
              
-                
-			 
-            <p>COMPRAS <?php echo $recor["totalCompras"];?></p>
+<?php           
+                } ?>
+            </div>   
+<?php }
+?>
 
-            <?php foreach($imagenes as $imag){?>
-                 <div><img src="<?php echo $imag["imagen_pro"];?>" alt="" srcset="" width="30px"></div>
-            <?php }?>
-
-        </div>
-        
-    <?php }?>
-
-
-	
-	<?php
-echo $html;
-   ?>
 </div>
+    
     <script src="../js/principal.js"></script>    
     <script src="../js/scripVentas.js"></script>
 </body>

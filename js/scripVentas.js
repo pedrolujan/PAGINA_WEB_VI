@@ -10,6 +10,7 @@ $(document).ready(function(){
 function calcularTotalAPagar(){  
     let subTotal= parseFloat($("#totalCarrito").val());      
         let costoEnvio=parseFloat($(".CostoEnvio").html());
+      
         $.ajax({
             data: {subTotal,costoEnvio},
             url: urlProyecto+'controller/calcularTotalAPagar.php',
@@ -279,6 +280,29 @@ $(document).on("click",".contenCompras",function(){
    
       
 })
+
+$(document).on("click",".contenTodasCompras",function(){
+    let element = $(this)[0];
+    let fecha = $(element).attr('capturofecha');
+    let idUsu = $(element).attr('capturoIDUsu');
+    let nombre = $(element).attr('capturoNombre');
+    $.ajax({
+        data: {fecha,idUsu},
+        url: urlProyecto+'controller/mostarComprasEspecificas.php',
+        type: 'post',
+        beforeSend: function () {},
+        success: function (response) {
+            $("#respuesta").addClass("respuestaOk").text("Estas son las Compras de "+nombre+" del dia:  "+fecha).show(300).delay(4000).hide(300);              
+            $("#respuesta").removeClass("respuestaError");
+            $(".cargarComprasDetalle").html(response);
+        },
+        error: function () {
+            alert("error")
+        }
+      });
+   
+      
+})
 $(document).on("click",".btnTerminarCompra",function(){
     let departamento=$(".BVdepartamento").html();
     let provincia=$(".BVprovincia").html();
@@ -289,7 +313,6 @@ $(document).on("click",".btnTerminarCompra",function(){
         type: 'post',
         beforeSend: function () {},
         success: function (response) {
-            alert(response);
               document.location.href = urlProyecto+"views/misCompras.php";
         },
         error: function () {

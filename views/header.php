@@ -19,7 +19,7 @@ session_start();
         <div id="header-main" class="header-main">
             <div class="contenHMain">
                 <div class="logo">
-                    <img src="<?php echo $urlProyecto?>imagenes/fuentes/logo.jpg" alt="" srcset="" class="logoEmpresa">
+                    <img class="logoEmpresa">
                 </div>
                 <div class="contenMenu">
                 <?php

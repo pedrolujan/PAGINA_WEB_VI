@@ -33,7 +33,7 @@ switch ($dato) {
 }
 $html="";
 	foreach ($u as $v){
-		$html.="<div class='contenProductos' capturoid=".$v['id_pro'].">
+		$html.="<div class='contenProductos contenProductosDetalle' capturoid=".$v['id_pro'].">
 					<div class='contenImgProBusq'>
 						<div class='imgPro_buscados'>
 							<img src='".$v['imagen_pro']."' class='imagenMosProductos' >

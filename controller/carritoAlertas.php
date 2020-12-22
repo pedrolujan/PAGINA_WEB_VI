@@ -21,13 +21,12 @@ if(isset($_SESSION[ 'usuarioLogeado'])){
     echo json_encode($respuesta);
 }else{
     if(isset($_POST["dato"])){
-        $respuesta["total"]=1111;
         $cantPro= $bus->buscarCar("
         SUM(unidades_car) AS UNIDADES, SUM(subTotal_car) AS TOTAL,productos.imagen_pro",
         "carrito 
         INNER JOIN compras ON carrito.id_car=compras.ID_CARRITO
                 INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
-                INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro","estado_car='1'");
+                INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro","carrito.estado_car='1'");
        
         foreach($cantPro as $un){               
             if($un["TOTAL"]==null){
