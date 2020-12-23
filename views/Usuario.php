@@ -2,6 +2,9 @@
 session_start();
 if(!isset($_SESSION["usuarioLogeado"]) and !isset($_SESSION["adminLogeado"]) ){
     header("Location: ../index.php");
+}elseif(isset($_SESSION["adminLogeado"])){
+    header("Location: ../index.php");
+
 }
 error_reporting(0);
 include("../model/url.php");
@@ -27,6 +30,7 @@ include("../model/url.php");
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilos_regProducto.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosFooter.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosHeader.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
 </head>
 
 <body>
@@ -34,14 +38,13 @@ include("../model/url.php");
     <?php include("menu_lateral.php");?>
         <div class="logoEBaners">
             <div class="banerCabecera">
-                <?php if(isset($_SESSION["usuarioLogeado"])){ ?>
                 <img src="<?php echo $urlProyecto?>imagenes/fuentes/baner3.png" alt=""
                     srcset="" width="50px">
-                <?php }?>
             </div>
     </div> 
     <div id="" class="area_trabajo">
-        <div class="cargarDatos"></div>
+        <div class="cargarDatos">
+        </div>
     </div>
     <?php
     ?>

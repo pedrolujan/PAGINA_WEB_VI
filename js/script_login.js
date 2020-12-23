@@ -112,9 +112,6 @@ $(document).ready(function () {
         return false;
       }
       if (resp.exito !== undefined) {
-       /*  $("#container").hide();
-        $("#msgexito").fadeIn(100).text(resp.exito).show();
-        $("#msgerror").fadeIn(100).text(resp.error).hide(); */
         setTimeout("location.href='../index.php'", 1000);
       }
     });

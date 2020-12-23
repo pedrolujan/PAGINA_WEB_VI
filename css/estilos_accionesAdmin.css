@@ -1,0 +1,30 @@
+:root {
+  --width: 250px;
+  --padding: 10px;
+  --background: #fec009;
+  --hovercolor: rgb(23, 23, 23);
+  --width-collapsed: 50px;
+}
+
+.table {
+  margin-top: 40px;
+  border: solid 1px rgb(243, 243, 243);
+  border-collapse: collapse;
+  margin-right: 20px;
+  width: 97%;
+}
+.tableProductos {
+  width: 98%;
+}
+.table thead tr > th {
+  background-color: var(--background);
+  padding: 10px;
+  color: rgb(100, 100, 100);
+}
+.table tbody tr:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.05);
+}
+.table tbody tr{
+    font-size: 14px;
+}
+

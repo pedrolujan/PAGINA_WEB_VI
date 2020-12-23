@@ -1,7 +1,9 @@
 <?php
 error_reporting(0);
 session_start();
-if((isset($_SESSION["adminLogeado"])) || (isset($_SESSION["usuarioLogeado"]))){
+if((isset($_SESSION["adminLogeado"]))){
+    header("Location: views/Admin.php");
+}elseif(isset($_SESSION["usuarioLogeado"])){
     header("Location: views/Usuario.php");
 }
 include("model/url.php");

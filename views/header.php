@@ -21,17 +21,18 @@ session_start();
                 <div class="logo">
                     <img class="logoEmpresa">
                 </div>
-                <div class="contenMenu">
-                <?php
-                if(!isset($_SESSION["usuarioLogeado"]) && !isset($_SESSION["adminLogeado"])){ ?>
-                    <span class="icon-menu" onclick="abrirMenuProductos()"></span>
-                <?php }?> 
+                <div class="contenMenu">          
+               
+                   
+               
                 </div>
             
                 <div class="busqueda">
+                <?php if(!isset($_SESSION["adminLogeado"])){ ?>
                     <input class="searchBuscar" id="searchBuscar" type="search" placeholder="buscar producto"
                         style="width: 80%; padding: 8px;border-radius: 7px;">
                     <div class="contengif"></div>
+                    <?php }?> 
                 </div>
                
             
@@ -44,7 +45,7 @@ session_start();
                     <div class="row">
                         <div class="carrito">
                             <div class="carrito-total" onclick="desplegarCarrito()">
-                                <span class="lnr lnr-cart"></span>
+                                <span class="fas"><img src="../imagenes/fuentes/carrito.png" alt="" srcset=""></span>
                                 <p class="simpleCart_quantity cantidadUnidades"><?php echo $TOTALUNIDADES?></p>
                                 <span class="simpleCart_total" id="totalAPagar"> <?php echo $TOTALCARRITO ?></span>
                             </div>

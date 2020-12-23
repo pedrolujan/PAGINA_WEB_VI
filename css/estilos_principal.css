@@ -5,21 +5,21 @@
   --hovercolor: rgb(23, 23, 23);
   --width-collapsed: 50px;
 }
-
+/* 
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-}
-.conten_body2index{
+} */
+/* .conten_body2index{
   width: 100%;
   display: flex;
  height: 100%; 
  background-color: rgb(255, 0, 0);
  z-index: 20;
-}
+} */
 #salidaSMS{
   margin-top: -10px;
   width: auto;
@@ -47,12 +47,12 @@ body {
   background: rgb(23, 156, 23,0.1);
 }
 .body-expanded {
- /*  margin-left: var(--width); */
+  /* margin-left: var(--width); */
 }
-.body-expanded .header-main {/* 
-  left: var(--width); */
- /*  width: calc(100% - var(--width)); */
- width: 100%;
+.body-expanded .header-main {
+  left: var(--width);
+  width: calc(100% - var(--width));
+
   height: 72px;
 }
 .headerGeneral{
@@ -113,7 +113,6 @@ height: 60px;
   background-color: rgb(255, 255, 255,0.3);
   width: 100%;
   padding-top: 10px;
-  padding-right: 5px;
 }
 .cargarDatos{
   padding-left: 50px;
@@ -136,7 +135,7 @@ height: 60px;
   z-index: 200;
 }
 .sidemenuAdmin{
-  top: 74px;
+  top: 0px;
   background: #252525;
   border: none;
   color: #fff;
@@ -170,7 +169,7 @@ height: 60px;
 }
 #sidemenu #header #menu-btn {
   cursor: pointer;
-  padding: 10px;
+  padding: 10px; 
   width: calc(var(--width-collapsed) + 10px);
   /* width: var(--width-collapsed); */
   box-sizing: border-box;
@@ -249,7 +248,7 @@ height: 60px;
 }
 
 .sidemenu .menu-items .item .icon {
-  background-color: rgb(223, 219, 219);
+  background-color: rgb(146, 146, 146);
   height: 45px;
   box-sizing: border-box;
   display: flex;
@@ -272,7 +271,7 @@ display: none;
 
 #sidemenu .menu-items .item .icon span {
   width: 100%;
-  color: rgb(43, 43, 42);
+  color:#fff;
   font-size: 1.6rem;
   font-weight: bold;
   font-weight: normal;
@@ -689,18 +688,6 @@ a{
 }
 
 
-
-
-.table{
-  border: solid 1px #ccc;
-  border-collapse: collapse;
-  width: 90%;
-  margin: auto;
-}
-.table tr>th{
-  background-color: #ccc;
-  padding: 10px;
-}
 
 .contenTotalGanancias{
   display: flex;

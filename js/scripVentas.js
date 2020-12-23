@@ -1,3 +1,4 @@
+alertasDashboardAdmin();
 const toCurrency=(number,currency,lang=1)=>
 Intl.NumberFormat({ style :'currency',currency},lang).format(number);
 alertasCarrito();
@@ -39,7 +40,7 @@ function  alertasCarrito() {
             $('.cantidadUnidades').html(respuesta.unidades);
           /*   const conver=toCurrency(,'PEN'); */
             $('.simpleCart_total').html("S/ "+respuesta.total);
-            $('#totalCarrito').val(conver);
+           
         }
         
     })
@@ -322,31 +323,22 @@ $(document).on("click",".btnTerminarCompra",function(){
   
 })
 $(document).on("click",".verTodoElDinero",function(){
+    
+})
+function alertasDashboardAdmin(){
     let dato=3;
     $.ajax({
-        url: '../controller/carritoAlertas.php',
+        url: '../controller/dashboardAdmin.php',
         type: 'post',
         data:{dato},
         dataType: 'json',
-        success: function (respuesta) {      
-            let plantilla=`
-            <div class='contenTotalGanancias'>
-                <div class='contenGanancia'>
-                <h1> TUS GANANCIAS HASTA HOY</h1>
-                <p>S/ ${respuesta.total}</p>
-            <td ><img src="../imagenes/fuentes/ganancias.png" alt='' srcset='' width="300px" ></td>
-
-                </div>
-                <div class='contenProdVendidos'>
-                <h1>PRODUCTOS VENDIDOS</h1>
-                <p>${respuesta.unidades} Un</p>
-                </div>
-            </div>`;      
-           
-
-            $('.cargarDatos').html(plantilla);
-           
+        success: function (respuesta) {   
+            
+                $("#ProductosVendidos").html(`${respuesta.unidades}`);
+                $("#DineroGenerado").html(`S/ ${respuesta.total}`);           
+                $("#clientesRegistrados").html(`${respuesta.totalUsuarios}`);           
+                $("#productosStock").html(`${respuesta.stockProductos}`);           
         }
         
     })
-})
+}

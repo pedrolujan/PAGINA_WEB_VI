@@ -135,7 +135,7 @@ session_start();
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="#" class="TodosLosProductos">
                 <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>

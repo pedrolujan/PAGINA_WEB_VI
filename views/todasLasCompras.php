@@ -54,10 +54,12 @@ $html="";?>
 					   "carrito.ID_USUARIOS=".$recor_Usuarios["id_usu"]."
                        GROUP by compras.fecha_corta_comp
                        ORDER BY compras.fecha_corta_comp");?>
+
             <div class="contenedorUsuarioYCompras">
                 <div class="cDatosUsuario">
-                    <img src="../<?php echo $recor_Usuarios["imagen_usu"];?>" alt="" srcset="">
+                    <p><?php echo $recor_Usuarios["apellido_usu"];?></p>
                     <p><?php echo $recor_Usuarios["nombre_usu"];?></p>
+                    <img src="../<?php echo $recor_Usuarios["imagen_usu"];?>" alt="" srcset="">
                 </div>
            
                 <?php foreach($fechas as $recor_fechas){
@@ -76,6 +78,7 @@ $html="";?>
                             INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
                             "compras.fecha_corta_comp ='".$recor_fechas["fecha_corta_comp"]."'
                             AND carrito.ID_USUARIOS='".$recor_Usuarios["id_usu"]."'");?>
+                    
                     <div class="contenCompras" capturoNombre="<?php echo $recor_Usuarios["nombre_usu"];?>" recor_Usuarios="<?php echo $recor["id_usu"];?>" capturofecha="<?php echo $recor_fechas["fecha_corta_comp"];?>">
                         <div class="ComprasFechaYTotal">
                             <i><?php echo $recor_fechas["fecha_corta_comp"];?></i>

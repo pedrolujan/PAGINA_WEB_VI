@@ -11,7 +11,7 @@
     <div class="conten_body2index">
         <?php
         if(isset($_SESSION["adminLogeado"])){?>
-        <div id="sidemenu" class="menu-collapsed sidemenu sidemenuAdmin">
+        <div id="sidemenu" class="menu-espanded sidemenu sidemenuAdmin">
             <?php }else{?>
             <div id="sidemenu" class="menu-collapsed sidemenu">
                 <?php }?>

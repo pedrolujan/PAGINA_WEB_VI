@@ -44,32 +44,6 @@ $arreglo['error']="Ingrese Usuario";
 		}
 	}
 	
-	/* $sql2=$user->buscar("usuarios","clave_usu='".$clave."'");
-	foreach($sql as $v){
-		$arreglo['error']=$v["nombre_usu"];
-	} */
-
-	/* if($sql){
-		session_start();
-		foreach($sql as $v)
-		if(isset($v['id_usu'])){	
-			
-			$_SESSION['usuarioLogeado']=$v['id_usu'];
-			$arreglo['exito']="Bienvenido ".$v['nombre_usu'];
-		}
-		
-	}else{
-		$sql2=$user->buscar("administrador","usuario_admin='".$usuario."' AND clave_admin='".$clave."'");
-		session_start();
-		foreach($sql2 as $v2)
-		if(isset($v2['id_admin'])){
-			$_SESSION['adminLogeado']=$v2['id_admin'];
-			$arreglo['exito']="Administrador ".$v2['nombre_admin'];
-		}else{
-		$arreglo['error']="Datos incorrectos";
-		}
-	} */
-	
 }
 echo json_encode($arreglo);
 ?>
