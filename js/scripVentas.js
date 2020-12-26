@@ -1,4 +1,4 @@
-import {abrirConfirElimina} from './script_modals.js';
+
 
 alertasDashboardAdmin();
 const toCurrency=(number,currency,lang=1)=>

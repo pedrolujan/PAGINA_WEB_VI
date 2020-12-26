@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+
+</head>
+<body>
 <?php
 include("../model/conexion.php");
 include("../model/url.php");
@@ -5,22 +16,24 @@ $bus = new ApptivaDB();
 session_start();
 
 $html = "";
-$fecha_inicio = $_POST["fechaIni"];
-$fecha_final = $_POST["fechaFin"];
-$itemDashboard = $_POST["itemDashboard"];
+/* $fecha_inicio = $_GET["fechaIni"];
+$fecha_final = $_GET["fechaFin"];
+$itemDashboard = $_POST["itemDashboard"]; */
+$fecha=$_GET["fechaReg"];
+$idUasuario=$_GET["idUsu"];
 
-$ZonaHoraria = date_default_timezone_set('America/lima');
-$fecha = date("y-m-d");
+/* $ZonaHoraria = date_default_timezone_set('America/lima');
+$fecha = date("y-m-d"); */
 
-if ($itemDashboard == "productosVendidos") {
-    if (empty($fecha_inicio) && empty($fecha_final)) {
+/* if ($itemDashboard == "productosVendidos") { */
+    /* if (empty($fecha_inicio) && empty($fecha_final)) {
         $fecha_inicio = "2020-01-01";
         $fecha_final = $fecha;
-    }
+    } */
 
 
 ?>
-    <div class='contenedorComprasGeneralAdmin'>
+    <div class='card'>
         <?php
         $usuarios = $bus->buscarFech(
             "usuarios.id_usu, usuarios.nombre_usu, usuarios.apellido_usu, usuarios.imagen_usu",
@@ -28,7 +41,8 @@ if ($itemDashboard == "productosVendidos") {
             INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
             INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
             INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
-                    "'1' GROUP by carrito.ID_USUARIOS
+            "carrito.ID_USUARIOS=".$idUasuario."
+            GROUP by carrito.ID_USUARIOS
             ORDER BY compras.fecha_corta_comp"
         );
 
@@ -39,17 +53,17 @@ if ($itemDashboard == "productosVendidos") {
                 INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car 
                 INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu 
                 INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
-                "carrito.ID_USUARIOS=" . $recor_Usuarios["id_usu"] . "
-                AND compras.fecha_corta_comp BETWEEN '" . $fecha_inicio . "' AND '" . $fecha_final . "'
+                "carrito.ID_USUARIOS=".$idUasuario."
+                AND compras.fecha_corta_comp='".$fecha."'
                 GROUP by compras.fecha_corta_comp
                 ORDER BY compras.fecha_corta_comp"
             );
         ?>
-            <div class='contenedorUsuarioYCompras'>
-                <div class='cDatosUsuario'>
+            <div class='col-lg-12 bg-danger'>
+                <div class='card-header'>
                     <p><?php echo $recor_Usuarios['apellido_usu'] ?></p>
                     <p><?php echo $recor_Usuarios['nombre_usu'] ?></p>
-                    <img src="../<?php echo $recor_Usuarios['imagen_usu'] ?>" alt='' srcset=''>
+                    <img src="../<?php echo $recor_Usuarios['imagen_usu'] ?>" width="60px" alt='' srcset=''>
                 </div>
                 <?php
 
@@ -59,41 +73,55 @@ if ($itemDashboard == "productosVendidos") {
                             "carrito.id_car,
                             carrito.ID_PRODUCTOS,
                             productos.imagen_pro,
+                            productos.id_pro,
+                            productos.nombre_pro,
                             carrito.ID_USUARIOS,
                             usuarios.nombre_usu,
                             usuarios.imagen_usu,
                             carrito.unidades_car,
                             compras.fecha_corta_comp",
-                                                    "compras
+                            "compras
                             INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
                             INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
                             INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro",
-                                                    "compras.fecha_corta_comp ='" . $recor_fechas["fecha_corta_comp"] . "'
-                            AND compras.fecha_corta_comp BETWEEN '" . $fecha_inicio . "' AND '" . $fecha_final . "'
-                            AND carrito.ID_USUARIOS='" . $recor_Usuarios["id_usu"] . "'"
+                            "compras.fecha_corta_comp ='".$fecha."'
+                            AND carrito.ID_USUARIOS='" . $idUasuario. "'"
                         );
 
                 ?>
 
-                    <a href="descripcion_compra.php?idUsu=<?php echo $recor_Usuarios['id_usu'] ?>&fechaReg=<?php echo $recor_fechas['fecha_corta_comp'] ?>" class='contenCompras' capturoIdUsu="<?php echo $recor_Usuarios['id_usu'] ?>" capturofecha="<?php echo $recor_fechas['fecha_corta_comp'] ?>">
-                        <div class='ComprasFechaYTotal'>
+                  
+                        <div class='col-lg-12'>
                             <i><?php echo $recor_fechas['fecha_corta_comp'] ?></i>
                         </div>
-                        <div class='ComprasImagenes'>
+                        <div class='card-body"'>
                             <?php
 
                             foreach ($compras as $recor_compras) {
                             ?>
-                                <div>
-                                    <img src="<?php echo $recor_compras['imagen_pro'] ?>" alt='' srcset='' width='30px'>
-                                    <span><?php echo $recor_compras['unidades_car'] ?></span>
-                                </div>
+                            <table class="table mt-5 mb-5" border="1">
+                                <thead class="bg-primary">
+                                    <tr>
+                                        <td>Imagen</td>
+                                        <td>Nombre</td>
+                                        <td>Precio</td>
+                                        <td>Cantidad</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img class="my-4" src="<?php echo $recor_compras['imagen_pro'] ?>" alt='' srcset='' width='30px'></td>
+                                        <td><a href="detalle_producto.php?id=<?php echo $recor_compras['id_pro'] ?>"><?php echo $recor_compras['nombre_pro'] ?></a></td>
+                                        <td></td>
+                                        <td><?php echo $recor_compras['unidades_car'] ?></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
                             <?php
                             }
                             ?>
                         </div>
-                    </a>
-
                 <?php
                 }
                 ?>
@@ -103,5 +131,9 @@ if ($itemDashboard == "productosVendidos") {
         ?>
     </div>
 <?php
-}
+/* } */
 ?>
+
+
+</body>
+</html>

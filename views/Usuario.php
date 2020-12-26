@@ -62,7 +62,7 @@ include("../model/url.php");
 
     }
     </script>
-
+  <?php include("chat.php"); ?>
 
     <script src="../js/principal.js"></script>
     <script src="../js/scripVentas.js"></script>

@@ -410,6 +410,7 @@ $(document).on("click",".verCompras",function(){
         }
     })
 });
+
 $(document).on("click",".img_descripProd1",function(){    
     $("#imagenDetPro").attr("src",$(".img_descripProd1").attr("src"));
     

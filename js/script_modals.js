@@ -1,6 +1,6 @@
 var urlProyecto="http://localhost/L&M.StoreTecnology/";
 
-export  function abrirConfirElimina() {
+function abrirConfirElimina() {
     $('.modal_confirmar').fadeIn(100, function () {
         $('.contenMConfirmar').fadeIn(0);
     });
