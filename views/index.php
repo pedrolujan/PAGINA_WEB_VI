@@ -1,5 +1,10 @@
+
 <?php
 error_reporting(0);
+session_start();
+if(isset($_SESSION["usuarioLogeado"]) || isset($_SESSION["adminLogeado"]) ){
+    header("Location: ../index.php");
+}
 ?>
 
 <!doctype html>

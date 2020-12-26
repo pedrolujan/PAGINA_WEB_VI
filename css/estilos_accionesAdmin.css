@@ -33,4 +33,12 @@
   object-fit: scale-down;
   cursor: pointer;
 }
+.table tbody tr>.btnEliminarPro>span{
+  font-size: 30px;
+  cursor: pointer;
+  color: #CC232C;
+}
+.table tbody tr>.btnEliminarPro>span:hover{
+  font-size: 25px;
+}
 

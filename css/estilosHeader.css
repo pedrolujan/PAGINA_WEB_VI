@@ -54,6 +54,7 @@
   align-items: center;
   color: rgb(117, 117, 117);
   font-size: 40px;
+  cursor: pointer;
   font-weight: bold;
  /*  background: linear-gradient(0.25turn,#453ae6,#6294ff, #302280); */
 /*  background: linear-gradient(0.25turn,#e6cc3a,#ffef62, #e6cc3a); */
@@ -115,12 +116,12 @@
 }
 .bolsa_carrito table {
   width: 100%;
-  display: block;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 .bolsa_carrito .btnDetalleCarrito {
   margin-left: 20px;
+  border: solid 1px #caa73c;
 }
 .bolsa_carrito table > thead {
 }
@@ -195,7 +196,7 @@
   object-fit: scale-down;
 }
 .header-main .contenHMain .divCarrito .row .carrito .carrito-total .fas:hover {
-  background-color: #175ba8;
+  background-color: #caa73c;
 }
 
 .header-main

@@ -137,13 +137,13 @@ session_start();
         <div class="item">
             <a href="#" class="TodosLosProductos">
                 <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
-                <div class="title"><span>CONFIG. / ACCIONES</span></div>
+                <div class="title"><span>TODOS LOS PRODUCTOS</span></div>
             </a>
         </div>
         <div class="item">
-            <a href="#">
-                <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
-                <div class="title"><span>CONFIG. / ACCIONES</span></div>
+            <a href="#" class="ProductosInactivos">
+                <div class="icon"><span class="icon-eye-blocked"></span></div>
+                <div class="title"><span>Productos Inactivos</span></div>
             </a>
         </div>
         <div class="item">

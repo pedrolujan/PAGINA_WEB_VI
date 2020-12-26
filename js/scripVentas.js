@@ -1,3 +1,5 @@
+import {abrirConfirElimina} from './script_modals.js';
+
 alertasDashboardAdmin();
 const toCurrency=(number,currency,lang=1)=>
 Intl.NumberFormat({ style :'currency',currency},lang).format(number);
@@ -134,6 +136,14 @@ $(document).on("click",".item_add",function(e){
          $("#respuesta").removeClass("respuestaOk");
      }
       })
+
+/* codigo para borrar producto de carrito */
+$(document).on("click","#btnEliminarItemCarrito",function(){
+    let element = $(this)[0].parentElement;
+    let idPro = $(element).attr('capturarIdPro');
+    alert(idPro);
+    abrirConfirElimina();
+})
 
  /* codigo para actualiuzar stok */
 function actualizaStok(){

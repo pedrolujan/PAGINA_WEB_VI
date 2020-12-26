@@ -15,7 +15,8 @@ $html="";
 						<th>Marca</th>
 						<th>Stock</th>
 						<th>Precio</th>
-						<th colspan='3'>Acciones</th>
+						<th>Estado</th>
+						<th colspan='3'>Ocultar</th>
 					</tr>
 				</thead>
 				<tbody>";
@@ -40,11 +41,10 @@ $html="";
 						<label>S/ ".$v["precio_pro"]."</label>				
 					</td>
 					<td>
-						<img src='../imagenes/fuentes/iconos/eliminar.svg' alt=''srcset=''>						
+						<span style='color:#000;'>🟢</span>						
 					</td>
 					<td class='btnEliminarPro'>
-						
-							<img src='../imagenes/fuentes/iconos/eliminar.svg' alt=''srcset=''>		
+						<span class='icon-eye-blocked'></span>	
 						
 					</td>
 					

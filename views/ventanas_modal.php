@@ -45,11 +45,12 @@
     </div>
 </form>
 <!-- modal para confimar si se desea eliminar o no -->
-<div class="modal_confirmar"></div>
-<div class="contenMConfirmar">
+<div class="modal_confirmar" style="z-index: 30"></div>
+<div class="contenMConfirmar" style="z-index: 31">
     <div class="btnCerrar">X</div>
     <div class="atenecion">¡ Atencion !</div>
-    <input type="hidden" name="txtObtId" id="txtObtId">
+    <input type="text" name="txtObtId" id="txtObtId">
+    <input type="text" name="txtTipoCon" id="txtTipoCon">
     <h3>¿En realidad deseas eliminar?</h3><br>
     <button class="btn_cancelar">Cancelar</button>
     <button class="btn_eliminar">Eliminar</button>
@@ -106,7 +107,7 @@
     <input type="text" name="txtusuario" id="txtusuario" Placeholder="Ingese Usuario"><br>
     <input type="password" name="txtpassword" id="txtpassword" Placeholder="•••••"><br>
     <div class="exito" id="salidaSMS"></div>
-    <input type="submit" class="btnaccederM" value="ACCEDER"><br>
+    <input type="submit" class="btnaccederM" id="btnaccederM" value="ACCEDER"><br>
     <a href="#">¿No tienes Cuenta/ Crear Cuenta?</a>
 </form>
 <!-- codigo modal consultar direccion para recojo de productos -->

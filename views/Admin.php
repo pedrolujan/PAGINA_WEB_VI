@@ -155,8 +155,8 @@ body-expanded
     }
     </script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="Chart.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="../js/graficos/Chart.bundle.min.js"></script>
+    <script src="../js/graficos/Chart.min.js"></script>
     <script src="../js/principal.js"></script>
     <script src="../js/scrip_admin.js"></script>
     <script src="../js/scripVentas.js"></script>

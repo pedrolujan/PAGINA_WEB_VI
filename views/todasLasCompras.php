@@ -90,8 +90,8 @@ $html="";?>
                         <div class="ComprasImagenes">
                             
                             <?php foreach($compras as $recor_compras){?>
-                                <div><img src="<?php echo $recor_compras["imagen_pro"];?>" alt="" srcset="" width="30px"></div>
-                                <span><?php echo $recor_compras["unidades_car"];?></span>                                
+                                <div><img src="<?php echo $recor_compras["imagen_pro"];?>" alt="" srcset="" width="30px">
+                                <span><?php echo $recor_compras["unidades_car"];?></span> </div>                               
                             <?php }?>
                         </div>
 

@@ -5,11 +5,15 @@ $(document).on("click",".verClientes",function(){
 $(document).on("click",".TodosLosProductos",function(){
     $(".cargarDatos").load("../controller/todosProductos.php");
 })
+$(document).on("click",".ProductosInactivos",function(){
+    $(".cargarDatos").load("../controller/todosProductos_Inactivos.php");
+})
 
 $(document).on("click",".btnEliminarPro",function(){
     let element = $(this)[0].parentElement;
     let idPro = $(element).attr('capturoIdProd');
     $("#txtObtId").val(idPro);
+    $("#txtTipoCon").val("desactivar");
     abrirConfirElimina();   
 })
 /* codigo para elimminar producto */
@@ -23,7 +27,8 @@ $(document).on('click', '.btn_eliminar', function () {
         })
          .done(function correcto(resp) {
         if (resp.exito != undefined) {
-            location.reload();
+            /* location.reload(); */
+            alert(resp.exito);
 
         }
         if (resp.error != undefined) {
@@ -34,10 +39,7 @@ $(document).on('click', '.btn_eliminar', function () {
     }).fail(function error(e) {
        
         cerrarConfirElimina();
-    }).always(function final() {});
-    setTimeout(function () {
-        $(".respuestas").fadeOut(1500);
-    }, 3000);
+    })
 });
 
 function abrirConfirElimina() {
@@ -99,6 +101,7 @@ $(document).on("click",".ECantUsuarios",function(){
 $(document).on("click",".ECantProdStok",function(){
    $("#txtItemABuscar").val("productosStok");
    cargarDatos_ParaGrafica();
+   $(".cargarDatos").load("../controller/todosProductos.php");
 
     /* $(".cargarDatos").load("../controller/todosProductos.php"); */
 })

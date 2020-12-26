@@ -221,7 +221,10 @@ body {
 }
 #sidemenu #menu-items .item .icon span {
   width: 100%;
-  color: rgb(245, 245, 194);
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(rgb(255, 238, 0), rgb(206, 158, 2));
+  color: #b11e2d;
   font-size: 2rem;
   font-weight: bold;
   font-weight: normal;

@@ -23,6 +23,14 @@
     margin: 10px;
     display: flex;
 }
+.container .contenPDC #btnEliminarItemCarrito>img{
+    width: 40px;
+    cursor: pointer;
+}
+.container .contenPDC #btnEliminarItemCarrito>img:hover{
+    width: 38px;
+    transform: rotate(-10deg);
+}
 .container .contenPDCInportes{
  display: flex;
  position: fixed;

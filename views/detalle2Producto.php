@@ -11,10 +11,12 @@ $bus=new ApptivaDB();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilos_principal.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosCarritoDetalle.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>fonts/fonts/style.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosUsuComun.css" type="text/css">
+    <link rel="stylesheet" href="../css/estilos_modals.css" type="text/css">
     
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosHeader.css">
     <!-- <link rel="stylesheet" href="http://localhost/PAGINA_WEB_VI/css/carrito/estilos.css"> -->
@@ -47,13 +49,13 @@ $bus=new ApptivaDB();
                .$_SESSION["usuarioLogeado"]."'AND carrito.estado_car='0'");
               
              foreach($datos as $recor){?>
-        <div class="contenPDC">
+        <div class="contenPDC" capturarIdPro="<?php echo $recor["id_pro"];?>">
             <div><img src="<?php echo $recor["imagen_pro"]; ?>" alt="" srcset="" width="80px"></div>
             <div><?php echo $recor["nombre_pro"];?></div>
             <div>S/ <?php echo number_format($recor["precio_pro"],1);?></div>
             <div><?php echo $recor["unidades_car"]; ?> Un</div>
             <div>S/ <?php echo number_format($recor["subTotal_car"],1); ?></div>
-            <img src="../imagenes/fuentes/iconos/eliminar.svg" width="80px">
+            <div id="btnEliminarItemCarrito"><img src="../imagenes/fuentes/iconos/eliminar.svg"></div>
         </div>
         <?php }
          foreach($totalPago as $TP){   ?>
@@ -112,14 +114,15 @@ $bus=new ApptivaDB();
     </div>
     <?php
 include("header.php");
+
 ?>
 <!-- 
     <script src="../js/popper.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script> -->
-    
+
     <script src="../js/principal.js"></script>
     
-<script src="../js/scripVentas.js"></script>
+<script src="../js/scripVentas.js" type="module"></script>
 </body>
 
 </html>

@@ -279,7 +279,7 @@ display: none;
 
 #sidemenu .menu-items .item .icon span {
   width: 100%;
-  color:#6c6d1c;
+  color:#fdff9d;
   font-size: 1.6rem;
   font-weight: bold;
   font-weight: normal;
@@ -670,34 +670,38 @@ a{
 }
 
 
-.btn{
-  background: #403F5D;
+.btn{/* 
+  background: #fabb00; */
   padding: 10px 35px;
   width: 95%;
-  color: #fff;
+  color: rgb(88, 87, 87);
   margin: auto;
+  font-weight: bold;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 22px;
   border: none;
   outline: none;
   border-radius: 10px;
   cursor: pointer;
 }
 .btnInicio{
-  background: #403F5D;
+  
   padding: 10px 35px;
   width: 300px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
   margin-bottom: 10px;
   font-size: 20px;
   border: none;
   outline: none;
   border-radius: 10px;
   cursor: pointer;
+  border: solid 2px #fabb00;
 }
 .btn:hover{
-  background: #5189bb;
+  background: #f1c643;
 }
 
 

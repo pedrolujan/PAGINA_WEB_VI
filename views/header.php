@@ -15,7 +15,7 @@ session_start();
 
 <body>
      
-    <div class="headerGeneral" style="z-index: 200;">       
+    <div class="headerGeneral" style="z-index: 30;">       
         <div id="header-main" class="header-main">
             <div class="contenHMain">
                 <div class="logo">
@@ -50,7 +50,7 @@ session_start();
                                 <span class="simpleCart_total" id="totalAPagar"> <?php echo $TOTALCARRITO ?></span>
                             </div>
                             <div class="bolsa_carrito" id="bolsa_carrito" >
-                                <table>
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th colSpan="2" class="productoCantidadCarrito">producto</th>

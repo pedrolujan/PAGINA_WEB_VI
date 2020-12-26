@@ -33,9 +33,9 @@ include("model/url.php");
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block" src="<?php echo $urlProyecto?>imagenes/fuentes/car3.png" alt="Third slide">
+                <img class="d-block" src="<?php echo $urlProyecto?>imagenes/fuentes/car3.gif" alt="Third slide">
                 <div class="cantenInfoIndex">
-                    <div class="carInfo">Oferta Navideña pejatec</div>
+                    <div class="carInfo">Ofertas Navideña</div>
                     <p class="subCarInfo">siempre a tu servicio</p>
                 </div>
             </div>
