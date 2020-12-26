@@ -12,7 +12,7 @@ body {
   background: #ffffff;
   overflow-x: hidden;
   margin: 0;
-  margin-left: var(--width-collapsed);
+  margin-left: 100px;
 }
 .conten_body2index {
   display: flex;
@@ -85,60 +85,7 @@ body {
     justify-content: flex-start;
   }
 }
-.header-main .contenHMain .divCarrito span {
-  font-size: 1.4rem;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #d9dfe6;
-  border-radius: 50%;
-  padding: 5px;
-  cursor: pointer;
-}
-.header-main .contenHMain .divCarrito .lnr-cart p {
-  padding: 5px;
-  position: fixed;
-  font-size: 11px;
-  border-radius: 50px;
-  color: #ffffff;
-  margin-bottom: 40px;
-  margin-left: 30px;
-  font-weight: bold;
-  background: #e42645;
-  border: solid 1px rgb(235, 220, 11);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-.header-main .contenHMain .datos_usuario {
-  width: 25%;
-  height: inherit;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.header-main .contenHMain .datos_usuario p {
-  font-size: 12px;
-  color: #000;
-  height: auto;
-}
-.header-main .contenHMain .datos_usuario .datos_usuarioEsp {
-  display: flex;
-  justify-content: center;
-  border: solid 0.01px #ccc;
-  align-items: center;
-  height: 70%;
-  margin-right: 5%;
-  cursor: pointer;
-  padding: 0 20px 0px 0px;
-  border-radius: 50px;
-}
-.header-main .contenHMain .datos_usuario .datos_usuarioEsp:hover {
-  background-color: #d9dfe6;
-}
+
 .img_usuario {
   width: 40px;
   margin-right: var(--padding);
@@ -158,8 +105,11 @@ body {
 .area_trabajo {
   width: 100%;
   padding-top: 60px;
-  padding-left: 20px;
+  padding-left: 80px;
   padding-right: 5px;
+}
+.body-expanded>.area_trabajo {
+  padding-left: 10px;
 }
 .cargarDatos {
   width: 100%;
@@ -320,7 +270,7 @@ body {
 }
 .menu-collapsed {
   width: calc(var(--width-collapsed) + 10px);
-  transition: width 1s;
+ /*  transition: width 1s; */
 }
 .menu-espanded {
   width: var(--width);
@@ -403,7 +353,6 @@ body {
   margin-top: 50px;
   width: 98%;
   margin-left: 0px;
-  padding-right: 100px;
   display: flex;
   justify-content: space-around;
 }
@@ -421,18 +370,22 @@ body {
 }
 .contenedorEstadisticas .cajas .ECantDinero {
   background-color: #27a844;
+  cursor: pointer;
 }
 .contenedorEstadisticas .cajas .masInfoCantDinero {
   background-color: #10882a;
 }
 .contenedorEstadisticas .cajas .ECantUsuarios {
-  background: var(--background);;
+  background: var(--background);
+  cursor: pointer;
 }
 .contenedorEstadisticas .cajas .masInfoCantUsuarios {
   background-color: #cc9d0e;
+  
 }
 .contenedorEstadisticas .cajas .ECantProdStok {
   background-color: #cc232c;
+  cursor: pointer;
 }
 .contenedorEstadisticas .cajas .masInfoCantProdStok {
   background-color: #b11e2d;

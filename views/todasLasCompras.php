@@ -1,5 +1,4 @@
 <?php
-	include("../views/header.php");
 	include("../model/conexion.php");
 	include("../model/url.php");
 	$bus=new ApptivaDB();
@@ -89,8 +88,10 @@ $html="";?>
                            
                         </div>
                         <div class="ComprasImagenes">
+                            
                             <?php foreach($compras as $recor_compras){?>
                                 <div><img src="<?php echo $recor_compras["imagen_pro"];?>" alt="" srcset="" width="30px"></div>
+                                <span><?php echo $recor_compras["unidades_car"];?></span>                                
                             <?php }?>
                         </div>
 

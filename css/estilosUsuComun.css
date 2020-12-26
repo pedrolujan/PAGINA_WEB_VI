@@ -88,13 +88,14 @@ background-color: rgb(58, 57, 57);
   cursor: pointer;  
 }
 .masUevo{
-    background-color: #167240;
+    margin: auto;
     margin-top: 20px;
-    width: 100%;
+    width:30%;
 }
 .masUevo p{
     text-align: center;
-    color: #fff;
+    color: rgb(139, 139, 139);
+    border-bottom: solid 2px #FEC009;
     font-size: 40px;
 }
 a{

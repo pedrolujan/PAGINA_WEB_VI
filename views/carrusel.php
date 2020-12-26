@@ -26,7 +26,7 @@ include("model/url.php");
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block " src="<?php echo $urlProyecto?>imagenes/fuentes/car2.png" alt="Second slide">
+                <img class="d-block " src="<?php echo $urlProyecto?>imagenes/fuentes/car2.gif" alt="Second slide">
                 <div class="cantenInfoIndex">
                     <div class="carInfo">Precios Bajos</div>
                     <p class="subCarInfo">siempre a tu servicio</p>                    

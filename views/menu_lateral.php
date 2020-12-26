@@ -11,7 +11,7 @@
     <div class="conten_body2index">
         <?php
         if(isset($_SESSION["adminLogeado"])){?>
-        <div id="sidemenu" class="menu-espanded sidemenu sidemenuAdmin">
+        <div id="sidemenu" class="menu-collapsed sidemenu sidemenuAdmin">
             <?php }else{?>
             <div id="sidemenu" class="menu-collapsed sidemenu">
                 <?php }?>
@@ -25,18 +25,19 @@
                 </div>
                 <div id="profile" class="profile">
                     <div id="photo" class="photo"><?php
-            if ( is_file($urlProyecto."imagenes/usuarios/" . $_SESSION[ 'usuarioLogeado' ] . ".jpg" ) ) {
-                ?>
-                        <img src="<?php echo $urlProyecto?>imagenes/usuarios/<?php echo($_SESSION['usuarioLogeado'])?>.jpg" width="150"
+                        if ( is_file($urlProyecto."imagenes/usuarios/" . $_SESSION[ 'usuarioLogeado' ] . ".jpg" ) ) {
+                        ?>
+                            <img src="<?php echo $urlProyecto?>imagenes/usuarios/<?php echo($_SESSION['usuarioLogeado'])?>.jpg" width="150"
                             onclick="desplemenulogin()" class="img_usuario" />
                         <?php
-            } else {
-                ?>
+                        } else {
+                            ?>
                         <img src="<?php echo $urlProyecto?>imagenes/usuarioblanco.jpg" width="150" class="img_usuario"
                             onclick="desplemenulogin()" />
                         <?php }?>
                     </div>
                     <div id="name" class="name"><span class="bievenido_usu"></span></div>
+                    <span class="icon"></span>
                 </div>
                 <?php
             if(isset($_SESSION["adminLogeado"])){?>

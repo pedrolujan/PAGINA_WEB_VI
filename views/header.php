@@ -15,11 +15,11 @@ session_start();
 
 <body>
      
-    <div class="headerGeneral">       
+    <div class="headerGeneral" style="z-index: 200;">       
         <div id="header-main" class="header-main">
             <div class="contenHMain">
                 <div class="logo">
-                    <img class="logoEmpresa">
+                    <img class="logoEmpresa" src="../imagenes/fuentes/logo.png" alt="" srcset="">
                 </div>
                 <div class="contenMenu">          
                

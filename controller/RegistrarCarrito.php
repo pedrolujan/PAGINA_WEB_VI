@@ -16,7 +16,6 @@ $idProducto=$_POST["idPro"];
 $stokProducto=$_POST["stok"];
 $precioProducto=$_POST["precio"];
 $cantidadProducto=$_POST["cantidad"];
-
 $subTotal=($precioProducto*$cantidadProducto);
 $resultUnidades="";
 $msg="";
@@ -33,9 +32,8 @@ if($consul){
         "carrito"        
         ,"unidades_car='".$sumaCantidad."',
         fecha_car='".$fecha_actual."',
-		subTotal_car='".$sumaSubTotal."',
-		estado_car='0'"        
-		,"carrito.ID_PRODUCTOS=".$idProducto." AND carrito.ID_USUARIOS=".$id_usuario);
+		subTotal_car='".$sumaSubTotal."'"     
+		,"carrito.ID_PRODUCTOS='".$idProducto."' AND carrito.ID_USUARIOS='".$id_usuario."' AND carrito.estado_car='0'");
 	if ($actualiza) {
 		$msg.=  'ok';
 	} else {

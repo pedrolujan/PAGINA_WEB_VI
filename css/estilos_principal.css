@@ -49,9 +49,9 @@ body {
 .body-expanded {
   /* margin-left: var(--width); */
 }
-.body-expanded .header-main {
+.body-expanded .header-main {/* 
   left: var(--width);
-  width: calc(100% - var(--width));
+  width: calc(100% - var(--width)); */
 
   height: 72px;
 }
@@ -163,6 +163,8 @@ height: 60px;
 #sidemenu #header #title,
 #sidemenu #header #menu-btn {
   vertical-align: middle;
+  color: #fff;
+  
 }
 #sidemenu #header #menu-btn {
   display: inline-block;
@@ -178,7 +180,7 @@ height: 60px;
   background-color: var(--hovercolor);
 }
 .sidemenu #header #menu-btn .btn-hamburger {
-  background-color: rgb(54, 53, 53);
+  background-color: rgb(255, 255, 255);
   width: 80%;
   height: 2px;
   margin: 5px auto;
@@ -206,6 +208,7 @@ height: 60px;
 /*ITEM */
 #sidemenu{
   margin-bottom: 80px;
+  background: #252525;
 }
 .menu-collapsed .menu-items {
   margin-bottom: 80px;
@@ -225,7 +228,11 @@ height: 60px;
 #sidemenu .menu-items .item {
   width: var(--width);
   color: #fff;
+
   border-bottom: solid 1px rgb(196, 195, 195);
+}
+.menu-collapsed .menu-items .item{
+  /* background: #3a3a3a; */
 }
 #sidemenu .menu-items .item .icon {
   display: block;  
@@ -240,6 +247,7 @@ height: 60px;
   vertical-align: middle;
   overflow: hidden;
   display: inline-block;
+  color: #fff;
 }
 #sidemenu .menu-items .item a {
   width: 100%;  
@@ -248,7 +256,7 @@ height: 60px;
 }
 
 .sidemenu .menu-items .item .icon {
-  background-color: rgb(146, 146, 146);
+  background-color: #adadad;
   height: 45px;
   box-sizing: border-box;
   display: flex;
@@ -271,7 +279,7 @@ display: none;
 
 #sidemenu .menu-items .item .icon span {
   width: 100%;
-  color:#fff;
+  color:#6c6d1c;
   font-size: 1.6rem;
   font-weight: bold;
   font-weight: normal;
@@ -310,7 +318,10 @@ display: none;
 .menu-espanded #profile #name {
   width: 100%;
   font-size: 22px;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  background: #F6F7F8;
   margin-bottom: -20px;
 }
 
@@ -467,6 +478,7 @@ a{
 .imgPro_buscados{
   display: flex;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
   width: 90%;
   height: 90%;
@@ -475,6 +487,7 @@ a{
 .imgPro_buscados .imagenMosProductos {
   width: 85%;
   height: 85%;
+  cursor: pointer;
   border-radius: 5px;
   transition: all  0.4s;
 }
@@ -505,7 +518,7 @@ a{
 }
 .contenDatos .precio_pro {
   font-size: 18px;
-  color: #ca0101;
+  color: #ee1414;
   font-family:Times, serif;
   letter-spacing: 2px;
   height: 40%;

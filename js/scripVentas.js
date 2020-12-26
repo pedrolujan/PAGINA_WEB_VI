@@ -121,7 +121,7 @@ $(document).on("click",".item_add",function(e){
              actualizaStok();
              alertasCarrito();
               mostrarProductosEnBolsa();
-             $("#respuesta").addClass("respuestaOk").text("Se añadio a carrito ✔").show(300).delay(2000).hide(300);              
+             $("#respuesta").addClass("respuestaOk").text(response+" ✔").show(300).delay(2000).hide(300);              
              $("#respuesta").removeClass("respuestaError");
              $("#cantidadPro").val(1);
          },

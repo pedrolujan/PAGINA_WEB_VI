@@ -16,7 +16,7 @@
             </div>
             <div class="contenCajas">
                 <div class="contenInputs" id="">
-                    <input type="hidden" name="capIdPro" id="capIdPro">
+                    <input type="text" name="capIdPro" id="capIdPro">
                     <input type="text" name="txtnombre" id="txtnobre" placeholder="Nombre del Producto" value="">
                     <textarea name="txtdescripcion" id="txtdescripcion"></textarea>
                     <input type="text" name="txtmarca" id="txtmarca" placeholder="Marca del Producto"
@@ -139,7 +139,16 @@
     </div>
 </form>
 
-<form action="#" id="form-RegistroCategoria" class="modal" method="post"></form>
+<form action="#" id="form-RegistroCategoria" class="modal" method="post">
+    
+</form>
+
+<form action="#" id="form-ConfCambioEstadoProd" style="z-index:500000;" class="modal" method="post">
+    <h4>¿ En realidad quieres desactivar el producto?</h4>
+    <button>Desactivar</button>
+    <button>ancelae</button>
+
+</form>
 
 
 

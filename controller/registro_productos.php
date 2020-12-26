@@ -30,6 +30,7 @@ $user = new ApptivaDB();
 			$name=$imagen["name"];
 			$ZonaHoraria= date_default_timezone_set('America/lima'); 
 			$fecha_actual=date("dmyGi");
+			$fecha=date("y-m-d");
 			$n_aleatorio = rand(10, 99);			
 			$carpeta="../imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
 			$rutabd=$urlProyecto."imagenes/productos/".$fecha_actual.$categoria."_".$n_aleatorio.$name;
@@ -38,7 +39,7 @@ $user = new ApptivaDB();
 			$u = $user->insertar(
 				"productos",
 				"'$nombre','$descripcion','$marca','$precio','$stock','$categoria',
-				'$rutabd','$estado'");			
+				'$rutabd','$estado','$fecha'");			
 			if ($u) {	
 				move_uploaded_file($tmp_name,$carpeta);
 				$areglo['exito'] = 'Registro corecto';

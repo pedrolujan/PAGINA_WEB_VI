@@ -30,7 +30,7 @@ $user = new ApptivaDB();
 			if($consul){
 				$actualiza = $user->actualizar(
 					"descripcionproducto",
-					"descripcion_pro='".$descripcion."',
+					"descripcion_descriPro='".$descripcion."',
 					fotoUno_descripPro='".$rutabd1."',
 					fotoDos_descripPro='".$rutabd2."'",
 					"descripcionproducto.ID_PRODUCTO=".$idProdcto);

@@ -46,7 +46,9 @@ $bus=new ApptivaDB();
    <?php foreach($fechaCompra as $recor){
            $imagenes= 
            $bus->buscarFech("carrito.id_car,             
-                       productos.imagen_pro",
+                       productos.imagen_pro,
+                       carrito.unidades_car",
+                       
                        "compras
                        INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car
                        INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
@@ -61,9 +63,9 @@ $bus=new ApptivaDB();
                 <span>S/ <?php echo number_format($recor["TOTAL"],1);?></span>
             </div>
             <div class="ComprasImagenes">
-                
                 <?php foreach($imagenes as $imag){?>
-                    <div><img src="<?php echo $imag["imagen_pro"];?>" alt="" srcset=""></div>
+                    <div><img src="<?php echo $imag["imagen_pro"];?>" alt="" srcset="">
+                    <span><?php echo $imag["unidades_car"];?></span></div>
                 <?php }?>
 
             </div>

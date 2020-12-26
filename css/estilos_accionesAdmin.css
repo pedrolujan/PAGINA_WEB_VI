@@ -12,6 +12,7 @@
   border-collapse: collapse;
   margin-right: 20px;
   width: 97%;
+  
 }
 .tableProductos {
   width: 98%;
@@ -26,5 +27,10 @@
 }
 .table tbody tr{
     font-size: 14px;
+}
+.table tbody tr>td>div>img{
+  width: 50px;
+  object-fit: scale-down;
+  cursor: pointer;
 }
 

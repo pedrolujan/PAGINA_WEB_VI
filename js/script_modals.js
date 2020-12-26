@@ -1,4 +1,7 @@
 var urlProyecto="http://localhost/L&M.StoreTecnology/";
+
+export { abrirConfirElimina,cerrarConfirElimina };
+
 function abrirConfirElimina() {
     $('.modal_confirmar').fadeIn(100, function () {
         $('.contenMConfirmar').fadeIn(0);
@@ -59,12 +62,14 @@ $(document).on("click", ".btnActualizarPro", function (e) {
         contentType: false,
         processData: false
     }).done(function correcto(resp) {
-        console.log(resp);
+        
         if (resp.error !== undefined) {
             $(".respuestas").html(resp.error).fadeIn();
+            alert(resp.error);
             return false;
-        }
-        if (resp.exito !== undefined) {
+        }else if (resp.ok !== undefined) {
+            $("#respuesta").addClass("respuestaOk").text("resp.ok").show(300).delay(4000).hide(300);              
+            $("#respuesta").removeClass("respuestaError");
             cerrarRegistroA();
             location.reload();
            /*  $(".respuestas").html(resp.exito).fadeIn();
@@ -270,9 +275,7 @@ $(document).on("click",".btnEditFT",function(){
  })
 
 /* codigo para registrar descripcion de productos */
-$(document).ready(function () {
-    $(document).on("click",".btnGuardarDescripP",insertardescripcion);
-    function insertardescripcion(e) {
+    $(document).on("click",".btnGuardarDescripP",function(e){
         e.preventDefault();
         var datos = new FormData($("#form-DescripcionProducto")[0]);
        let id= $("#txtidDescripProModal").val();
@@ -295,11 +298,10 @@ $(document).ready(function () {
             }
             
         })
-    }
+    });
     setTimeout(function () {
         $(".respuestas").fadeOut(1500);
     }, 3000);
-})
 /* codigo para mostrar descripcion  de producto */
 function mostrarDEscripcionPro(id){
     $.ajax({

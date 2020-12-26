@@ -7,7 +7,7 @@ $html=[];
 if(isset($_SESSION[ 'usuarioLogeado'])){  
 	$u=$user->buscar("usuarios"," usuarios.id_usu=".$_SESSION[ 'usuarioLogeado']);
    foreach ($u as $v)
-    $html['datos']="<p>Usuario <br>".$v["nombre_usu"]."</p>"; 
+    $html['datos']="<p>".$v["nombre_usu"]."</p>"; 
     $html['img']=$urlProyecto.$v["imagen_usu"];
 }elseif(isset($_SESSION['adminLogeado'])){
     $u=$user->buscar("usuarios"," usuarios.id_usu=".$_SESSION[ 'adminLogeado']);

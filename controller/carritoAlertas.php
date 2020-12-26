@@ -5,7 +5,7 @@ $bus=new ApptivaDB();
 $respuesta=array();
 
 if(isset($_SESSION[ 'usuarioLogeado'])){  
-    $cantPro= $bus->buscarCar("SUM(unidades_car) AS UNIDADES, SUM(subTotal_car) AS TOTAL","carrito","ID_USUARIOS='".$_SESSION["usuarioLogeado"]."' AND estado_car='0'");
+    $cantPro= $bus->buscarCar("SUM(unidades_car) AS UNIDADES, SUM(subTotal_car) AS TOTAL","carrito","carrito.ID_USUARIOS='".$_SESSION["usuarioLogeado"]."' AND estado_car='0'");
     foreach($cantPro as $un){   
         
         if($un["TOTAL"]==null){
@@ -18,13 +18,12 @@ if(isset($_SESSION[ 'usuarioLogeado'])){
 
      }  
      
-    echo json_encode($respuesta);
 }else{
     if(isset($_POST["dato"])){
         $cantPro= $bus->buscarCar("
         SUM(unidades_car) AS UNIDADES, SUM(subTotal_car) AS TOTAL,productos.imagen_pro",
         "carrito 
-        INNER JOIN compras ON carrito.id_car=compras.ID_CARRITO
+                INNER JOIN compras ON carrito.id_car=compras.ID_CARRITO
                 INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu
                 INNER JOIN productos ON carrito.ID_PRODUCTOS=productos.id_pro","carrito.estado_car='1'");
        
@@ -40,6 +39,7 @@ if(isset($_SESSION[ 'usuarioLogeado'])){
     
          }  
     }
-    echo json_encode($respuesta);
+    
 }
+echo json_encode($respuesta);
 ?>

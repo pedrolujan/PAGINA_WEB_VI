@@ -22,8 +22,8 @@ $user=new ApptivaDB();
                 <h3 id="msg">Registra producto</h3>
                 <div class="contenFoto_prod">
                     <input type="file" name="imagenProducto" id="imagenProducto" style="display: none;">
-                    <img src="../imagenes/fuentes/subir_imagen.gif" alt="" srcset="" id="acaFotoProducto">
-                    <div class="btnSubeImgPro" id="btnSubeImgPro"><span class="icon-camera"></span></div>
+                    <div><img src="./imagenes/fuentes/subir_imagen.gif" alt="" srcset="" id="acaFotoProducto">
+                    <div class="btnSubeImgPro" id="btnSubeImgPro"><span class="icon-camera"></span></div></div>
                 </div>
                 <div class="contenCajas">
                     <div class="contenInputs" id="">

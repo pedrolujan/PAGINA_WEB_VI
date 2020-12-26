@@ -17,12 +17,12 @@ include("../model/url.php");
     <script src="../js/jquery-Carrito/simpleCart.min.js"></script>
     <script src="../js/jquery-Carrito/app.js"></script> -->
 
-    <!-- <link rel="stylesheet" href="CSS/carrito/bootstrap-grid.css"> -->
+    
     <link rel="stylesheet" href="../css/estilos_principalAdmin.css">
-
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/carrito/estilos.css">
     <link rel="stylesheet" href="../fonts/style.css">
-<link rel="stylesheet" href="../js/jquery.modal.min.css">
+    <link rel="stylesheet" href="../js/jquery.modal.min.css">
     <link rel="stylesheet" href="../fonts/fonts/style.css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosUsuComun.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilos_regProducto.css" type="text/css">
@@ -30,9 +30,13 @@ include("../model/url.php");
     <link rel="stylesheet" href="<?php echo $urlProyecto?>css/estilosHeader.css">
     <link rel="stylesheet" href="../css/estilos_accionesAdmin.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="<?php echo $urlProyecto?>css/ventas.css">
+    
+    <link rel="stylesheet" href="Chart.min.css">
 </head>
 
-<body class="body-expanded">
+<body class="">
+body-expanded
     <?php include("header.php"); ?>
     <?php include("menu_lateral.php");?>
        
@@ -95,7 +99,43 @@ include("../model/url.php");
                 </div>
             </div>
         </div>
+        <div class="ontenedorEstadisticas" style="width: 100%;">
+        <div class="card z-index-none" style="margin-top: 50px">
+        <div class="card-header">
+            <div class="col-lg-12 d-flex justify-content-between">
+                    <input type="text" name="txtItemABuscar" id="txtItemABuscar" value="productosVendidos" style="display:none;">
+                <div class="col-lg-5">
+                    <label for="">FECHA INICIO</label></br>
+                    <input id="fecha_inicio" type="date" name="fecha_inicio" required/>
+                </div>
+                <div class="col-lg-5">
+                    <LAbel>FECHA FIN</LAbel></br>
+                    <input id="fecha_final" type="date" name="fecha_final" required/>
+                </div>
+                <div class="col-lg-2">
+                    <label for=""></label></br>
+                    <button   id="btnBuscarEstadistica" class="btn btn-danger">buscar</button>
+                </div>
+                </div>
+        </div>
+        <div class="card-body" style="width: 100%;">
+            <div class="row col-lg-12" id="contenGraficos" style="width: 100%;" >           
+                
+                <div class="col-lg-6" >
+                <canvas id="GraficoFiltrado" style="background-color: #F7F7F7;"></canvas>
+                </div>
+                <div class="col-lg-6">
+                    <canvas id="graficopie" style="background-color: #F7F7F7;"></canvas>
+                </div>
+            </div>
+            <div class="row col-lg-12 contenDatosSegunGraficas">
+
+            </div>
+        </div>
+    </div>
+     </div>
         <div class="cargarDatos">
+          
         </div>
     </div>
     <?php
@@ -114,11 +154,14 @@ include("../model/url.php");
 
     }
     </script>
-
-
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="../js/principal.js"></script>
     <script src="../js/scrip_admin.js"></script>
     <script src="../js/scripVentas.js"></script>
+
+    
 </body>
 
 </html>

@@ -1,10 +1,11 @@
 
-mostrarProductos();
+
 var urlProyecto="http://localhost/L&M.StoreTecnology/";
 mostrarProductos1();
 mostrarMensajes();
 cargar_datosUsuLogeado();
 cargar_datosUsuLogeadoIndex();
+mostrarProductos();
 $(document).ready(function(){
     $("#TOTALCARRITO").val();
     $(".cantidadUnidades").text($("#TOTALUNIDADES").val());
@@ -117,11 +118,6 @@ $(document).on("click","#btnLogearse",function(){
 
    
 });
-/* codigo boton atras */
-$(document).on("click",".icon-arrow-left2",function(){
-    mostrarProductos();
-})
-
 /* codigo para mostrar todo los productos */
 function mostrarProductos() {
     $.ajax({
@@ -400,19 +396,7 @@ function mostrarMensajes() {
     }
     
     
-$(document).on("click",".verClientes",function(){
-    $.ajax({
-        url: '../controller/todosUsuarios.php',
-        type: 'GET',
-        beforeSend: function () {},
-        success: function (res) {
-            $(".cargarDatos").html(res);
-        },
-        error: function () {
-            /* alert("error") */
-        }
-    })
-});
+
 $(document).on("click",".verCompras",function(){
     $.ajax({
         url: '../controller/todosUsuarios.php',
@@ -426,4 +410,13 @@ $(document).on("click",".verCompras",function(){
         }
     })
 });
-           
+$(document).on("click",".img_descripProd1",function(){    
+    $("#imagenDetPro").attr("src",$(".img_descripProd1").attr("src"));
+    
+}) 
+$(document).on("click",".img_descripProd2",function() {
+    $("#imagenDetPro").attr("src",$(".img_descripProd2").attr("src"));
+}) 
+$(document).on("click",".img_descripProd3",function() {
+    $("#imagenDetPro").attr("src",$(".img_descripProd3").attr("src"));
+}) 

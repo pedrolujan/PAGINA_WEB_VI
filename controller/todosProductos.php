@@ -22,8 +22,8 @@ $html="";
 		foreach ($u as $v){			
 		$html.="<tr capturoIdProd=".$v['id_pro'].">
 					<td>
-						<div class='imgPro_buscados'>
-							<img src='".$v['imagen_pro']."' width='50px'; >
+						<div class='img_Productos'>
+							<img src='".$v['imagen_pro']."' class='imagenProductoAdmin'>
 						</div>
 					</td>
 					<td>
@@ -43,8 +43,11 @@ $html="";
 						<img src='../imagenes/fuentes/iconos/eliminar.svg' alt=''srcset=''>						
 					</td>
 					<td class='btnEliminarPro'>
-						<img src='../imagenes/fuentes/iconos/eliminar.svg' alt=''srcset=''>		
+						
+							<img src='../imagenes/fuentes/iconos/eliminar.svg' alt=''srcset=''>		
+						
 					</td>
+					
 				</tr>"; 
 		}
 	$html.="</tbody>
@@ -98,4 +101,3 @@ $html="";
 echo $html;
    ?>
 
-  

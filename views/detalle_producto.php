@@ -39,16 +39,22 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 
 	include("../model/conexion.php");
 	$user=new ApptivaDB();
-	$u=$user->buscar("productos"," productos.id_pro=".$_GET['id']);
+	$u=$user->buscar("productos","productos.id_pro='".$_GET['id']."'");
+	$desc=$user->buscarFech("descripcionproducto.fotoUno_descripPro,descripcionproducto.fotoDos_descripPro",
+	"productos
+	INNER JOIN descripcionproducto ON productos.id_pro=descripcionproducto.ID_PRODUCTO",
+					"descripcionproducto.ID_PRODUCTO='".$_GET['id']."'");
 	foreach ($u as $v){
 		if(isset($_SESSION['adminLogeado'])){	?>			
 				<div class='contenDetPro' capturoid="<?php echo $v['id_pro']?>">
 					<div class='contenDatosDetProMain simpleCart_shelfItem' id="contenDatosDetProMain">
 						<div class='imgDet_Pro'>
 							<div class="carruselImagenes">
-								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
-								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
-								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
+							<img src="<?php echo $v['imagen_pro']?>" alt=""  class="img_descripProd1"srcset="">
+							<?php foreach ($desc as $des){?>								
+								<img src="<?php echo $des['fotoUno_descripPro']?>" class="img_descripProd2" alt="" srcset="">
+								<img src="<?php echo $des['fotoDos_descripPro']?>" class="img_descripProd3" alt="" srcset="">
+							<?php }?>
 							</div>
 							<img src="<?php echo $v['imagen_pro']?>" class='item_image' id="imagenDetPro">
 						</div>
@@ -95,11 +101,13 @@ if(isset($_GET['id']) && ($_GET['id']!="")){
 					<div class='contenDatosDetProMain simpleCart_shelfItem' id="contenDatosDetProMain">
 						<div class='imgDet_Pro'>
 							<div class="carruselImagenes">
-								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
-								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
-								<img src="<?php echo $v['imagen_pro']?>" alt="" srcset="">
+							<img src="<?php echo $v['imagen_pro']?>" alt=""  class="img_descripProd1"srcset="">
+							<?php foreach ($desc as $des){?>								
+								<img src="<?php echo $des['fotoUno_descripPro']?>" class="img_descripProd2" alt="" srcset="">
+								<img src="<?php echo $des['fotoDos_descripPro']?>" class="img_descripProd3" alt="" srcset="">
+							<?php }?>
 							</div>
-							<img src="<?php echo $v['imagen_pro']?>" class='item_image'>
+							<img src="<?php echo $v['imagen_pro']?>" id="imagenDetPro" class='item_image'>
 						</div>
 						<div class='contenDatosDetPro ' capId="<?php echo $v['id_pro']?>">
 							<input type='hidden' class='item_idpro' id="idProducto" value="<?php echo $v['id_pro']?>" style='display:blok;'>

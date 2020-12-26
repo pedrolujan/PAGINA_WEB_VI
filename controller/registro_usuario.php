@@ -13,6 +13,8 @@ $correo = $_POST["correo"];
 $usuario = $_POST["usuario"];
 $clave = $_POST["clave"];
 $repclave = $_POST["repclave"];
+$ZonaHoraria= date_default_timezone_set('America/lima');
+	$fecha=date("y-m-d");
 
 if (empty($nombre)) {
 	$areglo['error'] = "Complete el campo Nombre ";
@@ -66,11 +68,16 @@ if (empty($nombre)) {
 } elseif (strlen($clave) < 4) {
 	$areglo['error'] = "contraseña muy corta ";
 } else {
+	
+	$consulta=$user->buscarFech("usuarios.dni_usu","usuarios","usuarios.dni_usu='".$dni."'");
+	$result=mysqli_num_rows($consulta);
+	if($result){
+
+	}
 	$u = $user->insertar(
 		"usuarios",
-		"'$nombre','$apellido','$dni','$telefono','$pais',
-		'$provincia','$correo','$usuario','$clave','$repclave','NULL','foto'"
-	);
+		"'$nombre','$apellido','$dni','$telefono','1',
+		'1','$correo','$usuario','$clave','$repclave','foto','1','$fecha'");
 	if ($u) {
 		//$html.="registro correcto";	
 		$areglo['exito'] = 'Registro corecto';
