@@ -30,15 +30,33 @@
 }
 .table tbody tr>td>div>img{
   width: 50px;
+  height: 50px;
   object-fit: scale-down;
   cursor: pointer;
 }
+.table tbody tr>td>div>img:hover{
+  border-radius:50%;
+-webkit-border-radius:50%;
+box-shadow: 0px 0px 15px 15px #bdab08;
+-webkit-box-shadow: 0px 0px 15px 15px #dacf37;
+transform: rotate(360deg);
+-webkit-transform: rotate(360deg);
+}
+
 .table tbody tr>.btnEliminarPro>span{
   font-size: 30px;
   cursor: pointer;
   color: #CC232C;
 }
+.table tbody tr>.btnEliminarUsuario span{
+  font-size: 30px;
+  cursor: pointer;
+  color: #CC232C;
+}
 .table tbody tr>.btnEliminarPro>span:hover{
+  font-size: 25px;
+}
+.table tbody tr>.btnEliminarUsuario>span:hover{
   font-size: 25px;
 }
 

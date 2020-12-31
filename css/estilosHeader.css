@@ -267,7 +267,6 @@
   font-size: 20px;
   font-weight: bold;
   padding: 5px;
-  display: none;
   text-align: center;
   background: rgb(23, 156, 23, 0.1);
 }
@@ -285,11 +284,12 @@
   background: rgba(156, 23, 23, 0.1);
 }
 .item_add{
-  background-color:#403F5D;
   padding: 8px 50px;
-  color: #fff;
+  color: rgb(54, 54, 54);
+  border: solid 1px  #FEC009;
   border-radius: 5px;
 }
 .item_add:hover{
-  background-color:#605f92;
+  background-color: #FEC009;
+  
 }

@@ -11,12 +11,12 @@
             <div class="contenFotoAct_prod">
                 <input type="hidden" name="txtimagen" id="txtimagen" value="">
                 <input type="file" name="imagenActProducto" id="imagenActProducto" style="display: none;">
-                <img src="" alt="" srcset="" id="acaFotoActProducto">
-                <div class="btnSubeImgActPro" id="btnSubeImgActPro"><span class="icon-camera"></span></div>
+                <div><img src="" alt="" srcset="" id="acaFotoActProducto">
+                <div class="btnSubeImgActPro" id="btnSubeImgActPro"><span class="icon-camera"></span></div></div>
             </div>
             <div class="contenCajas">
                 <div class="contenInputs" id="">
-                    <input type="text" name="capIdPro" id="capIdPro">
+                    <input type="hidden" name="capIdPro" id="capIdPro">
                     <input type="text" name="txtnombre" id="txtnobre" placeholder="Nombre del Producto" value="">
                     <textarea name="txtdescripcion" id="txtdescripcion"></textarea>
                     <input type="text" name="txtmarca" id="txtmarca" placeholder="Marca del Producto"
@@ -49,11 +49,23 @@
 <div class="contenMConfirmar" style="z-index: 31">
     <div class="btnCerrar">X</div>
     <div class="atenecion">¡ Atencion !</div>
-    <input type="text" name="txtObtId" id="txtObtId">
-    <input type="text" name="txtTipoCon" id="txtTipoCon">
-    <h3>¿En realidad deseas eliminar?</h3><br>
+    <input type="hidden" name="txtObtId" id="txtObtId">
+    <input type="hidden" name="txtTipoCon" id="txtTipoCon">
+    <h3>¿ seguro de cambiar estado ?</h3><br>
+    <img src="../imagenes/fuentes/alerta.gif" alt="" srcset="">
     <button class="btn_cancelar">Cancelar</button>
-    <button class="btn_eliminar">Eliminar</button>
+    <button id="btn_CambiarEstado" class="btn_CambiarEstado">Aceptar</button>
+</div>
+<div class="modal_confirmar" style="z-index: 30"></div>
+<div class="contenMConfirmar contenConfiCompra" style="z-index: 31">
+    <div class="btnCerrar">X</div>
+    <div class="atenecion">¡ Atencion !</div>
+    <input type="hidden" name="txtObtId" id="txtObtId">
+    <input type="hidden" name="txtTipoCon" id="txtTipoCon">
+    <h3>¿ Seguro que quieres comprar ?</h3><br>
+    <img src="../imagenes/fuentes/alerta.gif" alt="" srcset="">
+    <button class="btn_cancelar">Cancelar</button>
+    <button id="btn_CambiarEstado" class="btn_CambiarEstado">Aceptar</button>
 </div>
 
 <!-- codigo para ficha del producto -->
@@ -144,7 +156,7 @@
     
 </form>
 
-<form action="#" id="form-ConfCambioEstadoProd" style="z-index:500000;" class="modal" method="post">
+<form action="#" id="form-CompraExitosa"class="modal" method="post">
     <h4>¿ En realidad quieres desactivar el producto?</h4>
     <button>Desactivar</button>
     <button>ancelae</button>
@@ -155,5 +167,10 @@
 
 <script src="http://localhost/L&M.StoreTecnology/js/jquery.modal.min.js"></script>
 
-<script src="http://localhost/L&M.StoreTecnology/js/script_modals.js"></script><!-- 
+<script src="http://localhost/L&M.StoreTecnology/js/script_modals.js"></script>
+
+
+<!-- 
+
+
 <script src="js/jquery-3.5.1.min.js"></script> -->

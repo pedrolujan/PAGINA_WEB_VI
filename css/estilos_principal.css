@@ -27,20 +27,18 @@ body {
 }
 .error{
   display: block;  
-  color: #792020; 
+  color: #bb0000; 
   font-size: 20px;
-  font-weight: bold;
   padding: 5px;
   display: none;
   text-align: center;
-  background: rgba(156, 23, 23, 0.1);
+  background: rgba(216, 0, 0, 0.178);
 }
 .exito{
   display: block;
-  color: #207920;
+  color: #1b881b;
   width: auto;
   font-size: 20px;
-  font-weight: bold;
   padding: 5px;
   display: none;
   text-align: center;
@@ -321,7 +319,7 @@ display: none;
   display: flex;
   justify-content: center;
   text-align: center;
-  background: #F6F7F8;
+  color: #adadad;
   margin-bottom: -20px;
 }
 
@@ -407,7 +405,7 @@ display: none;
   color: #000;
   overflow: hidden;
   text-align: center;
-  top: 55px;
+  top: 95px;
   right: 0px;
   padding: 0px;
   border-radius: 0px 0px 5px 10px;

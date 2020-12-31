@@ -1,0 +1,32 @@
+.contenEstados{
+ background-color: lightgreen;
+ width: 100%;
+}
+.contenEstados .contenItemsEstados{
+    background-color: lightseagreen;
+    display: flex;
+    justify-content: space-evenly;
+}
+.contenEstados .contenItemsEstados .contEstadosProductos{
+    background-color: lightcoral;
+    width: 20%;
+    height: 150px;
+}
+.contenEstados .contenItemsEstados .contenEstadosUsuarios{
+    background-color: rgb(128, 139, 240);
+    width: 20%;
+    height: 150px;
+}
+.contenEstados .contenCargarDatos_Estados{
+    background-color: rgb(46, 51, 102);
+    display: flex;
+    justify-content: space-evenly;
+}
+.contenEstados .contenCargarDatos_Estados .datos{
+    background-color: rgb(48, 102, 46);
+    width: 100%;
+}
+.contenedorEstados{
+    display: flex;
+    width: 100%;
+}

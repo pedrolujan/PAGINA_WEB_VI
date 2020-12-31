@@ -36,7 +36,6 @@ include("../model/url.php");
 </head>
 
 <body class="">
-body-expanded
     <?php include("header.php"); ?>
     <?php include("menu_lateral.php");?>
        
@@ -53,7 +52,7 @@ body-expanded
                     </div>
                 </div>
                 <div class="masInfo masInfoProVendidos">
-                    <p>mas informacion <span class="fas fa-arrow-circle-right"></p>
+                    <p><span id="preoductosVendidosHoy"></span> hoy<span class="fas fa-arrow-circle-right"></p>
                 </div>
             </div>
             <div class="cajas EstadisticaCantidadDinero">
@@ -67,13 +66,13 @@ body-expanded
                     </div>
                 </div>
                 <div class="masInfo masInfoCantDinero">
-                    <p>mas informacion <span class="fas fa-arrow-circle-right"></p>
+                    <p><span id="dineroHoy"></span> hoy<span class="fas fa-arrow-circle-right"></p>
                 </div>
             </div>
             <div class="cajas EstadisticaCantidadUsuarios">
                 <div class="contenDatos_icono ECantUsuarios">
                     <div class="datos">
-                        <h2 id="clientesRegistrados">150</h2>
+                        <h2 id="clientesRegistrados"></h2>
                         <p>Clientes</p>
                     </div>
                     <div class="icono">
@@ -81,7 +80,7 @@ body-expanded
                     </div>
                 </div>
                 <div class="masInfo masInfoCantUsuarios">
-                    <p>mas informacion <span class="fas fa-arrow-circle-right"></p>
+                    <p><span id="clientesInactivos"></span> Inactivos<span style="margin-left: 10px;" class="fas fa-arrow-circle-right"></p>
                 </div>
             </div>
             <div class="cajas EstadisticaCantidadProd">
@@ -95,7 +94,7 @@ body-expanded
                     </div>
                 </div>
                 <div class="masInfo masInfoCantProdStok">
-                    <p>mas informacion <span class="fas fa-arrow-circle-right"></span></p>
+                    <p><span id="productosStockInactivos"></span> Inactivos<span style="margin-left: 10px;" class="fas fa-arrow-circle-right"></span></p>
                 </div>
             </div>
         </div>
@@ -114,7 +113,7 @@ body-expanded
                 </div>
                 <div class="col-lg-2">
                     <label for=""></label></br>
-                    <button   id="btnBuscarEstadistica" class="btn btn-danger">buscar</button>
+                    <button   id="btnBuscarEstadistica" class="btn btn-warning">buscar</button>
                 </div>
                 </div>
         </div>
@@ -134,7 +133,10 @@ body-expanded
         </div>
     </div>
      </div>
-        <div class="cargarDatos">
+        <div class="cargarDatos" id="cargarDatos">
+          
+        </div>
+        <div class="piecargarDatos" id="piecargarDatos" style="height:100px;" >
           
         </div>
     </div>

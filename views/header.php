@@ -1,6 +1,8 @@
 <?php
 error_reporting(0);
 session_start();
+include("../model/url.php");
+$direccion=$urlProyecto;
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +21,7 @@ session_start();
         <div id="header-main" class="header-main">
             <div class="contenHMain">
                 <div class="logo">
-                    <img class="logoEmpresa" src="../imagenes/fuentes/logo.png" alt="" srcset="">
+                    <img class="logoEmpresa" src="<?php echo $direccion ?>imagenes/fuentes/logo.png" alt="" srcset="">
                 </div>
                 <div class="contenMenu">          
                
@@ -84,8 +86,9 @@ session_start();
                     <div class="datos_usuarioEsp abrirLogeo">               
                     <?php }else{?>
                         <div class="datos_usuarioEsp" onclick="desplemenulogin()">
-                        <?php }?>
-                    
+                        <?php }
+                        
+                        ?>
                         <img src="<?php echo $urlProyecto?>imagenes/usuarioblanco.jpg" width="150" onclick="desplemenulogin()" / class="img_usuario" />
                     
 

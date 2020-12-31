@@ -122,7 +122,7 @@ include("header.php");
 
     <script src="../js/principal.js"></script>
     
-<script src="../js/scripVentas.js" type="module"></script>
+<script src="../js/scripVentas.js"></script>
 </body>
 
 </html>

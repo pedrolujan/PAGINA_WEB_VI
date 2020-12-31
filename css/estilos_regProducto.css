@@ -61,13 +61,26 @@
   align-items: center;
   justify-content: center;
   text-align: center; 
+  margin-bottom: 20px;
 }
 .contenFoto_prod>div{
   width: 400px;
   height: 400px;
   
 }
+.contenFotoAct_prod >div{
+  width: 400px;
+  height: 400px;
+  
+}
 .contenFoto_prod>div>img{
+  width: inherit;
+  height: inherit;
+  object-fit: scale-down;
+  border-radius: 5px;
+  
+}
+.contenFotoAct_prod >div>img{
   width: inherit;
   height: inherit;
   object-fit: scale-down;

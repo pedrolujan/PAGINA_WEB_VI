@@ -32,7 +32,7 @@ include("model/url.php");
 <?php include("views/header.php"); ?>    
     <?php include("views/carrusel.php"); ?>
     <div class="contenBotones">
-        <a href="views/registro_usuario.php" class="btn btnInicio mr-5   px-5">registrarce</a>
+        <a href="views/registro_usuario.php" class="btn btnInicio mr-5   px-5">registrarse</a>
         <a href="#login-form"  rel="modal:open" class="btn btnInicio ml-5 py-3 px-5">Iniciar Session</a>
         
     </div>

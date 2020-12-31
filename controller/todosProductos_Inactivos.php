@@ -41,7 +41,7 @@ $html="";
 						<label>S/ ".$v["precio_pro"]."</label>				
 					</td>
 					<td>
-						<span style='color:#000;'>🔴</span>						
+						<span style='color:red;'>🔴 Inactivo</span>						
 					</td>
 					<td class='btnEliminarPro'>
 						<span class='icon-eye' style='color: green;'></span>	

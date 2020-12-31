@@ -26,7 +26,6 @@ $(document).ready(function () {
   });
 });
 /* codigo para registro de usuario */
-$(document).ready(function () {
   $("#btnRegistrar").click(function (evt) {
     evt.preventDefault();
     $("#container")
@@ -36,19 +35,7 @@ $(document).ready(function () {
       .show();
     $(".mensajeerror").hide();
     $(".mensajeok").hide();
-    var datos = {
-      nombre: $("#txtnombre").val(),
-      apellido: $("#txtapellido").val(),
-      dni: $("#txtdni").val(),
-      telefono: $("#txttelefono").val(),
-      pais: $("#cbo_pais").val(),
-      provincia: $("#cbo_provincia").val(),
-      correo: $("#txtcorreo").val(),
-      usuario: $("#txtusuario").val(),
-      clave: $("#txtclave").val(),
-      repclave: $("#txtconfclave").val(),
-    };
-
+    let datos=$("#formulario_registro").serialize();
     $.ajax({
       data: datos,
       url: "../controller/registro_usuario.php",
@@ -66,7 +53,7 @@ $(document).ready(function () {
         if (resp.exito !== undefined) {
           $(".mensajeok").fadeIn(100).text(resp.exito).show();
           $(".mensajeerror").text(resp.error).hide();
-          $("#container").hide();
+          /* $("#container").hide();
           $("#txtnombre").val("");
           $("#txtapellido").val("");
           $("#txtdni").val("");
@@ -76,14 +63,13 @@ $(document).ready(function () {
           $("#txtcorreo").val("");
           $("#txtusuario").val("");
           $("#txtclave").val("");
-          $("#txtconfclave").val("");
+          $("#txtconfclave").val(""); */
           setTimeout("location.href='../index.php'", 1000);
         }
       })
       .fail(function error(e) {})
       .always(function final() {});
   });
-});
 var cont=0;
 /* codigo para logeo */
 $(document).ready(function () {

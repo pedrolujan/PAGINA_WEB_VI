@@ -18,7 +18,7 @@ if($tipoConsulta=="productosVendidos"){
     if($fechaInicio=="" && $fechaFinal==""){
 
         $fechaInicio="2020-01-01";
-        $consulta=$busq->buscarFech("compras.fecha_corta_comp,COUNT(*) AS totalCompras",
+        $consulta=$busq->buscarFech("compras.fecha_corta_comp, SUM(carrito.unidades_car) AS SUMA",
                                 "compras
                                 INNER JOIN carrito ON compras.ID_CARRITO=carrito.id_car 
                                 INNER JOIN usuarios ON carrito.ID_USUARIOS=usuarios.id_usu 
@@ -29,7 +29,7 @@ if($tipoConsulta=="productosVendidos"){
         while($row =mysqli_fetch_array($consulta)){
                 $json[] = array(				
                 'fecha' => $usu_fecha_registro = strftime("%d de %B del %Y", strtotime( $row['fecha_corta_comp'])),
-                'cantidad' => $row['totalCompras'],
+                'cantidad' => $row['SUMA'],
                 'tipoGrafica'=>  "Cantidad de ventas"        
                 );
         }                       

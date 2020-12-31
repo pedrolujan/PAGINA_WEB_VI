@@ -9,9 +9,9 @@
     left: 0;
 }
 .contenMConfirmar{
-    background-color: #fff;
+    background-color: #ffffff;
     width: 40%;
-    height: 30%;
+    height: 40%;
     margin: auto;
     text-align: center;
     top: 0;
@@ -45,7 +45,18 @@
     margin-top: 10px;
 }
 .contenMConfirmar h3{
+    margin-bottom: 0px;
     font-weight: normal;
+    font-size: 22px;
+}
+.contenMConfirmar img{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-left: 12%;
+    position: fixed;
+    object-fit: scale-down;
+    display: inline-block;
 }
 .contenMConfirmar button{
     height: 30px;
@@ -59,11 +70,16 @@
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 2%;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+.contenMConfirmar button:hover{
+    transform: scale(1.1);    
 }
 
-.contenMConfirmar .btn_eliminar{
+.contenMConfirmar .btn_CambiarEstado{
     background: #D9534F;
+    
 }
 /* //codigo para el logeo si desea comprar */
 #login-form{
@@ -89,18 +105,19 @@
     border-radius: 6px;
 }
 #login-form input:focus{
-    border: solid 1.5px #166FE5;
+    border: solid 1.5px #f3b91a;
 }
 #login-form .btnaccederM{
  width: 60%;
- background-color: #166FE5;
- color: #fff;
+ color: rgb(80, 80, 80);
+ border: solid 1px #f3b91a;
  cursor: pointer;
  margin-top: 20px;
  font-weight: bold;
 }
 #login-form .btnaccederM:hover{
     transform: scale(1.05);
+    background-color: #f3b91a;
 }
 #login-form .btnaccederM:active{
     transform: scale(1);
@@ -215,7 +232,7 @@
 }
 #form-DescripcionProducto
  .conten-descripProducto >a> input{
-    background: rgb(62, 59, 224); 
+    background: rgb(218, 180, 14); 
     width: 40%;
     color: #fff;
     outline: none;

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeJaTec Servis</title>
+    <title>L&M TECNO STORE</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <div id="sidemenu" class="menu-collapsed sidemenu">
                 <?php }?>
                 <div id="header" class="header">
-                    <div class="title" id="title"><span>PeJaTec Servis</span></div>
+                    <div class="title" id="title"><span>L&M TECNO STORE</span></div>
                     <div class="menu-btn" id="menu-btn" onclick="abrirMenu()">
                         <div class="btn-hamburger"></div>
                         <div class="btn-hamburger"></div>

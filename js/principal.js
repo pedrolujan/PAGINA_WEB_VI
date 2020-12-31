@@ -333,7 +333,7 @@ $(document).on("click", "#btnActualizaDU", function (e) {
 $(document).on("click", ".CHFoterImg", function () {
     var mensaje = $("#txtmensaje").val();
     $.ajax({
-        url: "controller/insertar_mensaje.php", 
+        url: "../controller/insertar_mensaje.php", 
         data: {mensaje},
         type: "POST", dataType: "json"
     }).done(function correcto(resp) {
@@ -341,16 +341,16 @@ $(document).on("click", ".CHFoterImg", function () {
             $("#msg").html(resp.error);
             return false;
         }
-        if (resp.exito !== undefined) { /* 
-			$(".contenCH_body").html(resp.exito); */
+        if (resp.exito !== undefined) { 
+		alert();
             mostrarMensajes();
-            /* setTimeout("location.href='login.php'", 1000); */
+           
         }
     })
 })
 function mostrarMensajes() {
     $.ajax({
-        url: 'controller/todosMensajes.php',
+        url: '../controller/todosMensajes.php',
         type: 'GET',
         beforeSend: function () {},
         success: function (res) {
@@ -398,7 +398,7 @@ function mostrarMensajes() {
     
 
 $(document).on("click",".verCompras",function(){
-    $.ajax({
+   /*  $.ajax({
         url: '../controller/todosUsuarios.php',
         type: 'GET',
         beforeSend: function () {},
@@ -406,9 +406,9 @@ $(document).on("click",".verCompras",function(){
             $(".cargarDatos").html(res);
         },
         error: function () {
-            /* alert("error") */
+           
         }
-    })
+    }) */
 });
 
 $(document).on("click",".img_descripProd1",function(){    

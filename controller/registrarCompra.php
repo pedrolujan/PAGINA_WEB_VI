@@ -53,7 +53,7 @@ $fecha_actual = date('Y-m-d H:i:s');
 $fecha_corta=date('Y-m-d');
 
 for ($i = 0; $i < $cantidad_Comras; $i++) {
-    $generar_cod = "COMPRAL&M_0" . $obtener_ultimo_id;
+    $generar_cod = "CLM_0" . $obtener_ultimo_id;
     $registrar_compras = $con->insertar(
         "compras",
         "'$ids_carrito[$i]','$generar_cod','$departamento','$provincia','$distrito','$subTotales_carrito[$i]','$fecha_actual','$fecha_corta'");

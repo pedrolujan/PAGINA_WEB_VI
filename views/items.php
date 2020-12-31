@@ -114,9 +114,15 @@ session_start();
                 <div class="title"><span>USUARIOS REGISTRADOS</span></div>
             </a>
         </div>
+        <div class="item">
+            <a href="#" class="verClientesInactivos">
+                <div class="icon"> <img src="<?php echo $urlProyecto?>imagenes/fuentes/userBloked.png" alt="" srcset=""></span></div>
+                <div class="title"><span>USUARIOS REGISTRADOS</span></div>
+            </a>
+        </div>
         
         <div class="item">
-            <a href="todasLasCompras.php" class="verCompras">
+            <a href="#" class="verCompras">
                 <div class="icon"> <img src="<?php echo $urlProyecto?>imagenes/fuentes/ventas.png" alt="" srcset=""></div>
                 <div class="title"><span>TOTAL VENTAS</span></div>
             </a>
@@ -129,7 +135,7 @@ session_start();
         </div>
         <div class="item">
             
-            <a href="#form-RegistroCategoria" rel="modal:open" class="ReguistrarCategoria">
+            <a href="cambiar_estados.php" rel="" class="ReguistrarCategoria">
                 <div class="icon"><img src="<?php echo $urlProyecto?>imagenes/fuentes/settings.png" alt="" srcset=""></span></div>
                 <div class="title"><span>CONFIG. / ACCIONES</span></div>
             </a>
@@ -141,7 +147,7 @@ session_start();
             </a>
         </div>
         <div class="item">
-            <a href="#" class="ProductosInactivos">
+            <a href="#piecargarDatos" class="ProductosInactivos">
                 <div class="icon"><span class="icon-eye-blocked"></span></div>
                 <div class="title"><span>Productos Inactivos</span></div>
             </a>

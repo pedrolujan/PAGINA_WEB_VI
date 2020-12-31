@@ -3,16 +3,16 @@
 sleep(1);
 include "../model/conexion.php";
 $user = new ApptivaDB();
-$nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
-$dni = $_POST["dni"];
-$telefono = $_POST["telefono"];
-$pais = $_POST["pais"];
-$provincia = $_POST["provincia"];
-$correo = $_POST["correo"];
-$usuario = $_POST["usuario"];
-$clave = $_POST["clave"];
-$repclave = $_POST["repclave"];
+$nombre = $_POST["txtnombre"];
+$apellido = $_POST["txtapellido"];
+$dni = $_POST["txtdni"];
+$telefono = $_POST["txttelefono"];
+$pais = $_POST["cbo_pais"];
+$provincia = $_POST["cbo_provincia"];
+$correo = $_POST["txtcorreo"];
+$usuario = $_POST["txtusuario"];
+$clave = $_POST["txtclave"];
+$repclave = $_POST["txtconfclave"];
 $ZonaHoraria= date_default_timezone_set('America/lima');
 	$fecha=date("y-m-d");
 
@@ -69,22 +69,31 @@ if (empty($nombre)) {
 	$areglo['error'] = "contraseña muy corta ";
 } else {
 	
-	$consulta=$user->buscarFech("usuarios.dni_usu","usuarios","usuarios.dni_usu='".$dni."'");
-	$result=mysqli_num_rows($consulta);
-	if($result){
-
+	$consulDni=$user->buscarFech("usuarios.dni_usu","usuarios","usuarios.dni_usu='".$dni."'");
+	$consulCorreo=$user->buscarFech("usuarios.correo_usu","usuarios","usuarios.correo_usu='".$correo."'");
+	$consulUsuario=$user->buscarFech("usuarios.usuario_usu","usuarios","usuarios.usuario_usu='".$usuario."'");
+	$result=mysqli_num_rows($consulDni);
+	$resultCorreo=mysqli_num_rows($consulCorreo);
+	$resultCUsuario=mysqli_num_rows($consulUsuario);
+	if($result>=1){
+		$areglo['error'] = 'Este dni ya esta registrado';
+	}elseif ($resultCorreo>=1) {
+		$areglo['error'] = 'Este correo ya esta registrado';
+	}elseif ($resultCUsuario>=1) {
+		$areglo['error'] = 'Este Usuario ya esta registrado';
+	}else{
+		$u = $user->insertar(
+			"usuarios",
+			"'$nombre','$apellido','$dni','$telefono','1',
+			'1','$correo','$usuario','$clave','$repclave','foto','1','$fecha','1'");
+		if ($u) {
+			
+			$areglo['exito'] = 'Registro corecto';
+		} else {
+			$areglo['error'] = 'Hubo un error en el registro';
+			
+		}
 	}
-	$u = $user->insertar(
-		"usuarios",
-		"'$nombre','$apellido','$dni','$telefono','1',
-		'1','$correo','$usuario','$clave','$repclave','foto','1','$fecha'");
-	if ($u) {
-		//$html.="registro correcto";	
-		$areglo['exito'] = 'Registro corecto';
-	} else {
-		$areglo['error'] = 'Hubo un error en el registro';
-		//$html.="registro correcto";
-	}
+	
 }
 echo json_encode($areglo);
-//echo $html;

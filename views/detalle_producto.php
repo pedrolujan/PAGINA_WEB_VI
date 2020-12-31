@@ -11,7 +11,8 @@ include("../model/url.php");
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="../js/jquery-3.5.1.min.js"></script>    
+	<script src="../js/jquery-3.5.1.min.js"></script>  <!-- 
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">   -->
     <!-- <link rel="stylesheet" href="CSS/carrito/bootstrap-grid.css"> -->
 	<link rel="stylesheet" href="../js/jquery.modal.min.css">
     <link rel="stylesheet" href="../css/estilos_principal.css">
@@ -247,6 +248,8 @@ $(".btnCargaDescrip").click();
 <!-- 
 <script src="../js/jquery-Carrito/simpleCart.min.js"></script>
 <script src="../js/jquery-Carrito/app.js"></script> -->
+<?php include("chat.php"); ?>
+
 
 <script src="../js/principal.js"></script>
 <script src="../js/scrip_modals.js"></script>

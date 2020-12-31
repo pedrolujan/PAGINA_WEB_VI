@@ -1,5 +1,5 @@
 <div class="messagechat" id="messagechat">
-    <img src="imagenes/fuentes/icono_messeger.PNG" alt="" srcset="">
+    <img src="../imagenes/fuentes/icono_messeger.PNG" alt="" srcset="">
 </div>
 <div class="conten_chat" id="conten_chat">
     <div class="contenCH_header">

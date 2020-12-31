@@ -15,9 +15,9 @@ session_start();
     <link rel="stylesheet" href="../fonts/fonts/style.css">
     <link rel="stylesheet" href="../css/stilos_login.css">
 
-</head>
+</head> 
 
-<body>
+<body class="fondoLogin">
 
     <div class="container-form login-form">
         <div class="headerLogin">

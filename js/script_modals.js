@@ -22,7 +22,7 @@ $(document).on('click', '.btnCerrar', cerrarConfirElimina);
 $(document).on('click', '.btn_cancelar', cerrarConfirElimina);
 
 /* codigo para elimminar producto */
-$(document).on('click', '.btn_eliminar', function () {
+$(document).on('click', '.btn_CambiarEstado', function () {
     var id = $("#txtObtId").val();
     $.ajax({
         url: '../controller/eliminar_productos.php',
@@ -312,7 +312,7 @@ function mostrarDEscripcionPro(id){
             let datosRes = JSON.parse(response);
             datosRes.exito.forEach(recor => {				
                 $(".imagen1DescripPro").attr("src",`${recor.fotoUno_descripPro}`);
-                $(".textoDescripcion").html(`${recor.descripcion_pro}`);
+                $(".textoDescripcion").html(`${recor.descripcion_descriPro}`);
                 $(".imagen2DescripPro").attr("src",`${recor.fotoDos_descripPro}`);
                 
         });

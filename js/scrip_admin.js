@@ -1,43 +1,98 @@
+
+alertasDashboardAdmin();
+/* alertas dasboard admonistrador */
+
+function alertasDashboardAdmin(){
+  let fechaIni = $("#fecha_inicio").val();
+  let fechaFin = $("#fecha_final").val();
+  let dato=3;
+  $.ajax({
+      url: '../controller/dashboardAdmin.php',
+      type: 'post',
+      data:{dato,fechaIni,fechaFin},
+      dataType: 'json',
+      success: function (respuesta) {
+              $("#ProductosVendidos").html(`${respuesta.unidades}`);
+              $("#preoductosVendidosHoy").html(`${respuesta.unidadeshoy}`);
+              $("#DineroGenerado").html(`S/ ${respuesta.total}`);           
+              $("#dineroHoy").html(`S/ ${respuesta.totalhoy}`);           
+              $("#clientesRegistrados").html(`${respuesta.totalUsuarios}`);           
+              $("#clientesInactivos").html(`${respuesta.totalUsuariosInactivos}`);           
+              $("#productosStock").html(`${respuesta.stockProductos}`);           
+              $("#productosStockInactivos").html(`${respuesta.stockProductosInac}`);           
+      }
+      
+  })
+}
 $(document).on("click", ".verClientes", function () {
-  mostarClientes();
+  mostarClientesActivos();
+});
+$(document).on("click", ".verClientesInactivos", function () {
+  mostarClientesInactivos();
 });
 $(document).on("click", ".TodosLosProductos", function () {
-  $(".cargarDatos").load("../controller/todosProductos.php");
+  mostarProductosActivos();
 });
 $(document).on("click", ".ProductosInactivos", function () {
-  $(".cargarDatos").load("../controller/todosProductos_Inactivos.php");
+  mostarProductosInactivos();
 });
 
+/* codigo para abrir ventana de confirmacion en cambiar estados de productos */
 $(document).on("click", ".btnEliminarPro", function () {
   let element = $(this)[0].parentElement;
   let idPro = $(element).attr("capturoIdProd");
   $("#txtObtId").val(idPro);
-  $("#txtTipoCon").val("desactivar");
+  $("#txtTipoCon").val("producto");
   abrirConfirElimina();
 });
-/* codigo para elimminar producto */
-$(document).on("click", ".btn_eliminar", function () {
+$(document).on("click", ".btnEliminarUsuario", function () {
+  let element = $(this)[0].parentElement;
+  let idUsu = $(element).attr("capturoIdUsu");
+  $("#txtObtId").val(idUsu);
+  $("#txtTipoCon").val("usuario");
+  abrirConfirElimina();
+});
+/* codigo para elimminar desactivar usuario y productos */
+$(document).on("click", "#btn_CambiarEstado", function (e) {
+  e.preventDefault();
   var id = $("#txtObtId").val();
+  var tipoCon = $("#txtTipoCon").val();
   $.ajax({
     url: "../controller/eliminar_productos.php",
-    data: { id },
+    data: { id,tipoCon},
     type: "post",
     dataType: "json",
   })
     .done(function correcto(resp) {
-      if (resp.exito != undefined) {
-        /* location.reload(); */
-        alert(resp.exito);
+      if (resp.exito != undefined && resp.activarPro!=undefined) {
+        mostarProductosInactivos();
+        cerrarConfirElimina();
+        alertasDashboardAdmin();
+      }else if(resp.exito != undefined && resp.desActivarPro!=undefined){
+        mostarProductosActivos();
+        cerrarConfirElimina();
+        alertasDashboardAdmin();
       }
+      if (resp.exito != undefined && resp.activarUsu!=undefined) {
+        mostarClientesInactivos();
+        cerrarConfirElimina();
+        alertasDashboardAdmin();
+      }else if(resp.exito != undefined && resp.desActivarUsu!=undefined){
+        mostarClientesActivos();
+        cerrarConfirElimina();
+        alertasDashboardAdmin();
+      }
+
       if (resp.error != undefined) {
         $(".respuestas").html(resp.error).fadeIn();
-        /* cerrarConfirElimina(); */
+        cerrarConfirElimina();
       }
     })
     .fail(function error(e) {
       cerrarConfirElimina();
     });
 });
+
 
 function abrirConfirElimina() {
   $(".modal_confirmar").fadeIn(100, function () {
@@ -64,9 +119,49 @@ $(document).on("click", ".imagenProductoAdmin", function () {
     urlProyecto + "views/detalle_Producto.php?id=" + idPro;
 });
 
-function mostarClientes() {
+function mostarClientesActivos() {
   $.ajax({
-    url: "../controller/todosUsuarios.php",
+    url: "../controller/todosUsuariosActivos.php",
+    type: "GET",
+    beforeSend: function () {},
+    success: function (res) {
+      $(".cargarDatos").html(res);
+    },
+    error: function () {
+      /* alert("error") */
+    },
+  });
+}
+function mostarClientesInactivos() {
+  $.ajax({
+    url: "../controller/todosUsuariosInActivos.php",
+    type: "GET",
+    beforeSend: function () {},
+    success: function (res) {
+      $(".cargarDatos").html(res);
+    },
+    error: function () {
+      /* alert("error") */
+    },
+  });
+}
+
+function mostarProductosActivos(){
+  $.ajax({
+    url: "../controller/todosProductos.php",
+    type: "GET",
+    beforeSend: function () {},
+    success: function (res) {
+      $(".cargarDatos").html(res);
+    },
+    error: function () {
+      /* alert("error") */
+    },
+  });
+}
+function mostarProductosInactivos(){
+  $.ajax({
+    url: "../controller/todosProductos_Inactivos.php",
     type: "GET",
     beforeSend: function () {},
     success: function (res) {
@@ -90,7 +185,7 @@ $(document).on("click", ".ECProdVendidos", function () {
 $(document).on("click", ".ECantUsuarios", function () {
   $("#txtItemABuscar").val("clientes");
   cargarDatos_ParaGrafica();
-  mostarClientes();
+  mostarClientesActivos();
 });
 $(document).on("click", ".ECantProdStok", function () {
   $("#txtItemABuscar").val("productosStok");
@@ -100,6 +195,11 @@ $(document).on("click", ".ECantProdStok", function () {
   /* $(".cargarDatos").load("../controller/todosProductos.php"); */
 });
 
+/* codigo para cargar las compras por el items del sidemenu */
+$(document).on("click",".verCompras",function(){
+  caragar_Ventas_segun_fechas();
+
+});
 $(document).on("click", ".contenCompras", function () {
     let IdUsuario=$(this).attr("capturoIdUsu");
     let fechaCompra=$(this).attr("capturofecha");
@@ -164,14 +264,8 @@ function generarNumero(numero) {
 }
 /* genero colores aleatorias */
 function colorRGB() {
-  let coolor =
-    "(" +
-    generarNumero(255) +
-    "," +
-    generarNumero(255) +
-    "," +
-    generarNumero(255) +
-    ")";
+  let coolor ="("+generarNumero(255) +"," +
+    generarNumero(255) +","+generarNumero(255) +")";
   return "rgb" + coolor;
 }
 
@@ -180,6 +274,7 @@ cargarDatos_ParaGrafica();
 $(document).on("click", "#btnBuscarEstadistica", function () {
   cargarDatos_ParaGrafica();
   caragar_Ventas_segun_fechas();
+  alertasDashboardAdmin();
 });
 
 /* filtro por las fechas */

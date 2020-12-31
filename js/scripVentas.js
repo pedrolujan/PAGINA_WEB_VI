@@ -1,6 +1,5 @@
 
 
-alertasDashboardAdmin();
 const toCurrency=(number,currency,lang=1)=>
 Intl.NumberFormat({ style :'currency',currency},lang).format(number);
 alertasCarrito();
@@ -123,7 +122,7 @@ $(document).on("click",".item_add",function(e){
              actualizaStok();
              alertasCarrito();
               mostrarProductosEnBolsa();
-             $("#respuesta").addClass("respuestaOk").text(response+" ✔").show(300).delay(2000).hide(300);              
+             $("#respuesta").addClass("respuestaOk").text("Se añadio al carrito ✔").show(300).delay(2000).hide(300);              
              $("#respuesta").removeClass("respuestaError");
              $("#cantidadPro").val(1);
          },
@@ -136,13 +135,30 @@ $(document).on("click",".item_add",function(e){
          $("#respuesta").removeClass("respuestaOk");
      }
       })
-
+      function abrirConfirElimina() {
+        $('.modal_confirmar').fadeIn(100, function () {
+            $('.contenMConfirmar').fadeIn(0);
+        });
+    }
 /* codigo para borrar producto de carrito */
 $(document).on("click","#btnEliminarItemCarrito",function(){
     let element = $(this)[0].parentElement;
     let idPro = $(element).attr('capturarIdPro');
-    alert(idPro);
-    abrirConfirElimina();
+    $.ajax({
+        data: {idPro},
+        url: urlProyecto+'controller/eliminar_ProductosCarrito.php',
+        type: 'post',
+        dataType:'JSON',
+        beforeSend: function () {},
+        success: function (response) {
+            $("#respuesta").addClass("respuestaOk").text(response.exito).show(300).delay(2000).hide(300);              
+            $("#respuesta").removeClass("respuestaError"); 
+            
+        },
+        error: function () {
+            alert("error")
+        }
+      });
 })
 
  /* codigo para actualiuzar stok */
@@ -274,14 +290,16 @@ $(document).on("change","#cboProvincia",function(){
 $(document).on("click",".contenCompras",function(){
     let element = $(this)[0];
     let fecha = $(element).attr('capturofecha');
+    let codigo=$(element).attr('capturoCodCompra');
+    
     $.ajax({
-        data: {fecha},
+        data: {fecha,codigo},
         url: urlProyecto+'controller/mostarComprasEspecificas.php',
         type: 'post',
         beforeSend: function () {},
         success: function (response) {
-            $("#respuesta").addClass("respuestaOk").text("Estas son tus Compras del dia:  "+fecha).show(300).delay(4000).hide(300);              
-            $("#respuesta").removeClass("respuestaError");
+           /*  $("#respuesta").addClass("respuestaOk").text("Estas son tus Compras del dia:  "+fecha).show(300).delay(4000).hide(300);              
+            $("#respuesta").removeClass("respuestaError"); */
             $(".cargarComprasDetalle").html(response);
         },
         error: function () {
@@ -324,6 +342,8 @@ $(document).on("click",".btnTerminarCompra",function(){
         type: 'post',
         beforeSend: function () {},
         success: function (response) {
+            $("#respuesta").addClass("respuestaOk").text("Compra realizada ✔").show(300).delay(2000).hide(300);              
+            $("#respuesta").removeClass("respuestaError");
               document.location.href = urlProyecto+"views/misCompras.php";
         },
         error: function () {
@@ -335,20 +355,3 @@ $(document).on("click",".btnTerminarCompra",function(){
 $(document).on("click",".verTodoElDinero",function(){
     
 })
-function alertasDashboardAdmin(){
-    let dato=3;
-    $.ajax({
-        url: '../controller/dashboardAdmin.php',
-        type: 'post',
-        data:{dato},
-        dataType: 'json',
-        success: function (respuesta) {   
-            
-                $("#ProductosVendidos").html(`${respuesta.unidades}`);
-                $("#DineroGenerado").html(`S/ ${respuesta.total}`);           
-                $("#clientesRegistrados").html(`${respuesta.totalUsuarios}`);           
-                $("#productosStock").html(`${respuesta.stockProductos}`);           
-        }
-        
-    })
-}

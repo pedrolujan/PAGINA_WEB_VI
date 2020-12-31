@@ -1,0 +1,277 @@
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+.tamanioFactura{
+  border: solid 1px rgb(117, 117, 117);
+  margin: 0 auto; 
+  width: 80%;
+  color: #0f0f0f;
+  padding: 50px 0px;
+  background: #FFFFFF; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px;
+}
+@media only screen and (max-width : 992px) {
+  .tamanioFactura{
+    border: solid 1px rgb(192, 1, 1);
+    margin: 0 auto; 
+    width: 100%;
+    color: #0f0f0f;
+    background: #FFFFFF; 
+    font-family: Arial, sans-serif; 
+    font-size: 14px;
+  }
+  
+}
+.tamanioFactura header {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #AAAAAA;
+}
+.tamanioFactura .main {
+  padding: 10px;
+}
+/* .tamanioFactura .main .clearfix{
+  padding: 10px;
+}
+.tamanioFactura .main #client{
+  width: 40%;
+}
+.tamanioFactura .main #invoice{
+  width: 40%;
+} */
+
+#logo {
+  float: left;
+  margin-top: 8px;
+}
+
+#logo img {
+  height: 70px;
+}
+
+#company {
+  float: right;
+  text-align: right;
+  padding-right: 10px;
+  border-right: solid 2px rgb(228, 195, 8);
+}
+
+
+#details {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#client {
+  padding-left: 6px;
+  border-left: 6px solid rgb(228, 195, 8);
+  
+  width: 50%;
+  float: left;
+}
+#clienteComprador {
+  padding-left: 6px;
+  border-left: 6px solid rgb(228, 195, 8);
+  
+  width: 30%;
+  float: left;
+}
+#EnviarA{
+  
+  text-align: left;
+  padding-left: 90px;
+  height: inherit;
+}
+#EnviarA span{
+  font-size: 20px;
+  color: #777777;
+  border-bottom: 2px solid rgb(228, 195, 8);
+}
+#client .to {
+  color: #777777;
+  font-size: 20px;
+}
+#clienteComprador .to {
+  color: #777777;
+  font-size: 20px;
+}
+
+h2.name {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0;
+}
+.datEmpresa{
+  color: #777777;
+}
+
+#invoice {
+  float: right;
+  text-align: right;
+  
+  width: 20%;
+}
+
+#invoice h1 {
+  color: #38728b;
+  font-size: 1.7em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 0  0 10px 0;
+}
+
+#invoice .date {
+  font-size: 1.1em;
+  color: #777777;
+}
+
+table {
+  width: 100%;
+/*   border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px; */
+}
+
+table th,
+table td {
+  padding: 20px;
+  background: #fafafa;
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+table th {
+  white-space: nowrap;        
+  font-weight: normal;
+}
+
+table td {
+  text-align: right;
+}
+
+table td h3{
+  color: #57B223;
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0 0 0.2em 0;
+}
+
+table .no {
+  color: #FFFFFF;
+  font-size: 1.6em;
+  background: #57B223;
+}
+
+table .desc {
+  text-align: left;
+}
+
+table .unit {
+  background: #DDDDDD;
+}
+
+table .qty {
+}
+
+table .total {
+  background: #d3d283;
+  color: #000000;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.2em;
+}
+
+/* table tbody tr:last-child td {
+  border: none;
+} */
+
+table tfoot td {
+  padding: 10px 20px;
+  background: #ffffff;
+  border-bottom: none;
+  font-size: 1.2em;
+  white-space: nowrap; 
+  border-top: 1px solid #AAAAAA; 
+}
+
+table tfoot tr:first-child td {
+  border-top: none; 
+}
+
+table tfoot tr:last-child td {
+  color: #57B223;
+  font-size: 1.4em;
+  border-top: 1px solid #57B223; 
+
+}
+
+
+
+#thanks{
+  font-size: 1.3em;
+  margin-bottom: 50px;
+}
+
+#notices{
+  padding-left: 6px;
+  border-left: 6px solid #e4c307;  
+}
+
+#notices .notice {
+  font-size: 1em;
+}
+
+footer {
+  color: #797979;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #AAAAAA;
+  margin-left: -90px;
+  text-align: center;
+}
+
+table  .cabecera{/* 
+  background-color: #F1C643; */
+  font-size: 18px;
+  padding: 15px 3px;
+  color: rgb(90, 88, 88);
+  font-weight: normal;
+  border-left: solid 1px #ccc;
+}
+table thead tr th{
+  background-color: #F1C643;
+  font-size: 18px;
+  padding: 15px 3px;
+  color: rgb(90, 88, 88);
+  font-weight: normal;
+  border-left: solid 1px #ccc;
+}
+table > tbody >tr:nth-child(2n) {
+  background-color: rgb(235, 209, 126);
+}
+
+/* codigo para mostrar las boletas al admnistrardor */
+
+.contenedorBoletasAdmin{
+  padding: 90px 50px;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
